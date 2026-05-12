@@ -8,10 +8,6 @@
 
 ---
 
-## TODO
-
-revisit choice of caps, considering use of large audio-friendly caps like WIMA MKS2 4.7µF / 63V
-
 ## 1. System architecture
 
 This HAT generates +48V phantom power from the Pi's 5V GPIO rail and injects it onto the audio lines heading to the HiFiBerry DAC2 ADC Pro's J4 balanced input header. The downstream P93 preamps derive their own +VE rail from the phantom feed via R10/R11/D1 on the preamp board.
@@ -221,9 +217,51 @@ Standard XLR pinout, easy to remember:
 
 ## 4. Critical design decisions and tradeoffs
 
-### 4.1 Why this isn't a fully-isolated design
+### 4.1 Why this isn't a fully-isolated design (and what that costs)
 
-There is no galvanic isolation between the Pi 5V rail, the audio ground, and the XLR shield. All three are the same GND net. In commercial mixers, phantom supplies use isolated converters to keep switching noise from analog rails. In this system, there is only one ground anyway (Pi, HiFiBerry, and the XLR shell all tie together), so an isolation barrier would do nothing functional. Switching noise mitigation comes from input/output LC filtering and careful PCB layout, not isolation.
+The existing +9V PSU HAT uses a Murata NMH0515SC to provide **galvanic isolation** between Pi GND and the preamp's ISO_GND. This phantom injector HAT does not. The decision deserves more explanation than a one-liner because the noise tradeoff is real and worth understanding before deployment.
+
+**What the +9V HAT's isolation was actually doing.** In that architecture, the P93's single-ended input stage is sensitive to any noise on its +9V supply rail — supply noise modulates the input transistor's bias and impresses itself directly onto the audio. Isolation prevents Pi-generated noise (digital switching, USB activity, GPIO toggling) from reaching that critical rail.
+
+**What changes in phantom-power mode.** The P93's +VE rail is now regulated locally by D1 (its 10V Zener) from the phantom feed. By the time switching noise reaches the audio gain stage, it has passed through:
+
+1. The output LC filter on the injector HAT (FB1 + capacitors)
+2. The 6.81 kΩ phantom-injection bias resistors (an RC low-pass with the next cap stage)
+3. The XLR cable (capacitance acts as additional filtering)
+4. The P93's R10 and R11 (2.2 kΩ phantom-extraction resistors)
+5. The P93's D1 Zener clamp (local re-regulation)
+6. The P93's own bypass caps on the +VE rail
+
+That's a six-stage filter between the switching node and the audio gain stage. Each stage attenuates 400 kHz substantially.
+
+**The remaining noise risks (in approximate order of severity).**
+
+1. **Switching radiation into audio traces** — the LT8362's SW node and inductor radiate, and they sit physically close to the audio path. This is the dominant risk and is addressed by PCB layout (section 5.3, switching loop layout) rather than by isolation. An isolated converter would radiate similarly; isolation doesn't help here.
+
+2. **Common-mode injection through GND** — Pi switching activity creates noise on the shared GND net, which can propagate through the system. The balanced audio topology rejects most of it via the PCM1863's ~80 dB CMRR, but extreme cases (heavy USB traffic during recording) might leak through.
+
+3. **Bus pumping** — Pi 5V rail variations (e.g., from Wi-Fi transmission bursts) propagate as brief +48V output variations, then through the six-stage filter to the audio.
+
+Note that **none of these noise sources is what galvanic isolation primarily protects against**. Isolation protects against **ground loops** — situations where current flows through a "ground" reference because two ground points are at slightly different potentials. In this system, Pi GND, HiFiBerry GND, and XLR pin 1 all tie at one star point on the HAT, so there isn't a second ground point to form a loop with. Isolation would solve a problem that doesn't exist in this topology.
+
+**How big the risk is in practice.** For wildlife recording with EM272 capsules:
+- EM272 self-noise: ~14-20 dB SPL equivalent (fairly quiet, but not Sennheiser-MKH territory)
+- Environmental noise: wind, traffic, other animals — typically 20-30 dB SPL even in quiet locations
+- Long unbalanced cable runs: pick up RF and can add 5-10 dB of noise
+
+Switching converter noise from a well-laid-out non-isolated injector HAT typically sits **below** the mic's self-noise floor. Quieter capsules (Sennheiser MKH-series, Schoeps CMC, etc.) might reveal the switching noise, but EM272 will not.
+
+For comparison: commercial inline phantom supplies like the Rolls PB224 use non-isolated switching boost converters. Field recordists use them with high-end mics without complaint. The architecture is well-trodden.
+
+**When to reconsider isolation.** If a future variant requires a quieter noise floor (e.g., recording very low-SPL ambient sounds, using ultra-quiet capsules, doing scientific bioacoustics measurements where any switching artifact would corrupt analysis), the architecture to revisit is:
+
+```
+Pi → existing +9V PSU HAT (isolated, +15V tapped) → new 15V→48V injector → HiFiBerry → P93
+```
+
+This brings isolation back via the existing well-debugged PSU HAT. Cost: an extra HAT in the stack (4 boards tall total), additional 5V→15V→48V efficiency loss, more layout/BOM work. For wildlife recording with EM272s, the cost outweighs the noise-floor benefit.
+
+**Validation plan.** Build the non-isolated injector HAT, deploy it, and measure the noise floor with a known-quiet capsule pointed at a sound-absorbent surface. Compare against the same mic running on the existing +9V PSU HAT (battery-equivalent quiet baseline). If the noise floor difference is audible or measurable, reconsider the architecture. If it isn't, the simpler single-HAT design is validated for this use case.
 
 ### 4.2 Why 400 kHz, not 1 MHz
 
@@ -295,48 +333,169 @@ Single GND net, but plan the layout such that:
 - Audio ground (C12-C15, R6-R9, J2 GND, J3 GND, J4 GND) connects to that patch at one point only
 - Pi GND comes in via J1 and ties at the same star point
 
-### 5.6 Stack clearances
+### 5.6 LT8362 exposed pad layout
+
+The MSOP-16-EP package has an exposed thermal pad on the underside of the chip that serves both as the IC's GND connection and as a heatsink. Layout requirements:
+
+- **Pad size**: match the IC's EP dimensions per the LT8362 datasheet's "Package Information" page (verify against the official footprint, typically ~3.0×2.4 mm)
+- **Thermal stitching**: 3×3 grid of 0.3 mm drill, 0.6 mm pad vias inside the EP footprint, plated through to a continuous ground pour on the bottom layer
+  - This is essential for the iron-based assembly fallback (section 5.8.4)
+  - Even with hot-plate reflow, these vias improve in-operation thermal dissipation and provide low-impedance ground return for the switching current
+- **Soldermask**: open the soldermask over the EP pad in a slightly larger window than the pad itself, to ensure paste can spread cleanly during reflow
+- **No silkscreen** over the EP area — it interferes with reflow
+
+### 5.7 Stack clearances
 
 - J1 header tops out at ~8.5 mm (Samtec SSQ-120-03-T-D plus mating socket)
 - Slide switches: ~6 mm tall (within Z budget)
 - SW node passives: <1 mm tall (SMD)
 - WIMA film caps in future audiophile variant would be 5-7 mm — would need to check fit against HiFiBerry-above clearance, but the current 1812 ceramics are <2 mm.
 
-### 5.7 Hand-assembly notes
+### 5.8 Hand-assembly notes
 
-All passives are 0805 or larger to support hand soldering with a fine-tip iron and tweezers. Suggested assembly order:
+All passives are 0805 or larger to support hand soldering with a fine-tip iron and tweezers. The LT8362's MSOP-16-EP package — with its exposed thermal pad — is the most challenging part of the assembly. Three methods are viable; the **recommended approach for this build is hot-plate reflow** (lowest skill floor, most reliable EP connection).
 
-1. **U1 (LT8362, MSOP-16-EP)** first, while the board is empty and accessible.
-   - The exposed pad on the bottom is the trickiest part. Two options:
-     - **Hot air + paste**: apply solder paste with a syringe, place part with tweezers, reflow with $30 hot-air station at 280-300°C for ~20 seconds
-     - **Iron + via thermal stitching**: design the EP pad with a 3×3 grid of vias (0.3 mm drill) to the bottom layer. Tin the bottom-side ground pour, place and tack the part by soldering pins 1 and 9 (opposite corners), then heat the bottom-side vias to reflow solder up through to the EP pad.
-   - Solder the remaining 15 leaded pins by drag-soldering or pin-by-pin with flux paste
-2. **D1 (B260A in SMA)** next — large pads, easy to flow
-3. **Inductors L1, L2** — large parts with side-accessible pads
-4. **Ferrite bead FB1 (1206)** — easy
-5. **Bulk caps C1, C6, C8, C9 (1210)** — large
-6. **DC-block caps C12-C15 (1812)** — largest passives, hardest to dislodge with iron tip
-7. **All 0805 R/C parts** — straightforward
-8. **Through-hole connectors J1-J4, switches SW1-SW2, LED D2** last
-   - Order matters: J1 (Pi GPIO) must be installed last because it's tall and prevents access to everything underneath
+#### 5.8.1 Assembly method comparison
 
-**Recommended tools**:
-- Temperature-controlled iron, 0.4 mm fine conical tip, set to 350°C
-- Fine-tip tweezers (curved or angled)
-- Solder paste in 0.5 mm needle syringe (Chip Quik SMD291AX or similar lead-free no-clean)
-- Liquid flux pen (rosin-based no-clean)
-- Hot-air rework station (cheap one is fine — $30-50 on Amazon)
-- 10× magnifier or USB inspection scope
-- Isopropyl alcohol + brush for flux cleanup
+| Method | Setup cost | Time per board | Skill floor | LT8362 EP risk |
+|---|---|---|---|---|
+| Iron + via thermal stitching | $0 (existing iron) | ~20 min | High | Medium |
+| Hot-air rework + solder paste | $30-50 | ~10 min | Medium | Low |
+| **Hot-plate reflow + solder paste** | **$80** | **~5 min** | **Low** | **Very low** |
+| PCB-assembly service (PCBWay etc.) | $40-80 setup + per-board fee | 0 (mailed back assembled) | None | None |
+
+**Recommendation for this 5-unit build**: hot-plate reflow. The skill floor is much lower than iron methods, the equipment cost is modest and reusable for future projects, and the uniform heating eliminates the LT8362 exposed-pad gamble that iron-based methods involve.
+
+#### 5.8.2 Hot-plate reflow workflow (recommended)
+
+**Equipment**:
+- Dedicated SMD reflow hot plate, ~100×100mm surface, with built-in lead-free profile
+  - MINIWARE MHP30 (~$80) — well-regarded, USB-C powered, OLED display
+  - AiXun T3A, Quicko T12-X (~$60-80) — similar capability
+- Lead-free no-clean solder paste in syringe (Chip Quik SMD291AX10, ~$15 for 10cc)
+- Fine-tip tweezers (curved or angled, ESD-safe)
+- 10× magnifier or USB inspection scope for placement verification
+- Optional but recommended: stainless-steel solder paste stencil from PCBWay (~$15, much faster than syringe application across 5 boards)
+
+**Workflow**:
+
+1. **Pre-warm the solder paste** — remove the syringe from the fridge 4+ hours before use. Bring to room temperature with the cap still on (prevents condensation on the paste).
+
+2. **Apply paste to the PCB**:
+   - **With syringe**: dispense a small even bead onto each SMD pad. Slightly excessive is OK; surface tension during reflow pulls it into shape. Critical: don't skimp on the LT8362's exposed-pad area — apply a solid uniform patch covering ~70% of the EP footprint.
+   - **With stencil**: align stencil to PCB fiducials, squeegee paste across with a card or small spatula at ~45°, lift cleanly. Inspect under magnification.
+
+3. **Place all SMD components** with tweezers:
+   - The LT8362 first — light pressure, visual alignment, the orientation pin-1 dot must face the correct direction (verify against silkscreen)
+   - Then larger parts (inductors, SMA diode, 1812 caps)
+   - Then 1210 bulk caps, 1206 caps, ferrite bead
+   - Finally 0805 passives — order doesn't matter as long as all are placed before reflow
+   - Don't worry about minor misalignment for 0805+ parts — solder surface tension self-centers them during reflow
+
+4. **Slide the loaded PCB onto the hot plate**:
+   - Center the board so heat distribution is even
+   - For a Pi HAT (65×56.5mm), the board fits comfortably on any 100mm+ surface
+
+5. **Run the reflow profile** (most plates have a single button for this):
+   - **Pre-heat**: ramp to 130-150°C over ~60 seconds (lets flux activate, prevents thermal shock cracking in ceramic caps)
+   - **Soak**: hold at 150°C for ~60 seconds (heat spreads evenly through the board)
+   - **Reflow**: push to 220-240°C for 20-30 seconds (solder melts, parts settle into their pads — you'll see the paste change from dull grey to shiny liquid)
+   - **Cool**: turn off the plate but leave the board on it; let it cool to <50°C over a few minutes (slow cool reduces stress on ceramic caps)
+
+6. **Inspect under magnification**:
+   - Solder joints should be shiny and concave between pad and pin
+   - No bridges between adjacent pins of the LT8362 (most likely failure mode)
+   - All parts should be visibly aligned to their pads
+   - Touch up any defects with an iron and flux paste
+
+7. **Install through-hole parts** after the board has fully cooled:
+   - J2, J3, J4 (small headers) first
+   - SW1, SW2 (slide switches)
+   - D2 (LED) + verify polarity against silkscreen
+   - J1 (Pi GPIO 2×20 stacking header) **last** — it's tall and blocks access to everything else underneath
+
+#### 5.8.3 Hot-air rework workflow (alternative)
+
+If a hot plate isn't available, a hot-air rework station works:
+
+1. Apply paste to LT8362 pads only (skip the rest for now)
+2. Place LT8362 with tweezers
+3. Reflow with hot air at 280-300°C, nozzle held ~20mm above the part for ~20 seconds — paste turns liquid
+4. Let cool, verify with magnifier
+5. Solder remaining SMD parts one at a time with iron + paste + small dabs of hot air for fine-pitch reflow
+6. Install through-hole connectors last
+
+This is slower (one-part-at-a-time) but works without the upfront hot-plate investment.
+
+#### 5.8.4 Iron + thermal stitching workflow (fallback)
+
+If neither hot plate nor hot air is available, the LT8362 EP can be soldered through bottom-side thermal vias:
+
+1. PCB layout requires a 3×3 grid of 0.3mm vias inside the LT8362 EP footprint, plated through to a continuous ground pour on the bottom layer
+2. Tin the bottom-side ground pour heavily around the via cluster
+3. Place the LT8362 on the top, tack pins 1 and 9 (opposite corners) to hold it in place
+4. From the bottom, heat the via cluster with a wide chisel tip at ~370°C — solder reflows up through the vias and bonds to the EP
+5. Verify by gently rocking the part with tweezers — if it moves, the EP isn't bonded
+6. Solder remaining 14 leaded pins by drag-soldering with flux paste, or pin-by-pin
+
+This is the highest-skill method and the EP connection is the least reliable — risk a poorly-bonded EP causes thermal runaway during operation. Use only if other methods aren't possible.
+
+#### 5.8.5 Solder paste handling notes
+
+- **Storage**: refrigerator at 0-10°C (NOT freezer). Most pastes last 6 months refrigerated, only ~weeks at room temperature.
+- **Pre-use**: 4+ hours at room temp before opening, cap still on. Cold paste applied to a warm board causes condensation that ruins joints.
+- **After use**: cap the syringe, return to fridge. Mark the date on the syringe.
+- **If paste appears dry or grainy**: it's expired. Order fresh.
+
+#### 5.8.6 Tools list (consolidated)
+
+**Essential** (regardless of method):
+- Fine-tip tweezers, ESD-safe (curved or angled, ~$15)
+- 10× magnifier or USB microscope ($30-100)
+- Isopropyl alcohol + soft brush for flux cleanup
 - Solder wick for fixing bridges
+- Temperature-controlled iron, 0.4 mm fine conical tip, set to 350°C
+- Liquid flux pen (rosin-based no-clean)
 
-**First-power testing protocol**:
-1. **Visually inspect** the LT8362 leads under magnification for bridges
-2. **Apply 5V via bench supply** with current limit set to 100 mA (well below the expected ~185 mA draw) — should current-limit immediately on a shorted board, protecting the IC
-3. **Measure +48V at the output filter** (after FB1) — should be 47-49V at no load
-4. **Measure each XLR pin** when its slide switch is on — should see ~48V on pins 2 and 3 relative to pin 1
-5. **Increase current limit to 500 mA** and **plug in an actual P93** — should see <100 mA total draw, +48V holding stable
-6. **Inject audio at the EM272** (tap mic body, click, finger snap) — should see audio at J4 output
+**For hot-plate workflow** (recommended):
+- SMD reflow hot plate (~$80, e.g. MINIWARE MHP30)
+- Lead-free no-clean solder paste in syringe (Chip Quik SMD291AX10)
+- Optional: stainless-steel stencil from PCBWay (~$15, speeds paste application)
+
+**For hot-air workflow**:
+- Hot-air rework station ($30-50, look for adjustable temp and airflow)
+- Same paste as above
+
+#### 5.8.7 First-power testing protocol
+
+After assembly, before plugging into the Pi:
+
+1. **Visually inspect** the LT8362 and surrounding passives under magnification for bridges, missing parts, tombstoned caps
+2. **Check continuity from +5V to GND** with a multimeter on the unpowered board — should read open or very high resistance (kΩ range or more). A low reading indicates a short and means stop, don't power up.
+3. **Apply 5V via bench supply** with current limit set to 100 mA (well below expected ~185 mA draw) — board should current-limit immediately if there's a short, protecting the IC
+4. **Measure +48V at the output filter** (after FB1) — should be 47-49V at no load
+5. **Toggle each slide switch** and verify +48V appears on the corresponding XLR pins 2 and 3 (relative to pin 1)
+6. **Increase current limit to 500 mA** and **plug in an actual P93 + EM272** — should see <100 mA total draw, +48V holding stable
+7. **Inject audio at the EM272** (tap mic body, click, finger snap) — should see audio at the HiFiBerry J4 output via scope, or in the BirdNET-Pi recording stream
+
+#### 5.8.8 Noise-floor validation (validates the non-isolated topology, see section 4.1)
+
+After basic function is confirmed, before committing to the design across all 5 units:
+
+1. **Set up a quiet test environment** — point the EM272 at a sound-absorbent surface (a cushion, foam, or inside a closed cabinet). Avoid metal surfaces (reflect HF). Reduce ambient noise to lowest practical level.
+2. **Baseline recording (battery/PSU HAT mode)**: configure one P93 board for battery operation (per Rod's instructions: omit R10/R11/D1, reverse C5/C6, feed +9V from the existing PSU HAT). Record 30 seconds of silence into BirdNET-Pi or any DAW.
+3. **Phantom-mode recording**: switch the same P93 back to phantom configuration, power it from the new injector HAT. Record 30 seconds of silence.
+4. **Compare in audio editing software**:
+   - Look at the RMS noise floor — should be within 1-3 dB between the two recordings
+   - Listen for any tonal content around 400 kHz aliases (it shouldn't be present after the LT8362 spread-spectrum and the six-stage filter, but verify)
+   - Look at the spectrum (FFT view) — should be a smooth broadband floor, no sharp tones
+5. **If the phantom-mode recording shows audible or measurable tonal noise** (>5 dB worse than baseline):
+   - Most likely cause: PCB layout — switching loop too large, ground pour discontinuous, audio traces near the SW node. Revise layout.
+   - Less likely: insufficient output filtering. Try doubling C9 or adding a second ferrite stage.
+   - Rarely: bus pumping from Pi 5V. Add bulk capacitance on the +5V_PI net.
+6. **If layout fixes don't close the gap**, the architecture decision in section 4.1 should be revisited — pivot to Option D (use existing +9V PSU HAT's isolated +15V rail as input).
+
+
 
 ---
 
