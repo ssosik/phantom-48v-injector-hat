@@ -50,30 +50,32 @@ Raspberry Pi 4B
 
 ### 2.1 LT8362 boost converter section
 
+**Package sizing strategy**: All passives upsized to 0805 or larger (1206/1210) for hand assembly. Schottky upsized from SOD-123 to SMA. Compared to the AD reference design's 0402/0603 mix, this is much more forgiving with a fine-tip iron and tweezers.
+
 | Ref | Value | Description | Package | Mfr Part # | Qty/board |
 |-----|-------|-------------|---------|------------|-----------|
-| U1 | LT8362 | Boost converter, 60V SW | MSOP-16-EP | LT8362EMSE#PBF | 1 |
-| L1 | 22 µH | Shielded power inductor, ≥500 mA Isat | 5×5 mm | Coilcraft XAL5030-223MEC | 1 |
-| L2 | 2.2 µH | Input EMI filter inductor | 1812 | Würth 74437324022 | 1 |
-| D1 | 60V Schottky | 2A, low VF | SOD-123 | Diodes Inc DFLS260-7 | 1 |
-| FB1 | Ferrite bead | 600Ω @ 100MHz, 1A | 1206 | Würth 742792040 | 1 |
-| R1 | 1 MΩ 1% | FBX top divider | 0603 | Yageo RC0603FR-071ML | 1 |
-| R2 | 34.8 kΩ 1% | FBX bottom divider | 0603 | Yageo RC0603FR-0734K8L | 1 |
-| R3 | 121 kΩ 1% | R_T, sets 400 kHz | 0603 | Yageo RC0603FR-07121KL | 1 |
-| R4 | 22.1 kΩ 1% | V_C compensation | 0603 | Yageo RC0603FR-0722K1L | 1 |
-| R5 | 100 kΩ 1% | EN/UVLO pull-up | 0603 | Yageo RC0603FR-07100KL | 1 |
-| C1 | 10 µF / 50V X7R | V_IN bypass | 1206 | Murata GRM31CR71H106KA12L | 1 |
-| C2 | 1 µF / 25V X7R | V_C compensation | 0603 | Murata GRM188R71E105KA12D | 1 |
-| C3 | 1 µF / 100V X7R | Output filter | 0603 | Murata GRM188R72A105KE15D | 1 |
-| C4 | 1 nF X7R | Compensation high-freq | 0603 | Standard X7R | 1 |
-| C5 | 10 nF X7R | Soft-start | 0603 | Standard X7R | 1 |
+| U1 | LT8362 | Boost controller, 60V SW, H-grade | MSOP-16-EP | LT8362HMSE#PBF | 1 |
+| L1 | 22 µH | Shielded power inductor, ≥1.4A Isat | 5×5 mm SMT | Coilcraft XAL5030-223MEC | 1 |
+| L2 | 2.2 µH | Input EMI filter inductor | 7×7 mm SMT | Würth 74437324022 | 1 |
+| D1 | B260A | 60V 2A Schottky, low VF | SMA / DO-214AC | Diodes Inc B260A-13-F | 1 |
+| FB1 | Ferrite bead | 600Ω @ 100MHz, 1A | 1206 | Würth 742792044 | 1 |
+| R1 | 1 MΩ 1% | FBX top divider | 0805 | Yageo RC0805FR-071ML | 1 |
+| R2 | 34.8 kΩ 1% | FBX bottom divider | 0805 | Yageo RC0805FR-0734K8L | 1 |
+| R3 | 121 kΩ 1% | R_T, sets 400 kHz | 0805 | Yageo RC0805FR-07121KL | 1 |
+| R4 | 22.1 kΩ 1% | V_C compensation | 0805 | Yageo RC0805FR-0722K1L | 1 |
+| R5 | 100 kΩ 1% | EN/UVLO pull-up | 0805 | Yageo RC0805FR-07100KL | 1 |
+| C1 | 10 µF / 50V X7R | V_IN bypass | 1210 | Murata GRM32ER71H106KA12L | 1 |
+| C2 | 1 µF / 25V X7R | V_C compensation | 0805 | Murata GRM21BR71E105KA99L | 1 |
+| C3 | 1 µF / 100V X7R | Output filter | 1206 | Murata GRM31CR72A105KA01L | 1 |
+| C4 | 1 nF X7R | Compensation high-freq | 0805 | Murata GRM21BR71H102KA01L | 1 |
+| C5 | 10 nF X7R | Soft-start | 0805 | Murata GRM21BR71H103KA01L | 1 |
 | C6 | 22 µF / 16V X7R | Bulk input | 1210 | Murata GRM32ER71C226KE15L | 1 |
-| C7 | 0.1 µF / 100V X7R | Output bypass | 0402 | Standard X7R | 1 |
-| C8 | 4.7 µF / 50V X7R | Input EMI filter | 1206 | Murata GRM31CR71H475KA12L | 1 |
+| C7 | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
+| C8 | 4.7 µF / 50V X7R | Input EMI filter | 1210 | Murata GRM32ER71H475KA88L | 1 |
 | C9 | 10 µF / 50V X7R | Bulk output | 1210 | Murata GRM32ER71H106KA12L | 1 |
-| C10a | 0.1 µF / 100V X7R | Output bypass | 0402 | Standard X7R | 1 |
-| C10b | 0.1 µF / 100V X7R | Output bypass | 0402 | Standard X7R | 1 |
-| C11 | 4.7 pF C0G | FBX feedforward | 0402 | Standard NP0/C0G | 1 |
+| C10a | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
+| C10b | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
+| C11 | 4.7 pF C0G | FBX feedforward | 0805 | Murata GRM2165C1H4R7CA01D | 1 |
 
 **Notes**:
 - Reference designators C1–C11, R1–R5, L1–L2, D1, FB1, U1 mirror the LT8362 typical-application schematic exactly to make cross-checking trivial.
@@ -299,6 +301,42 @@ Single GND net, but plan the layout such that:
 - Slide switches: ~6 mm tall (within Z budget)
 - SW node passives: <1 mm tall (SMD)
 - WIMA film caps in future audiophile variant would be 5-7 mm — would need to check fit against HiFiBerry-above clearance, but the current 1812 ceramics are <2 mm.
+
+### 5.7 Hand-assembly notes
+
+All passives are 0805 or larger to support hand soldering with a fine-tip iron and tweezers. Suggested assembly order:
+
+1. **U1 (LT8362, MSOP-16-EP)** first, while the board is empty and accessible.
+   - The exposed pad on the bottom is the trickiest part. Two options:
+     - **Hot air + paste**: apply solder paste with a syringe, place part with tweezers, reflow with $30 hot-air station at 280-300°C for ~20 seconds
+     - **Iron + via thermal stitching**: design the EP pad with a 3×3 grid of vias (0.3 mm drill) to the bottom layer. Tin the bottom-side ground pour, place and tack the part by soldering pins 1 and 9 (opposite corners), then heat the bottom-side vias to reflow solder up through to the EP pad.
+   - Solder the remaining 15 leaded pins by drag-soldering or pin-by-pin with flux paste
+2. **D1 (B260A in SMA)** next — large pads, easy to flow
+3. **Inductors L1, L2** — large parts with side-accessible pads
+4. **Ferrite bead FB1 (1206)** — easy
+5. **Bulk caps C1, C6, C8, C9 (1210)** — large
+6. **DC-block caps C12-C15 (1812)** — largest passives, hardest to dislodge with iron tip
+7. **All 0805 R/C parts** — straightforward
+8. **Through-hole connectors J1-J4, switches SW1-SW2, LED D2** last
+   - Order matters: J1 (Pi GPIO) must be installed last because it's tall and prevents access to everything underneath
+
+**Recommended tools**:
+- Temperature-controlled iron, 0.4 mm fine conical tip, set to 350°C
+- Fine-tip tweezers (curved or angled)
+- Solder paste in 0.5 mm needle syringe (Chip Quik SMD291AX or similar lead-free no-clean)
+- Liquid flux pen (rosin-based no-clean)
+- Hot-air rework station (cheap one is fine — $30-50 on Amazon)
+- 10× magnifier or USB inspection scope
+- Isopropyl alcohol + brush for flux cleanup
+- Solder wick for fixing bridges
+
+**First-power testing protocol**:
+1. **Visually inspect** the LT8362 leads under magnification for bridges
+2. **Apply 5V via bench supply** with current limit set to 100 mA (well below the expected ~185 mA draw) — should current-limit immediately on a shorted board, protecting the IC
+3. **Measure +48V at the output filter** (after FB1) — should be 47-49V at no load
+4. **Measure each XLR pin** when its slide switch is on — should see ~48V on pins 2 and 3 relative to pin 1
+5. **Increase current limit to 500 mA** and **plug in an actual P93** — should see <100 mA total draw, +48V holding stable
+6. **Inject audio at the EM272** (tap mic body, click, finger snap) — should see audio at J4 output
 
 ---
 
