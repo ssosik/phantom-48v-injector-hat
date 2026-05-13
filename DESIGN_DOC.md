@@ -75,7 +75,7 @@ Raspberry Pi 4B
 
 **Notes**:
 - Reference designators C1–C11, R1–R5, L1–L2, D1, FB1, U1 mirror the LT8362 typical-application schematic exactly to make cross-checking trivial.
-- C8 placement: between L2 input and the LT8362 V_IN. This is the input-side EMI filter.
+- C8 placement: on the **input** side of L2 (between Pi and the inductor), in parallel with C6 as part of the input EMI filter. C1 is the V_IN bypass on the **output** side of L2 (between the inductor and U1).
 - C7, C3, C10a, C10b are arranged around FB1 in a Pi-filter network on the output.
 
 ### 2.2 Phantom injection section
@@ -119,58 +119,67 @@ Raspberry Pi 4B
 
 ### 3.1 Nets
 
+**Important — connect U1 by pin name, not pin number.** The pin numbers in earlier drafts of this document were inferred and have proven incorrect. The AD-provided LT8362 symbol shows the authoritative pin numbering; always wire by the pin name labels visible on the symbol (V_IN, SW, FBX, etc.).
+
 | Net | Purpose | Connected to |
 |-----|---------|--------------|
-| `+5V_PI` | Pi GPIO 5V input | J1 pins 2, 4; L2 input; C6+; C8+ |
-| `+5V_FILT` | Post-EMI-filtered 5V | L2 output; U1 V_IN (pin 1); C1+; C8 not connected here |
-| `SW_NODE` | Boost switch node | U1 SW (pin 4); L1 right; D1 anode |
-| `+48V_RAW` | Boost output before output filter | D1 cathode; C9+; FB1 left |
-| `+48V` | Filtered phantom rail | FB1 right; C3+; C7+; C10a+; C10b+; D2 anode (via R10); SW1 input; SW2 input |
-| `+48V_L` | L-channel phantom (after SW1) | SW1 output; R6; R7 |
-| `+48V_R` | R-channel phantom (after SW2) | SW2 output; R8; R9 |
-| `XLR_L_HOT` | L channel XLR pin 2 | R6; C12+ (anode); J3 pin 2 |
-| `XLR_L_COLD` | L channel XLR pin 3 | R7; C13+ (anode); J3 pin 3 |
-| `XLR_R_HOT` | R channel XLR pin 2 | R8; C14+ (anode); J4 pin 2 |
-| `XLR_R_COLD` | R channel XLR pin 3 | R9; C15+ (anode); J4 pin 3 |
-| `J4_L+` | HiFiBerry J4 L+ | C12- (cathode); J2 pin 5 |
-| `J4_L-` | HiFiBerry J4 L- | C13- (cathode); J2 pin 6 |
-| `J4_R+` | HiFiBerry J4 R+ | C14- (cathode); J2 pin 1 |
-| `J4_R-` | HiFiBerry J4 R- | C15- (cathode); J2 pin 2 |
-| `FBX` | Feedback to U1 | U1 FBX (pin 7); R1; R2; C11 |
-| `VC` | Compensation | U1 V_C (pin 9); R4; C2 |
-| `RT` | Frequency-setting | U1 R_T (pin 11); R3 |
-| `SS` | Soft-start | U1 SS (pin 12); C5 |
-| `EN_UVLO` | Enable | U1 EN/UVLO (pin 2); R5 (to +5V_FILT) |
-| `BIAS` | Internal bias | U1 BIAS (pin 6); tie to +5V_FILT or leave floating (verify datasheet) |
-| `INTVCC` | Internal regulator output | U1 INTVCC (pin 16); bypass cap (small, datasheet-specified) |
-| `SYNC_MODE` | Mode select | U1 SYNC/MODE (pin 3); GND for SSFM-on operation (verify datasheet) |
-| `GND_PI` | Pi ground | J1 pins 6, 9, 14, 20, 25, 30, 34, 39; J2 pins 3, 4; all decoupling cap returns; SW1/SW2 grounds (not used since SPST); C12-C15 are AC-only |
+| `+5V_PI` | Pi GPIO 5V input | J1 pins 2, 4; L2 (input-side terminal); C6; C8 |
+| `+5V_FILT` | Post-EMI-filtered 5V | L2 (output-side terminal); L1 (input-side terminal); U1 `V_IN`; C1 |
+| `SW_NODE` | Boost switch node | L1 (output-side terminal); D1 anode; U1 `SW` |
+| `+48V_RAW` | Boost output before output filter | D1 cathode; C9; FB1 (input-side terminal) |
+| `+48V` | Filtered phantom rail | FB1 (output-side terminal); C3; C7; C10a; C10b; R10; SW1 (common terminal); SW2 (common terminal) |
+| `+48V_L` | L-channel phantom (after SW1) | SW1 (switched terminal); R6; R7 |
+| `+48V_R` | R-channel phantom (after SW2) | SW2 (switched terminal); R8; R9 |
+| `XLR_L_HOT` | L channel XLR pin 2 | R6 (XLR-side terminal); C12 (XLR-side terminal); J3 pin 2 |
+| `XLR_L_COLD` | L channel XLR pin 3 | R7 (XLR-side terminal); C13 (XLR-side terminal); J3 pin 3 |
+| `XLR_R_HOT` | R channel XLR pin 2 | R8 (XLR-side terminal); C14 (XLR-side terminal); J4 pin 2 |
+| `XLR_R_COLD` | R channel XLR pin 3 | R9 (XLR-side terminal); C15 (XLR-side terminal); J4 pin 3 |
+| `J4_L+` | HiFiBerry J4 L+ | C12 (J4-side terminal); J2 pin 5 |
+| `J4_L-` | HiFiBerry J4 L- | C13 (J4-side terminal); J2 pin 6 |
+| `J4_R+` | HiFiBerry J4 R+ | C14 (J4-side terminal); J2 pin 1 |
+| `J4_R-` | HiFiBerry J4 R- | C15 (J4-side terminal); J2 pin 2 |
+| `FBX` | Feedback to U1 | U1 `FBX`; R1 (between +48V_RAW and FBX); R2 (between FBX and GND); C11 (parallel with R1) |
+| `VC` | Compensation | U1 `VC`; R4 (in series with C4 to GND); C2 (to GND) |
+| `RT` | Frequency-setting | U1 `RT`; R3 (to GND) |
+| `SS` | Soft-start | U1 `SS`; C5 (to GND) |
+| `EN_UVLO` | Enable / undervoltage lockout | U1 `EN/UVLO`; R5 (to +5V_FILT, always-on enable) |
+| `BIAS` | Internal bias | U1 `BIAS`; tied to +5V_FILT (verify in datasheet — see open item 4) |
+| `INTVCC` | Internal regulator output | U1 `INTVCC`; bypass cap to GND (typ. 1 µF / 16V, verify in datasheet) |
+| `SYNC_MODE` | Mode select | U1 `SYNC/MODE`; GND for SSFM-enabled operation (verify in datasheet) |
+| `GND` | System ground | J1 pins 6, 9, 14, 20, 25, 30, 34, 39; J2 pins 3, 4; U1 `GND` and exposed pad; R2 (bottom terminal); R3 (ground-side terminal); C2, C4, C5, C7, C10a, C10b (ground-side terminal each); C6, C8 (ground-side terminal each); C9 (ground-side terminal); C1 (ground-side terminal); D2 cathode; XLR pin 1 on J3 and J4 |
 
-**Star ground note**: All "GND" nets are a single net in this design — there is no isolation barrier. The star point should be physically near U1's exposed pad (the IC's GND lead frame). J1's many GND pins all tie to this single GND net.
+**Convention notes**:
+- **All capacitors in this design are non-polarized ceramic** (X7R or C0G). Use `Device:C` (the symmetric symbol with two parallel plates), not `Device:C_Polarized`. Either terminal can connect to either net — orientation does not matter for assembly. Where the netlist describes a cap's terminals (e.g., "C12 (XLR-side terminal)"), it's identifying *which* net the terminal sits on, not implying a polarity requirement.
+- **L1 (boost inductor)** sits between `+5V_FILT` (input side) and `SW_NODE` (output side). The "input-side terminal" is the one closer to U1's V_IN pin; the "output-side terminal" is the one closer to the SW pin and D1. Inductors are non-polarized; orientation doesn't matter.
+- **L2 (input EMI filter)** sits between `+5V_PI` (input side, Pi GPIO) and `+5V_FILT` (output side, filtered). Non-polarized.
+- **FB1 (output ferrite bead)** sits between `+48V_RAW` (boost converter output, ripple-bearing) and `+48V` (filtered rail, clean). Non-polarized.
+- **D1 (Schottky)** is polarized. Anode → SW_NODE, cathode → +48V_RAW. Marked with a band on the cathode side.
+- **D2 (LED)** is polarized. Anode (via R10) → +48V, cathode → GND. Marked with a flat on the cathode side, longer lead on the anode side.
+- **R6–R9 (precision bias resistors)** are non-polarized. They sit between `+48V_L` or `+48V_R` and an XLR pin. "Other terminal" or "XLR-side terminal" in the netlist refers to the terminal connecting to the XLR pin (not the +48V side).
 
-### 3.2 LT8362 pinout (MSOP-16-EP)
+**Star ground note**: All "GND" pins are a single net in this design — there is no isolation barrier. The star point should be physically near U1's exposed pad (the IC's GND lead frame). J1's many GND pins all tie to this single GND net.
 
-Reference: LT8362 datasheet, Pin Configuration section.
+### 3.2 LT8362 pin connections (by name)
 
-| Pin | Name | Function | Connected to |
-|-----|------|----------|--------------|
-| 1 | V_IN | Power input | +5V_FILT, C1 |
-| 2 | EN/UVLO | Enable / undervoltage lockout | R5 to +5V_FILT (always-on) |
-| 3 | SYNC/MODE | Frequency sync / mode | GND for SSFM enabled |
-| 4 | SW | Switch node | L1, D1 anode |
-| 5 | GND | Power ground | GND, also exposed pad |
-| 6 | BIAS | Internal bias | +5V_FILT (see datasheet, BIAS recommended) |
-| 7 | FBX | Feedback | R1, R2, C11 |
-| 8 | (NC or repeat) | — | See datasheet |
-| 9 | V_C | Compensation | R4, C2 |
-| 10 | (NC or repeat) | — | See datasheet |
-| 11 | R_T | Freq-setting resistor | R3 to GND |
-| 12 | SS | Soft-start cap | C5 to GND |
-| 13-15 | (per datasheet) | — | See datasheet pin diagram |
-| 16 | INTV_CC | Internal regulator output | Bypass cap to GND |
-| EP | Exposed pad | Thermal + ground | GND (must solder to ground pour) |
+Pin numbers are deliberately omitted here. Connect using the pin function names as labeled on the AD-provided KiCad symbol. The MSOP-16-EP package has 16 mechanical pins but only 12 are electrically active (the other 4 are NC spacers); leave the NC pins unconnected.
 
-**IMPORTANT — verify in datasheet**: Pin assignments above are based on memory/inference. The LT8362 datasheet's "Pin Configuration" page in the front matter has the authoritative mapping. **Cross-check every pin number before completing the schematic in KiCad.**
+| Pin name | Function | Connected to |
+|----------|----------|--------------|
+| `V_IN` | Power input | +5V_FILT, C1 |
+| `EN/UVLO` | Enable / undervoltage lockout | R5 to +5V_FILT (always-on enable) |
+| `SYNC/MODE` | Frequency sync / mode select | GND for internal-clock + SSFM-enabled operation (verify datasheet) |
+| `SW` | Switch node | L1 (output-side terminal, the end opposite +5V_FILT), D1 anode |
+| `GND` | Power ground | GND star point |
+| `BIAS` | Internal bias supply | +5V_FILT (verify datasheet for minimum V_BIAS requirement) |
+| `FBX` | Feedback | R1/R2 midpoint, C11 |
+| `VC` | Compensation | R4-C4 series to GND, C2 to GND |
+| `RT` | Frequency-setting | R3 (121 kΩ) to GND for ~400 kHz |
+| `SS` | Soft-start cap | C5 (10 nF) to GND |
+| `INTVCC` | Internal regulator output | Bypass cap to GND (typ. 1 µF / 16V) |
+| `EP` (exposed pad) | Thermal + electrical ground | GND ground pour, with 3×3 thermal stitching vias to bottom-layer ground |
+| `NC` × 4 | No connect | Leave open (do NOT tie to GND or any net) |
+
+**Critical**: leaving NC pins unconnected is intentional. The LT8362 datasheet's Pin Functions section specifies these pins must be floating. Some KiCad symbol libraries draw NC pins as connectable to make ERC happy — if so, mark each NC pin with the "no connect" flag (`Q` in KiCad) rather than wiring it to any net.
 
 ### 3.3 J1 — Raspberry Pi GPIO (2×20)
 
@@ -324,7 +333,7 @@ Practical rules:
 
 ### 5.4 Feedback trace (sensitive)
 
-The FBX trace from R1/R2 midpoint to U1 pin 7 carries low-impedance high-frequency feedback. Keep it short (<10 mm), kept away from the SW node and L1. Run on bottom layer if the top is congested.
+The FBX trace from R1/R2 midpoint to U1's `FBX` pin carries low-impedance high-frequency feedback. Keep it short (<10 mm), kept away from the SW node and L1. Run on bottom layer if the top is congested.
 
 ### 5.5 Ground strategy
 
@@ -501,7 +510,7 @@ After basic function is confirmed, before committing to the design across all 5 
 
 ## 6. Open items to verify before fabrication
 
-1. **LT8362 pin numbering** — verify against datasheet Pin Configuration page, specifically: V_IN, SW, FBX, V_C, R_T, SS, EN/UVLO, BIAS, INTV_CC. Some sources show 16 pins, some show 10 pins (DFN variant). MSOP-16-EP has specific NC pins.
+1. ~~**LT8362 pin numbering**~~ — resolved by using the AD-provided KiCad symbol. Wire by pin name, not pin number. See section 3.2.
 2. **V_FB (feedback reference voltage)** — the AD typical-application schematic uses R1=1M, R2=34.8k for 48V output, which implies V_FB ≈ 1.6V. Verify against the Electrical Characteristics table.
 3. **SYNC/MODE pin configuration for SSFM** — datasheet should specify whether SSFM is enabled by tying SYNC/MODE to GND, to V_IN, or via a resistor.
 4. **BIAS pin connection** — datasheet shows it tied to V_IN in some examples; verify our 5V V_IN is high enough to use BIAS or if it should be left floating.
