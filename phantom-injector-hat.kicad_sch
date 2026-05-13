@@ -5245,700 +5245,7 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(label "SS"
-		(at 101.6 187.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "023e3806-5ae7-44b5-a51d-337869b5c200")
-	)
-	(label "XLR_R_COLD"
-		(at 223.52 109.22 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "02960265-ba2d-4b8e-bc46-75fd84b2556d")
-	)
-	(label "INTVCC"
-		(at 69.85 133.35 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0bba0e03-79f6-409c-8505-6272f15c4ab1")
-	)
-	(label "FBX"
-		(at 92.71 102.87 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0cf63501-f062-4c63-bf30-4c1ec34ea778")
-	)
-	(label "J4_R+"
-		(at 186.69 101.6 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0f15463b-d9ba-48b8-9cbc-ca6a18ab4aa6")
-	)
-	(label "VC"
-		(at 90.17 54.61 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "137ce0fd-f5db-4176-bf0e-873cb85f3a96")
-	)
-	(label "XLR_R_COLD"
-		(at 226.06 62.23 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "149c3dfe-2a63-417f-aed7-d992a927ea2b")
-	)
-	(label "FBX"
-		(at 101.6 193.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1b2cc70b-3436-4455-a7fa-c14b38e4f122")
-	)
-	(label "XLR_L_COLD"
-		(at 242.57 27.94 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "215559ea-21af-4953-ba72-85ab4a2a019d")
-	)
-	(label "XLR_R_HOT"
-		(at 242.57 31.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "21e12bf8-b529-4e65-80b8-c50edd1ffb24")
-	)
-	(label "XLR_R_HOT"
-		(at 186.69 109.22 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2640ce1d-ae42-4f63-bbc8-63b707d516c0")
-	)
-	(label "RT"
-		(at 72.39 54.61 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "26b76c25-06d5-44d8-a6d5-b78da4ed6600")
-	)
-	(label "J4_R-"
-		(at 260.35 35.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3270202e-f6f6-45d4-ba0b-ed82f26a4eff")
-	)
-	(label "XLR_L_COLD"
-		(at 160.02 62.23 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "34cc9b94-f6e8-4efb-a0bb-25facee82deb")
-	)
-	(label "J4_L+"
-		(at 189.23 162.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "355fa3cd-2f28-4329-9faf-83e97e0eb755")
-	)
-	(label "J4_R-"
-		(at 223.52 101.6 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "38d93db6-12ee-4e4e-8211-7f13399d2d28")
-	)
-	(label "SW_NODE"
-		(at 181.61 24.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3a72f815-f2f6-4b45-8673-f6d2eb353ca1")
-	)
-	(label "EN_UVLO"
-		(at 45.72 177.8 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "41aff615-836a-49bf-ae19-7cc6915f626a")
-	)
-	(label "XLR_L_HOT"
-		(at 242.57 24.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4536e3e0-6358-4480-a959-175b1002a81a")
-	)
-	(label "XLR_R_COLD"
-		(at 248.92 160.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "48b7ab86-b58e-4c6c-b0df-1eab9259e3c8")
-	)
-	(label "J4_R+"
-		(at 260.35 31.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "55525796-ea37-4033-a51e-a2909024c3e2")
-	)
-	(label "EN_UVLO"
-		(at 52.07 133.35 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5c141096-8bac-4efa-868c-23e53b5e59d4")
-	)
-	(label "RT"
-		(at 101.6 190.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "697d10f5-eea0-4cb3-b2cd-cc477406a75d")
-	)
-	(label "BIAS"
-		(at 45.72 187.96 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6990e4e3-f9bb-4823-8704-71730c7bd9cd")
-	)
-	(label "J4_L-"
-		(at 189.23 165.1 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6d5fe51b-7578-43ce-aa02-5b5d3c7cfb48")
-	)
-	(label "FBX"
-		(at 36.83 54.61 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6eaf041d-5e02-409c-9936-909afd6b2ffb")
-	)
-	(label "SW_NODE"
-		(at 66.04 34.29 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "715bf7fe-3f75-4cb1-9f8c-fbed3d13bf1b")
-	)
-	(label "XLR_R_HOT"
-		(at 193.04 62.23 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "75afe40a-c0b2-4448-ba40-ba253fe75591")
-	)
-	(label "J4_L+"
-		(at 118.11 101.6 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "77c64fb8-ac73-4552-a5a5-be9130a5a98e")
-	)
-	(label "EN_UVLO"
-		(at 107.95 54.61 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "83c87bf2-c048-4056-abde-e1da8cfa9958")
-	)
-	(label "FBX"
-		(at 53.34 54.61 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "86769e27-24cf-492a-9f4b-825d98e0cedf")
-	)
-	(label "XLR_R_HOT"
-		(at 248.92 162.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8a9d4463-68c5-46f3-b918-1d976917c3af")
-	)
-	(label "J4_R+"
-		(at 176.53 160.02 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9039140d-f5bb-4a95-8297-816a7e1637d1")
-	)
-	(label "XLR_R_COLD"
-		(at 242.57 35.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "91fe82b2-a65b-4217-aaca-c9e282f140bf")
-	)
-	(label "XLR_L_COLD"
-		(at 151.13 109.22 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "96976c34-26f0-4dd7-ada2-690a6a23b451")
-	)
-	(label "INTVCC"
-		(at 45.72 182.88 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9764789b-c08c-4fa2-b64a-f6cb53c0d85f")
-	)
-	(label "SS"
-		(at 139.7 78.74 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "98b5ac8a-2be9-4e53-9ab3-c9067f4d8cb8")
-	)
-	(label "VC"
-		(at 45.72 190.5 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9bd7d7b2-b70b-4070-963e-f9e0fd3ab28e")
-	)
-	(label "SS"
-		(at 46.99 133.35 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9e098c69-4825-4558-a1c3-939bb7118c65")
-	)
-	(label "XLR_L_HOT"
-		(at 118.11 109.22 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a31b15cd-c7e2-42ba-be5a-7599547fe6a3")
-	)
-	(label "J4_L-"
-		(at 260.35 27.94 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a8f58de4-262f-4bcf-8c69-a5f97014c970")
-	)
-	(label "J4_L-"
-		(at 151.13 101.6 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b7dc85af-27fc-45d9-9285-d8ce2751231c")
-	)
-	(label "SW_NODE"
-		(at 101.6 180.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "be2da093-cd8e-4459-84b5-6ecf7def3337")
-	)
-	(label "XLR_L_COLD"
-		(at 217.17 160.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c0a878e9-0572-431d-bd58-0894b06c8405")
-	)
-	(label "BIAS"
-		(at 62.23 133.35 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c3a88faa-c035-406b-b4a8-5802e7b2af2c")
-	)
-	(label "VC"
-		(at 63.5 78.74 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cc8bc178-01a4-4289-917f-d4e2e6fdce2b")
-	)
-	(label "J4_R-"
-		(at 176.53 162.56 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d590533c-b8c1-4739-a5a4-05a55815970d")
-	)
-	(label "XLR_L_HOT"
-		(at 217.17 162.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d7a995ec-91c2-4d1e-847d-c4628b571d25")
-	)
-	(label "FBX"
-		(at 30.48 133.35 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f153ffd4-954c-4b87-8ecc-b1c84955c39b")
-	)
-	(label "VC"
-		(at 36.83 133.35 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f682aab5-5c1f-4c9f-a3c6-91d8696d4c16")
-	)
-	(label "SW_NODE"
-		(at 40.64 34.29 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "fc824512-4340-4621-9a21-c576d7a7ff00")
-	)
-	(label "RT"
-		(at 41.91 133.35 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fc905e28-8944-44ac-9029-f7c779e1d3d9")
-	)
-	(label "XLR_L_HOT"
-		(at 127 62.23 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "fe1e073c-f7ab-4482-ad17-5707816e4679")
-	)
-	(label "J4_L+"
-		(at 260.35 24.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ffc0936f-a8a2-4649-bcb8-072682f28c32")
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 148.59 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "02189ba2-0dd9-4e5d-b00e-5534f6307a7d")
-		(property "Reference" "#PWR018"
-			(at 148.59 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 148.59 34.29 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 148.59 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 148.59 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 148.59 40.894 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1c5cb69a-d070-46e3-a0e9-66fc324e70aa")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR018")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 201.93 26.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "04fc1917-b770-476e-8c6a-b0431efc6ce9")
-		(property "Reference" "#PWR03"
-			(at 201.93 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_RAW"
-			(at 201.93 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 201.93 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 201.93 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Boost output before output filter"
-			(at 201.93 28.194 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1199a67f-451a-4cbd-a3e8-2e8e0a7ec5d8")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 78.74 30.48 0)
 		(unit 1)
@@ -6019,86 +5326,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 162.56 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "05a0e6c4-c116-4797-b690-8154309d9a39")
-		(property "Reference" "#PWR08"
-			(at 162.56 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_PI"
-			(at 162.56 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 162.56 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 162.56 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 162.56 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "81bbe634-4139-4c77-9246-b35040dfa8ef")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 190.5 82.55 0)
 		(unit 1)
@@ -6179,164 +5407,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 190.5 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0c6dd2b3-32ba-4e00-b8f3-1ad7c8329953")
-		(property "Reference" "#PWR021"
-			(at 190.5 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 190.5 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 190.5 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 190.5 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 190.5 80.264 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "db236640-f22b-4c66-a2d9-2a3aeb706460")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_1")
-		(lib_id "power:GND")
-		(at 132.08 22.86 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0f65dc7f-2343-4353-b3ac-0daebf904336")
-		(property "Reference" "#PWR02"
-			(at 132.08 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 132.08 27.94 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 132.08 22.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 132.08 22.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 22.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e0e19948-d89d-4478-a405-6d80cb2d1289")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 63.5 106.68 0)
 		(unit 1)
@@ -6417,162 +5488,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 160.02 54.61 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "129a888b-c559-4d45-9a6f-0c08caf46dde")
-		(property "Reference" "#PWR031"
-			(at 160.02 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_L"
-			(at 160.02 49.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 160.02 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 160.02 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "L-channel phantom (after SW1)"
-			(at 160.02 56.134 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b9210aa6-0f6a-4d80-ad61-3230c8ec690a")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 53.34 34.29 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "14b7080e-37d8-4c32-a0f2-2aa86c8d5cf8")
-		(property "Reference" "#PWR012"
-			(at 53.34 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_FILT"
-			(at 53.34 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 53.34 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Post-EMI-filtered 5V"
-			(at 53.34 32.512 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e871aab5-70a2-4e23-a783-54d29279f7ec")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 72.39 58.42 0)
 		(unit 1)
@@ -6653,86 +5569,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 228.6 25.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "186c21e3-8f28-46bc-9413-34d78f4c242e")
-		(property "Reference" "#PWR01"
-			(at 228.6 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 228.6 20.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 228.6 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 228.6 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 228.6 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6d1491c6-3761-4378-9b93-05758e5b9b1c")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 34.29 106.68 0)
 		(unit 1)
@@ -6813,8 +5650,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 212.09 162.56 180)
 		(unit 1)
@@ -6896,85 +5732,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 325.12 53.34 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1b7262cf-66b0-4485-9443-62920e8d737d")
-		(property "Reference" "#PWR029"
-			(at 321.31 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_L"
-			(at 331.978 53.34 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 325.12 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 325.12 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "L-channel phantom (after SW1)"
-			(at 323.596 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cb4e8e11-6caf-45be-bd2c-f52106e94ec2")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR029")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 36.83 58.42 0)
 		(unit 1)
@@ -7053,8 +5811,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 218.44 82.55 0)
 		(unit 1)
@@ -7135,8 +5892,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:L")
 		(at 53.34 30.48 0)
 		(unit 1)
@@ -7217,164 +5973,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 261.62 54.61 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "352692cb-9469-4c14-b952-2e9eec4cb96a")
-		(property "Reference" "#PWR024"
-			(at 261.62 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 261.62 49.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 261.62 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 261.62 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 261.62 56.134 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "527be561-5d55-4111-8498-e644aaa8df8b")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_1")
-		(lib_id "power:GND")
-		(at 139.7 86.36 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "374d3ff4-c612-46e0-b198-c96eb703a761")
-		(property "Reference" "#PWR038"
-			(at 139.7 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 139.7 91.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 139.7 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 139.7 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 139.7 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5f6018d5-905d-4c99-b813-af8558989323")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR038")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 186.69 105.41 0)
 		(unit 1)
@@ -7453,8 +6052,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 118.11 105.41 0)
 		(unit 1)
@@ -7533,321 +6131,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 63.5 102.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3baf6512-c9b7-4e38-953b-2d1c895f9c51")
-		(property "Reference" "#PWR023"
-			(at 63.5 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 63.5 97.79 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 63.5 104.394 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0341072d-8e19-4c73-99a1-61bec961bcca")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR023")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 78.74 26.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3c314151-191b-486e-a4c3-b9213699b684")
-		(property "Reference" "#PWR017"
-			(at 78.74 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_RAW"
-			(at 78.74 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Boost output before output filter"
-			(at 78.74 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "98fe5348-6b76-4125-bc85-447a74dc1e1b")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR017")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 152.4 161.29 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3d7293b4-f132-4173-98e9-9f02a5f26f40")
-		(property "Reference" "#PWR06"
-			(at 148.59 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_PI"
-			(at 156.21 161.2899 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 152.4 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 152.4 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 152.4 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c72b29ce-0e08-49a5-ab59-3f9d4372c3f6")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_1")
-		(lib_id "power:GND")
-		(at 72.39 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "40bab9c9-5894-4c72-a106-61140acce316")
-		(property "Reference" "#PWR035"
-			(at 72.39 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 72.39 67.31 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 72.39 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 72.39 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 72.39 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b9f68ed2-b4bb-47b4-a69d-73995b345c62")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 107.95 58.42 0)
 		(unit 1)
@@ -7928,85 +6212,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 314.96 64.77 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "46dfc181-0b30-439b-847d-b0d2b5c39a66")
-		(property "Reference" "#PWR026"
-			(at 318.77 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 309.372 64.77 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 314.96 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 314.96 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 316.484 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fdef0d5a-749a-44da-98fa-4cab926f7b59")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR026")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 63.5 82.55 0)
 		(unit 1)
@@ -8087,85 +6293,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 193.04 54.61 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "50f16bc3-ecec-400a-b7d3-b763d75f051c")
-		(property "Reference" "#PWR033"
-			(at 193.04 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_R"
-			(at 193.04 49.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.04 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "R-channel phantom (after SW2)"
-			(at 193.04 56.134 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cc7c0d5f-6f4c-4195-85f3-795d63ff6a70")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR033")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Switch:SW_SPST")
 		(at 320.04 53.34 0)
 		(unit 1)
@@ -8242,316 +6370,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 34.29 102.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "534f1082-bd22-4aa7-9ca9-4d09575a6ed0")
-		(property "Reference" "#PWR022"
-			(at 34.29 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 34.29 97.79 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 34.29 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 34.29 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 34.29 104.394 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8207977e-e3f8-41ae-8477-78f81c22e79b")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 88.9 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "57ba29f1-a1d0-4197-b24e-78eafd04c8df")
-		(property "Reference" "#PWR020"
-			(at 88.9 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 88.9 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 88.9 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 88.9 80.264 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "30983fbc-fede-463b-b984-9d1ff01c026e")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 147.32 26.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5b659f66-71a5-44d3-b169-e7858f205cd7")
-		(property "Reference" "#PWR04"
-			(at 147.32 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_PI"
-			(at 147.32 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 147.32 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Pi GPIO 5V input"
-			(at 147.32 28.448 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5cf44fc5-3c6e-4461-af75-94ef179c36ef")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 53.34 26.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5f088d26-4d14-4325-a081-4ede538a5df0")
-		(property "Reference" "#PWR07"
-			(at 53.34 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_PI"
-			(at 53.34 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 53.34 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 53.34 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "50db8e1a-88ec-4fec-b71c-3738d5fc8f0c")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 88.9 82.55 0)
 		(unit 1)
@@ -8632,161 +6451,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 165.1 26.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "61c4901a-dd97-4a77-b697-8e79b5e8e318")
-		(property "Reference" "#PWR010"
-			(at 165.1 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_FILT"
-			(at 165.1 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 165.1 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 165.1 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Post-EMI-filtered 5V"
-			(at 165.1 28.448 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "25aa7dc8-fcef-4c80-816d-26205e7dedc1")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR010")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 314.96 53.34 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "64a7d0be-f8ef-415c-ab31-d34b0c7f634f")
-		(property "Reference" "#PWR025"
-			(at 318.77 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 309.372 53.34 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 314.96 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 314.96 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 316.484 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "52eb2792-9ac0-48a3-9f5e-82875c1440fe")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 116.84 82.55 0)
 		(unit 1)
@@ -8867,317 +6532,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 209.55 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "68d8ae6e-d311-4a1a-b371-ff0856e3d0e2")
-		(property "Reference" "#PWR028"
-			(at 209.55 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_R"
-			(at 209.55 34.29 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 209.55 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 209.55 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "R-channel phantom (after SW2)"
-			(at 209.55 40.894 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "286d7e45-e90e-4dad-9a69-30d7c17c2d8d")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR028")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_1")
-		(lib_id "power:GND")
-		(at 63.5 86.36 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "69f24672-9ac2-4eea-b08b-9e2bade4b52c")
-		(property "Reference" "#PWR036"
-			(at 63.5 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 63.5 91.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 63.5 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1b4a81f9-4f7d-47a4-828d-5cc424c7f54d")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR036")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 176.53 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6bd07465-b2f2-438f-978a-e12efd9c7c89")
-		(property "Reference" "#PWR027"
-			(at 176.53 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_L"
-			(at 176.53 34.29 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 176.53 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 176.53 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "L-channel phantom (after SW1)"
-			(at 176.53 40.894 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0212af39-66e3-4050-93df-1340b3a98898")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 218.44 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6e25b390-886c-4ccd-b00c-c0eb51589015")
-		(property "Reference" "#PWR09"
-			(at 218.44 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_PI"
-			(at 218.44 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 218.44 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 218.44 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 218.44 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d8ec512d-9484-43b2-b608-1108e12608d1")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 127 58.42 0)
 		(unit 1)
@@ -9258,8 +6613,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 53.34 58.42 0)
 		(unit 1)
@@ -9338,86 +6692,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 246.38 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "81c44905-be85-42c5-8244-25a8c9982af1")
-		(property "Reference" "#PWR016"
-			(at 246.38 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_RAW"
-			(at 246.38 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 246.38 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 246.38 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Boost output before output filter"
-			(at 246.38 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e60c7185-77e3-47d1-8e1e-4c54d9095025")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 162.56 82.55 0)
 		(unit 1)
@@ -9498,85 +6773,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 325.12 64.77 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "82c0217f-124a-4ee2-92ec-a9a85bde378c")
-		(property "Reference" "#PWR032"
-			(at 321.31 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_R"
-			(at 331.978 64.77 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 325.12 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 325.12 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "R-channel phantom (after SW2)"
-			(at 323.596 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e40e0660-e3cb-4dbd-b26c-87b1cb4f6ed2")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR032")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 160.02 58.42 0)
 		(unit 1)
@@ -9657,240 +6854,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_name "GND_1")
-		(lib_id "power:GND")
-		(at 53.34 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "88aacdeb-d8af-4235-8820-796c7db1392a")
-		(property "Reference" "#PWR037"
-			(at 53.34 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 53.34 67.31 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 53.34 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 53.34 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "93416ab9-4d09-4c4c-a5c7-acde2356dfeb")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR037")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 62.23 133.35 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "98ddcbd8-9ca5-4b61-9a93-794dead55524")
-		(property "Reference" "#PWR040"
-			(at 62.23 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_FILT"
-			(at 62.23 138.43 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 62.23 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 62.23 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "TODO Verify this is correct"
-			(at 62.484 140.462 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0c516536-07c7-4975-9f53-f05adc078c08")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR040")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 40.64 26.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "99c0c13d-bb4d-4cac-a09d-4116be58187e")
-		(property "Reference" "#PWR011"
-			(at 40.64 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_FILT"
-			(at 40.64 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 40.64 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Post-EMI-filtered 5V"
-			(at 40.64 28.448 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8d43009f-d15f-468d-b9fb-a2e77e8592df")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 193.04 58.42 0)
 		(unit 1)
@@ -9971,8 +6935,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 35.56 82.55 0)
 		(unit 1)
@@ -10053,8 +7016,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Connector_Generic:Conn_02x03_Top_Bottom")
 		(at 181.61 162.56 0)
 		(unit 1)
@@ -10143,8 +7105,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:LED")
 		(at 280.67 106.68 270)
 		(unit 1)
@@ -10236,8 +7197,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 92.71 106.68 0)
 		(unit 1)
@@ -10318,8 +7278,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 226.06 58.42 0)
 		(unit 1)
@@ -10400,8 +7359,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Diode:B260")
 		(at 66.04 30.48 270)
 		(unit 1)
@@ -10482,164 +7440,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 152.4 158.75 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b8cda6f0-7197-4b0e-9931-2cd3e9f650b3")
-		(property "Reference" "#PWR05"
-			(at 148.59 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_PI"
-			(at 156.21 158.7499 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 152.4 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 152.4 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 152.4 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7845e974-f7c9-4522-9671-af31c207609c")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 35.56 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c14048b9-be8c-483d-9417-66bc9f5b7c24")
-		(property "Reference" "#PWR014"
-			(at 35.56 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_FILT"
-			(at 35.56 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Post-EMI-filtered 5V"
-			(at 35.56 80.518 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "aa9f8387-d75e-4954-b178-2b1d5fd2a6db")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 139.7 82.55 0)
 		(unit 1)
@@ -10720,8 +7521,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 223.52 105.41 0)
 		(unit 1)
@@ -10800,240 +7600,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 45.72 180.34 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c6f25401-16e0-4b21-b2b6-64edaba8499c")
-		(property "Reference" "#PWR013"
-			(at 49.53 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_FILT"
-			(at 38.608 180.34 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Post-EMI-filtered 5V"
-			(at 47.498 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "31889fcc-e5a5-465b-af2a-e61494383b00")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 66.04 26.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c9d86c6f-f805-47a5-80b4-947308ddd7a2")
-		(property "Reference" "#PWR015"
-			(at 66.04 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_RAW"
-			(at 66.04 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Boost output before output filter"
-			(at 66.04 26.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f1144098-aa1b-4f6e-a4dd-03553cbb3949")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 226.06 54.61 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d1a570f7-fd8f-47b3-9c7d-fe3805b80c4a")
-		(property "Reference" "#PWR034"
-			(at 226.06 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V_R"
-			(at 226.06 49.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 226.06 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 226.06 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "R-channel phantom (after SW2)"
-			(at 226.06 56.134 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b42d4f70-d242-4246-888a-e74e972bc8d6")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 246.38 82.55 0)
 		(unit 1)
@@ -11114,8 +7681,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Switch:SW_SPST")
 		(at 320.04 64.77 0)
 		(unit 1)
@@ -11192,8 +7758,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 243.84 162.56 180)
 		(unit 1)
@@ -11275,85 +7840,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 107.95 62.23 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "dce9a55d-be54-40e8-aff7-628691aff51f")
-		(property "Reference" "#PWR039"
-			(at 107.95 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_FILT"
-			(at 107.95 67.31 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 107.95 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 107.95 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Post-EMI-filtered 5V"
-			(at 107.95 60.452 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "95035bb6-1c2a-40db-bf58-7c5b43a36244")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR039")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:C")
 		(at 151.13 105.41 0)
 		(unit 1)
@@ -11432,8 +7919,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 90.17 58.42 0)
 		(unit 1)
@@ -11514,8 +8000,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:R")
 		(at 261.62 58.42 0)
 		(unit 1)
@@ -11594,8 +8079,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Connector_Generic:Conn_02x20_Odd_Even")
 		(at 144.78 181.61 0)
 		(unit 1)
@@ -11788,8 +8272,7 @@
 				)
 			)
 		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Analog-Devices-LT8362-EMSE:LT8362EMSE-PBF")
 		(at 45.72 177.8 0)
 		(unit 1)
@@ -11903,85 +8386,7 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "power:+48V")
-		(at 78.74 34.29 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "eee2f019-040e-4c17-9bc5-d825efaf562f")
-		(property "Reference" "#PWR019"
-			(at 78.74 30.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+48V"
-			(at 78.74 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Filtered phantom rail"
-			(at 78.74 32.766 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b2a7e83b-14ae-4fd1-ae5e-2a01ef7a3985")
-		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
+	)	(symbol
 		(lib_id "Device:L")
 		(at 40.64 30.48 0)
 		(unit 1)
@@ -12062,10 +8467,710 @@
 				)
 			)
 		)
+	)	(label "EN_UVLO"
+		(at 45.72 177.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7abd333e-d3b5-463e-8ad0-63e4fc7dd2a7")
 	)
+	(label "+5V_FILT"
+		(at 45.72 180.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8c400d9e-2815-415f-af2f-9374c3b2687e")
+	)
+	(label "INTVCC"
+		(at 45.72 182.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ed9430a3-644d-4f12-a7ea-0007e8d99bc3")
+	)
+	(label "+5V_FILT"
+		(at 45.72 187.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bf0b39f5-06d1-475e-8a22-e7b045c69e85")
+	)
+	(label "VC"
+		(at 45.72 190.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d321a585-6484-4246-ac0b-5a7b4f06cea9")
+	)
+	(label "FBX"
+		(at 101.6 193.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8146c5d0-a719-44d8-bca7-15b4363a0689")
+	)
+	(label "RT"
+		(at 101.6 190.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2765d6b8-3281-4a37-a008-f218cbd69eba")
+	)
+	(label "SS"
+		(at 101.6 187.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a4dd229c-36e4-45d3-931e-91a44bbb6956")
+	)
+	(label "SW_NODE"
+		(at 101.6 182.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1e73c10b-0b63-46b2-be30-90b0e2e3507c")
+	)
+	(label "SW_NODE"
+		(at 101.6 180.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e0d225c2-ded7-4140-93ee-1bb4ef1eea07")
+	)
+	(label "+5V_FILT"
+		(at 40.64 26.67 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7bd24ed7-158b-4e03-bad7-635b1b35288a")
+	)
+	(label "SW_NODE"
+		(at 40.64 34.29 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d8b978fc-5357-4f3b-bb82-9b90582aeedb")
+	)
+	(label "+5V_FILT"
+		(at 53.34 34.29 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5851e737-a71a-4c5c-b24b-285ff5f69667")
+	)
+	(label "SW_NODE"
+		(at 66.04 26.67 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fd9775f3-ce22-4815-9cda-564accf5097a")
+	)
+	(label "+48V_RAW"
+		(at 66.04 34.29 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4c354f5d-9325-47ab-b8c8-4320d507258b")
+	)
+	(label "+48V_RAW"
+		(at 78.74 34.29 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c558f334-19b5-459e-95bc-97a1629fe0ed")
+	)
+	(label "+48V"
+		(at 78.74 26.67 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1c0daad2-c21a-4040-9fa1-b3ad62f3ca35")
+	)
+	(label "+48V_RAW"
+		(at 36.83 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "80b0e2e2-b316-451f-9ae8-3418c3609095")
+	)
+	(label "FBX"
+		(at 36.83 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "be6d1cb6-f147-4459-bc14-7d04256eab90")
+	)
+	(label "FBX"
+		(at 53.34 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6628769e-acfd-4032-b491-ae3349079f2b")
+	)
+	(label "RT"
+		(at 72.39 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "81b1133d-b474-4c42-ac7c-9adce6e063b0")
+	)
+	(label "VC"
+		(at 90.17 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4d42c6d3-141a-46b6-82ea-c45e47c5b67f")
+	)
+	(label "VC_COMP"
+		(at 90.17 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "101e766d-de69-47f1-bfe9-300de0a28638")
+	)
+	(label "EN_UVLO"
+		(at 107.95 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "13e9cb8c-48ef-4afa-a4cc-6390a9d44118")
+	)
+	(label "+5V_FILT"
+		(at 107.95 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ffb3f0d2-01ad-4665-ae44-fd968f4ed046")
+	)
+	(label "+48V_L"
+		(at 127.0 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "67d1700b-20d4-4ebe-87aa-e47e79c76d18")
+	)
+	(label "XLR_L_HOT"
+		(at 127.0 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2ada4c83-6d15-416c-b942-330479b782a6")
+	)
+	(label "+48V_L"
+		(at 160.02 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "550a4f3b-ea8b-499b-8296-741aea7c3289")
+	)
+	(label "XLR_L_COLD"
+		(at 160.02 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4a4dcbba-a8f8-46f2-a8a8-469440807ad9")
+	)
+	(label "+48V_R"
+		(at 193.04 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fd096498-e313-4a50-9c36-12ca81a312d7")
+	)
+	(label "XLR_R_HOT"
+		(at 193.04 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "70da0c58-ded7-48a5-9dbe-32b67d785c7e")
+	)
+	(label "+48V_R"
+		(at 226.06 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8d5e9717-ccc9-42e4-8751-ec96420456b2")
+	)
+	(label "XLR_R_COLD"
+		(at 226.06 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ad0fdefe-f877-4d77-b4b0-a32bfef81077")
+	)
+	(label "+48V"
+		(at 261.62 54.61 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f1eee3fe-1c42-4d98-9766-e578ddffe1e3")
+	)
+	(label "LED_A"
+		(at 261.62 62.23 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d0b7507a-d2bc-4a5e-98c4-5dc370413c3c")
+	)
+	(label "+5V_FILT"
+		(at 35.56 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6df24713-c2f5-4bdb-b3a7-4855fbc779f3")
+	)
+	(label "VC"
+		(at 63.5 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "572cc637-92b9-4b78-a858-0cb23547385a")
+	)
+	(label "+48V"
+		(at 88.9 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "03f43a6f-44d3-4975-9b80-3089753c5b74")
+	)
+	(label "VC_COMP"
+		(at 116.84 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9596915f-fa7d-4c14-aa4b-0647bfc8e7fe")
+	)
+	(label "SS"
+		(at 139.7 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "aac7e388-ca55-402d-8676-418d8d1a39f7")
+	)
+	(label "+48V"
+		(at 190.5 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "01f2b118-d57e-4c00-ba3a-ea8c471840bb")
+	)
+	(label "+48V_RAW"
+		(at 246.38 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "70071e24-77c6-4e35-9f57-bbb022037a58")
+	)
+	(label "+48V"
+		(at 34.29 102.87 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3edae84f-9e4c-4d7b-88a4-b93595284174")
+	)
+	(label "+48V"
+		(at 63.5 102.87 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f3bcde9f-9202-4f32-99a6-5cee95752c47")
+	)
+	(label "+48V_RAW"
+		(at 92.71 102.87 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "19b1c593-f055-43f4-9fbc-769c00c44ba0")
+	)
+	(label "FBX"
+		(at 92.71 110.49 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "45191256-7d3c-4c67-8dc8-91b1edda2333")
+	)
+	(label "XLR_L_HOT"
+		(at 118.11 101.6 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8e9f41f0-cfef-4dc9-967a-481f9a8c03c7")
+	)
+	(label "J4_L+"
+		(at 118.11 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "761fea36-d37e-402e-bb2d-f862479ea7c8")
+	)
+	(label "XLR_L_COLD"
+		(at 151.13 101.6 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "add4b207-2199-476f-9f32-8cbaeae10302")
+	)
+	(label "J4_L-"
+		(at 151.13 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "60a76387-bf29-462b-9c90-bde2eb719bb0")
+	)
+	(label "XLR_R_HOT"
+		(at 186.69 101.6 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d09d7d54-6b55-4917-b5a9-c67f19e004b6")
+	)
+	(label "J4_R+"
+		(at 186.69 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "545eb100-2eb2-451f-93b5-52253e368415")
+	)
+	(label "XLR_R_COLD"
+		(at 223.52 101.6 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "04e054a5-9392-4135-a181-28c2b3ad0609")
+	)
+	(label "J4_R-"
+		(at 223.52 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b2ae80ef-1e00-4740-a383-706aa700846e")
+	)
+	(label "LED_A"
+		(at 280.67 102.87 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "25fb6ea7-3f6f-47bb-93d5-bff8698a4f4d")
+	)
+	(label "+48V"
+		(at 314.96 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "feb6d00b-84d1-4d5e-8be2-6b3e549a4351")
+	)
+	(label "+48V_L"
+		(at 325.12 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0d9d2afd-894e-4a3e-a590-2d7740e5dc2c")
+	)
+	(label "+48V"
+		(at 314.96 64.77 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a8b59b3d-c2dc-46f9-802c-84f14fb921b8")
+	)
+	(label "+48V_R"
+		(at 325.12 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9c6b866b-4f71-461a-bfd7-49cec2fb2290")
+	)
+	(label "J4_R+"
+		(at 176.53 160.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1c24f1a1-b8ea-4a88-a62f-326f18e12715")
+	)
+	(label "J4_R-"
+		(at 176.53 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f54a016e-d938-4660-8f31-e29edebc8e0f")
+	)
+	(label "J4_L+"
+		(at 189.23 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "53e9af2e-129b-428c-971e-07ac45440943")
+	)
+	(label "J4_L-"
+		(at 189.23 165.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ebdd7be6-3e61-44bf-ba30-c2e9124c95e0")
+	)
+	(label "XLR_L_HOT"
+		(at 217.17 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a9f7c352-5e05-4bed-8dbd-567942da34cd")
+	)
+	(label "XLR_L_COLD"
+		(at 217.17 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f0d0b361-1f93-4d31-9704-5d946d2ebd60")
+	)
+	(label "XLR_R_HOT"
+		(at 248.92 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c8ab42e3-f23a-4763-ade9-819e20ba16d4")
+	)
+	(label "XLR_R_COLD"
+		(at 248.92 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1261fa06-2cd1-42f3-84c1-bb620239a490")
+	)
+	(no_connect (at 45.72 185.42) (uuid "cd4a64b0-cd87-47ce-b601-b1e014a04f55"))
+	(no_connect (at 152.4 179.07) (uuid "8e8a007b-39d8-4c1c-b2d4-21ae0f0a4da6"))
+	(no_connect (at 139.7 163.83) (uuid "629d78f2-dced-42cf-9b3f-9318e819bcd9"))
+	(no_connect (at 152.4 255.27) (uuid "d04b93b2-afd3-43ba-a44a-17a978766446"))
+	(no_connect (at 152.4 194.31) (uuid "ba6e4299-e5c5-4d87-b198-4ad0563bd77a"))
+	(no_connect (at 139.7 168.91) (uuid "8ddb1364-056d-4cf5-8dc4-c0a7d08c6016"))
+	(no_connect (at 139.7 158.75) (uuid "18fcb3d2-f124-48ca-93ed-ef78bfa5bd51"))
+	(no_connect (at 152.4 173.99) (uuid "579baa21-6a67-4d26-9a86-a82400707174"))
+	(no_connect (at 139.7 240.03) (uuid "3f36abe0-a3c4-47b3-b03a-b3f1450e37e2"))
+	(no_connect (at 152.4 250.19) (uuid "df07ca02-477e-4601-8bfd-dc8335fea9a7"))
+	(no_connect (at 152.4 209.55) (uuid "37dfd783-700f-4926-8368-114504ea911b"))
+	(no_connect (at 139.7 173.99) (uuid "0acba321-ec2a-4c72-ad0a-54649facfd41"))
+	(no_connect (at 139.7 209.55) (uuid "a98c80db-6cf7-45f6-bcca-3d09f117d0d2"))
+	(no_connect (at 152.4 234.95) (uuid "eb831e01-7369-4096-a7d7-266456453bbf"))
+	(no_connect (at 139.7 250.19) (uuid "9df67c7a-f1c2-4e4c-b492-4eec9905c02c"))
+	(no_connect (at 139.7 199.39) (uuid "50fcc5be-47a4-46b3-982b-065b31995c3e"))
+	(no_connect (at 152.4 199.39) (uuid "ae65c552-3340-4851-b29e-88c27806f4b6"))
+	(no_connect (at 139.7 214.63) (uuid "27ec612a-9e9d-4e30-bad3-0ade73f94203"))
+	(no_connect (at 139.7 194.31) (uuid "0b360a37-592d-4658-9959-64394f9ede3b"))
+	(no_connect (at 139.7 189.23) (uuid "234253ab-91a1-4ed3-b8ff-87bc2a97c8ec"))
+	(no_connect (at 139.7 224.79) (uuid "4794aaaa-3331-4e4d-aaf1-5d7a6ba7e656"))
+	(no_connect (at 152.4 224.79) (uuid "da3ea8ea-08f7-489c-9cf8-84ae54e30410"))
+	(no_connect (at 152.4 245.11) (uuid "424cb12a-9c8c-471a-a583-b83153789dbd"))
+	(no_connect (at 139.7 229.87) (uuid "04eda9db-50ca-4c87-89cd-af163e032059"))
+	(no_connect (at 152.4 214.63) (uuid "cccee010-da2e-4206-a679-68baee3efc90"))
+	(no_connect (at 152.4 184.15) (uuid "e0648020-ed04-46a9-9683-58d728b29347"))
+	(no_connect (at 139.7 204.47) (uuid "3d5a0955-ccd6-4013-94ff-450adfa35ec0"))
+	(no_connect (at 152.4 219.71) (uuid "e0aa0864-443e-4988-b801-9552783c7f06"))
+	(no_connect (at 139.7 245.11) (uuid "5e46cf75-ee0c-48a4-92a2-4d226b83c964"))
+	(no_connect (at 139.7 184.15) (uuid "dca67dc1-afde-4104-912d-686b3d303300"))
+	(no_connect (at 139.7 234.95) (uuid "dc1652cb-d4f3-4fc5-9623-4c3fb85a1a14"))
 	(symbol
-		(lib_id "power:+48V")
-		(at 127 54.61 0)
+		(lib_id "power:GND")
+		(at 101.6 185.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12073,9 +9178,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "fba52ff8-04f0-4018-a354-4e09ceecac5c")
-		(property "Reference" "#PWR030"
-			(at 127 58.42 0)
+		(fields_autoplaced yes)
+		(uuid "8abb3bc8-fdf6-40bc-9953-fb4393cad475")
+		(property "Reference" "#PWR001"
+			(at 101.6 181.60999999999999 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12085,8 +9191,8 @@
 				)
 			)
 		)
-		(property "Value" "+48V_L"
-			(at 127 49.53 0)
+		(property "Value" "GND"
+			(at 101.6 189.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12096,7 +9202,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 127 54.61 0)
+			(at 101.6 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12107,18 +9213,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 127 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "L-channel phantom (after SW1)"
-			(at 127 56.134 0)
+			(at 101.6 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12129,21 +9224,2088 @@
 			)
 		)
 		(pin "1"
-			(uuid "2f774255-7893-4bc6-b6df-64074a618edc")
+			(uuid "dfc7f5b3-f633-487f-aa1a-d8a57b383d33")
 		)
-		(instances
-			(project "phantom-injector-hat"
-				(path "/406c8d17-9b5b-489b-8b38-b913bdcb887d"
-					(reference "#PWR030")
-					(unit 1)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 101.6 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2c53004a-861e-4291-b1c0-ec3caae3df46")
+		(property "Reference" "#PWR002"
+			(at 101.6 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
-	)
-	(sheet_instances
-		(path "/"
-			(page "1")
+		(property "Value" "GND"
+			(at 101.6 181.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c8b50dd7-f43a-484d-b083-e1a86e08d199")
 		)
 	)
-	(embedded_fonts no)
+	(symbol
+		(lib_id "power:+5V")
+		(at 53.34 26.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bea4a416-04a2-46bb-866e-893c9be486e6")
+		(property "Reference" "#PWR003"
+			(at 53.34 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_PI"
+			(at 53.34 22.860000000000003 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8bcb2a31-35e9-47fb-a2ca-3f694f51cc2b")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 53.34 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5dd669ab-d494-44d9-9e14-c7c40d5762f9")
+		(property "Reference" "#PWR004"
+			(at 53.34 58.419999999999995 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 53.34 66.03999999999999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2ea5d7b8-840b-4715-b72d-1068f673b295")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 72.39 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "03632a62-442a-47fa-bba3-76faa7f21ed4")
+		(property "Reference" "#PWR005"
+			(at 72.39 58.419999999999995 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 72.39 66.03999999999999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8a95cd38-7b2a-4905-806e-fa7288e71619")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 35.56 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "78bacbf7-6bc5-4c96-b755-aa818e3c14e6")
+		(property "Reference" "#PWR006"
+			(at 35.56 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 35.56 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "414fc62a-b7de-4bdc-ac46-969df9780d25")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 63.5 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "457a753e-b5ae-400f-8f01-7539228e1f65")
+		(property "Reference" "#PWR007"
+			(at 63.5 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "248c6b80-c613-4a3e-b304-713f1cda773e")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 88.9 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "119d54f3-cc64-4697-a804-d7eee7b0b05b")
+		(property "Reference" "#PWR008"
+			(at 88.9 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 88.9 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3f701195-6b58-4970-a029-2f7f272e197a")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f28e98da-caba-490e-a60e-66eafe1e6383")
+		(property "Reference" "#PWR009"
+			(at 116.84 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 116.84 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d725188c-9693-4fe4-92d5-6e7c024da87b")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 139.7 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "05856e0a-b090-40e3-b89e-938e84f37e22")
+		(property "Reference" "#PWR010"
+			(at 139.7 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 139.7 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0cf7e687-160f-4c17-a832-d860ae87630b")
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 162.56 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "836c5813-fca1-49d2-bbbb-97de806648c6")
+		(property "Reference" "#PWR011"
+			(at 162.56 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_PI"
+			(at 162.56 74.92999999999999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "06eb92ca-dddd-409b-af2e-210a4367153d")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 162.56 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c977a426-f32e-409c-b473-6e9ecc5b966f")
+		(property "Reference" "#PWR012"
+			(at 162.56 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 162.56 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "36c2c0d8-94bf-413f-b038-d3860ceeeda8")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 190.5 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a191cde3-69a6-483c-9956-94c1c7c2cf1c")
+		(property "Reference" "#PWR013"
+			(at 190.5 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 190.5 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 190.5 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "aad4dff6-dbbd-432e-8c85-604df3612a6a")
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 218.44 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9eb5a569-fca3-421d-bcb4-2aa9409ff02f")
+		(property "Reference" "#PWR014"
+			(at 218.44 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_PI"
+			(at 218.44 74.92999999999999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 218.44 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 218.44 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7954d742-6663-45a2-ad1d-a5f050cfa869")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 218.44 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5d159417-7a47-49d7-b9e7-3387fbd3273c")
+		(property "Reference" "#PWR015"
+			(at 218.44 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 218.44 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 218.44 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 218.44 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5652f4d9-63a2-4bbd-b7af-5093f7eb4be1")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 246.38 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "63c3f1cd-3fd4-44c0-b544-edee225fa6f4")
+		(property "Reference" "#PWR016"
+			(at 246.38 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 246.38 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.38 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "217c455e-8e0a-4930-9d67-1564f2af5351")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 34.29 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5b092cd3-7efd-40ec-baba-3e659a4e2a8e")
+		(property "Reference" "#PWR017"
+			(at 34.29 106.67999999999999 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 34.29 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 34.29 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 34.29 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6cf53887-2640-45e5-8894-17fe73e4a4cd")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 63.5 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e650355c-b940-4229-95ed-fb3a18aae528")
+		(property "Reference" "#PWR018"
+			(at 63.5 106.67999999999999 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "082d6878-bd98-4d7a-84f9-32fb1bee706d")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 280.67 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1071fe12-90f7-4f2a-9cee-209e3258e404")
+		(property "Reference" "#PWR019"
+			(at 280.67 106.67999999999999 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 280.67 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 280.67 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 280.67 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "199eec97-7319-44e0-ba27-064f2a745070")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 176.53 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ec0ac49-8305-45fa-986a-72183b108e64")
+		(property "Reference" "#PWR020"
+			(at 176.53 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 176.53 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 176.53 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 176.53 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "607869bf-0452-4b46-9f48-61f76b289aa9")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 189.23 160.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "293265d4-da50-4c5e-ad8b-5b64128196be")
+		(property "Reference" "#PWR021"
+			(at 189.23 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 189.23 163.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b254379f-47c8-4440-9a31-33b2258c5bae")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 217.17 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a817bd55-9210-4476-ab74-82191f670805")
+		(property "Reference" "#PWR022"
+			(at 217.17 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 217.17 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 217.17 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6700e789-6b25-444a-b082-0050ce96c89b")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 248.92 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "830f7312-e267-4340-8bcd-587a410634c9")
+		(property "Reference" "#PWR023"
+			(at 248.92 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 248.92 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a467ee9a-889d-4c41-931a-0c5df2604086")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 152.4 229.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6201397c-48c6-45fc-b3cd-3111fa6b984e")
+		(property "Reference" "#PWR024"
+			(at 152.4 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 152.4 233.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5da2dd22-0fb0-46a0-9c74-bed1e24d09a0")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 152.4 168.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e97170bd-be1e-418c-9c96-7e33c54ec568")
+		(property "Reference" "#PWR025"
+			(at 152.4 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 152.4 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3664b00e-f286-40d3-b970-98cc72e4f744")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 152.4 204.47 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6ae1b380-ae8a-49fa-b0f9-770a091fe0b9")
+		(property "Reference" "#PWR026"
+			(at 152.4 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 152.4 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 204.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 204.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3737cc85-8d98-45c1-b5e0-3e7821385553")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 139.7 179.07 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "65167cbf-5ee3-40fe-aca8-c2044301a414")
+		(property "Reference" "#PWR027"
+			(at 139.7 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 139.7 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "60004171-7b31-4274-bb03-63590382dacb")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 139.7 219.71 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a6b8a0ce-7944-4dac-b1ec-c16389d38f47")
+		(property "Reference" "#PWR028"
+			(at 139.7 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 139.7 223.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "00dea164-d6af-43df-b0ab-1c9c6104b7a9")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 152.4 240.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ffc6a608-405b-484e-9c25-589f1272a56a")
+		(property "Reference" "#PWR029"
+			(at 152.4 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 152.4 243.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "194cc4b4-fd89-4b95-b62e-6ee3066a5e56")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 152.4 189.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a32d46d4-d4f3-4add-9f67-e21902a58da1")
+		(property "Reference" "#PWR030"
+			(at 152.4 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 152.4 193.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8382a647-28e8-420c-bf51-ccddef4afff2")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 139.7 255.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ed0226d7-8e07-469f-b828-c3b796678541")
+		(property "Reference" "#PWR031"
+			(at 139.7 251.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 139.7 259.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 255.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 255.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e59712d9-1957-4693-8b43-fa990601f957")
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 152.4 158.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b5194e8f-7cbd-48a8-b5ba-59f602d415b2")
+		(property "Reference" "#PWR032"
+			(at 152.4 162.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_PI"
+			(at 152.4 154.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "454dfc2f-e200-42db-91c1-554afa85fb1d")
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 152.4 163.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ba7b086d-7886-4dd6-88e4-4208693329e4")
+		(property "Reference" "#PWR033"
+			(at 152.4 167.64000000000001 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_PI"
+			(at 152.4 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "51044472-ddb2-4199-b526-1a64da65478a")
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 147.32 168.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "77367306-c9bc-4a90-8f4a-88eeeb2ec61b")
+		(property "Reference" "#PWR034"
+			(at 147.32 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 147.32 171.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "44422948-b58e-4b7a-a192-39029c1bf149")
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 168.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a36fb1af-4915-4b4d-bc39-2a5ea3bb3fc1")
+		(property "Reference" "#PWR035"
+			(at 147.32 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7114dce4-f7b0-4741-b4a0-22fc5bdc8e06")
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 147.32 158.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "69f5848c-e299-454e-a91c-95aceccf1af1")
+		(property "Reference" "#PWR036"
+			(at 147.32 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 147.32 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "05d122f9-f15f-4b58-8813-e1c500504cd3")
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 147.32 158.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a620ba84-ff75-4003-a19f-0995075fee66")
+		(property "Reference" "#PWR037"
+			(at 147.32 162.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_PI"
+			(at 147.32 154.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b4aefa90-f83e-4169-b63c-8cb3174576ea")
+		)
+	)
+
 )
