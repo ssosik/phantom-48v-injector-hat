@@ -92,16 +92,18 @@ NETLIST = {
     ('C7','1'): '+48V',      ('C7','2'): 'GND',
     ('C8','1'): '+5V_PI',    ('C8','2'): 'GND',
     ('C9','1'): '+48V_RAW',  ('C9','2'): 'GND',
-    ('C10a','1'): '+48V',    ('C10a','2'): 'GND',
-    ('C10b','1'): '+48V',    ('C10b','2'): 'GND',
-    # C11 FBX feedforward cap (parallel with R1)
-    ('C11','1'): '+48V_RAW', ('C11','2'): 'FBX',
-    # C16: 1µF INTVCC bypass (required minimum per LT8362 datasheet)
-    ('C16','1'): 'INTVCC',   ('C16','2'): 'GND',
-    ('C12','1'): 'XLR_L_HOT', ('C12','2'): 'J4_L+',
-    ('C13','1'): 'XLR_L_COLD',('C13','2'): 'J4_L-',
-    ('C14','1'): 'XLR_R_HOT', ('C14','2'): 'J4_R+',
-    ('C15','1'): 'XLR_R_COLD',('C15','2'): 'J4_R-',
+    ('C10','1'): '+48V',     ('C10','2'): 'GND',
+    ('C11','1'): '+48V',     ('C11','2'): 'GND',
+    # C12 FBX feedforward cap (parallel with R1)
+    ('C12','1'): '+48V_RAW', ('C12','2'): 'FBX',
+    ('C13','1'): 'XLR_L_HOT', ('C13','2'): 'J4_L+',
+    ('C14','1'): 'XLR_L_COLD',('C14','2'): 'J4_L-',
+    ('C15','1'): 'XLR_R_HOT', ('C15','2'): 'J4_R+',
+    ('C16','1'): 'XLR_R_COLD',('C16','2'): 'J4_R-',
+    # C17: 1µF INTVCC bypass (required minimum per LT8362 datasheet)
+    ('C17','1'): 'INTVCC',   ('C17','2'): 'GND',
+    # C18: 100nF BIAS local bypass — +5V_FILT is the BIAS rail (same as U1 pin 7)
+    ('C18','1'): '+5V_FILT', ('C18','2'): 'GND',
 
     # D2 LED (rot=270): pin 2=Anode (top), pin 1=Cathode (bottom)
     ('D2','2'): 'LED_A',     ('D2','1'): 'GND',
@@ -303,12 +305,18 @@ NEW_COMPONENTS = {
             '100 kΩ 1%',
             'Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder',
             'SYNC/MODE pull-down, selects Burst+SSFM'),
-    # C16: 1µF INTVCC bypass — required minimum per LT8362 datasheet
+    # C17: 1µF INTVCC bypass — required minimum per LT8362 datasheet
     # INTVCC = 3.2V LDO output; placed to the left of U1 at INTVCC pin y-level
-    'C16': ('Device:C', 33.02, 182.88, 0,
+    'C17': ('Device:C', 33.02, 182.88, 0,
             '1 µF / 10V X7R',
             'Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder',
             'INTVCC bypass, required minimum 1µF low ESR ceramic'),
+    # C18: 100nF local bypass on BIAS pin (U1 pin 7) — datasheet recommends local
+    # ceramic when BIAS is not connected to VOUT. Placed left of C17 at BIAS y-level.
+    'C18': ('Device:C', 22.86, 187.96, 0,
+            '100 nF / 10V X7R',
+            'Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder',
+            'BIAS pin local bypass, 100nF ceramic per LT8362 datasheet'),
 }
 
 
