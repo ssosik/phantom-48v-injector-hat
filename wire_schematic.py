@@ -39,8 +39,10 @@ LIB_PINS = {
         '4':(7.62,2.54,180), '5':(7.62,0,180), '6':(7.62,-2.54,180),
     },
     'Connector_Generic:Conn_02x20_Odd_Even': {
-        **{str(n): (-5.08, 22.86 - (n-1)*2.54, 0) for n in range(1, 41, 2)},
-        **{str(n): (7.62,  22.86 - (n-2)*2.54, 180) for n in range(2, 41, 2)},
+        # Odd pins 1,3,5,...,39 are in row 0,1,2,...,19 on the left side
+        # Even pins 2,4,6,...,40 are in row 0,1,2,...,19 on the right side
+        **{str(n): (-5.08, 22.86 - ((n-1)//2)*2.54, 0)   for n in range(1, 41, 2)},
+        **{str(n): (7.62,  22.86 - ((n-2)//2)*2.54, 180) for n in range(2, 41, 2)},
     },
 }
 
@@ -56,7 +58,8 @@ NETLIST = {
     ('U1','1'): 'EN_UVLO',  ('U1','3'): '+5V_FILT', ('U1','5'): 'INTVCC',
     ('U1','6'): None,        ('U1','7'): '+5V_FILT', ('U1','8'): 'VC',
     ('U1','9'): 'FBX',       ('U1','10'): 'RT',      ('U1','11'): 'SS',
-    ('U1','12'): 'GND',      ('U1','14'): 'SW_NODE', ('U1','16'): 'SW_NODE',
+    # Pin 12 = SYNC/MODE: 100kΩ to GND selects Burst+SSFM (low EMI, low idle current)
+    ('U1','12'): 'SYNC_MODE', ('U1','14'): 'SW_NODE', ('U1','16'): 'SW_NODE',
     ('U1','17'): 'GND',
 
     ('L1','1'): '+5V_FILT',  ('L1','2'): 'SW_NODE',
@@ -77,6 +80,8 @@ NETLIST = {
     ('R8','1'): '+48V_R',    ('R8','2'): 'XLR_R_HOT',
     ('R9','1'): '+48V_R',    ('R9','2'): 'XLR_R_COLD',
     ('R10','1'): '+48V',     ('R10','2'): 'LED_A',
+    # R11: 100kΩ SYNC/MODE pull-down for Burst+SSFM mode
+    ('R11','1'): 'SYNC_MODE', ('R11','2'): 'GND',
 
     ('C1','1'): '+5V_FILT',  ('C1','2'): 'GND',
     ('C2','1'): 'VC',        ('C2','2'): 'GND',
@@ -91,6 +96,8 @@ NETLIST = {
     ('C10b','1'): '+48V',    ('C10b','2'): 'GND',
     # C11 FBX feedforward cap (parallel with R1)
     ('C11','1'): '+48V_RAW', ('C11','2'): 'FBX',
+    # C16: 1µF INTVCC bypass (required minimum per LT8362 datasheet)
+    ('C16','1'): 'INTVCC',   ('C16','2'): 'GND',
     ('C12','1'): 'XLR_L_HOT', ('C12','2'): 'J4_L+',
     ('C13','1'): 'XLR_L_COLD',('C13','2'): 'J4_L-',
     ('C14','1'): 'XLR_R_HOT', ('C14','2'): 'J4_R+',
@@ -284,6 +291,124 @@ def gen_pwr_flag(x, y, net_lib_id):
     )
 
 
+# ─── New component injection ────────────────────────────────────────────────────
+# Components that don't yet exist in the schematic and must be injected.
+# Format: ref → (lib_id, x, y, rot, value, footprint, description)
+PROJECT_PATH_UUID = '406c8d17-9b5b-489b-8b38-b913bdcb887d'
+
+NEW_COMPONENTS = {
+    # R11: 100kΩ from SYNC/MODE to GND → Burst+SSFM mode (low EMI, low idle current)
+    # Placed to the right of U1 at SYNC/MODE pin y-level
+    'R11': ('Device:R', 114.3, 185.42, 0,
+            '100 kΩ 1%',
+            'Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder',
+            'SYNC/MODE pull-down, selects Burst+SSFM'),
+    # C16: 1µF INTVCC bypass — required minimum per LT8362 datasheet
+    # INTVCC = 3.2V LDO output; placed to the left of U1 at INTVCC pin y-level
+    'C16': ('Device:C', 33.02, 182.88, 0,
+            '1 µF / 10V X7R',
+            'Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder',
+            'INTVCC bypass, required minimum 1µF low ESR ceramic'),
+}
+
+
+def gen_new_symbol(lib_id, ref, value, footprint, description, x, y, rot=0):
+    """Generate a placed Device:R or Device:C symbol S-expression block."""
+    if lib_id == 'Device:R':
+        ref_dx, ref_dy = 2.54, -1.27
+        val_dx, val_dy = 2.54,  1.27
+        fp_x, fp_y, fp_rot = round(x - 1.778, 4), y, 90
+    else:  # Device:C
+        ref_dx, ref_dy = 3.81, -1.27
+        val_dx, val_dy = 3.81,  1.27
+        fp_x, fp_y, fp_rot = x, round(y + 3.81, 4), 0
+
+    return (
+        f'\n\t(symbol\n'
+        f'\t\t(lib_id "{lib_id}")\n'
+        f'\t\t(at {x} {y} {rot})\n'
+        f'\t\t(unit 1)\n'
+        f'\t\t(body_style 1)\n'
+        f'\t\t(exclude_from_sim no)\n'
+        f'\t\t(in_bom yes)\n'
+        f'\t\t(on_board yes)\n'
+        f'\t\t(in_pos_files yes)\n'
+        f'\t\t(dnp no)\n'
+        f'\t\t(fields_autoplaced yes)\n'
+        f'\t\t(uuid "{new_uuid()}")\n'
+        f'\t\t(property "Reference" "{ref}"\n'
+        f'\t\t\t(at {round(x+ref_dx,4)} {round(y+ref_dy,4)} 0)\n'
+        f'\t\t\t(show_name no)\n'
+        f'\t\t\t(do_not_autoplace no)\n'
+        f'\t\t\t(effects\n'
+        f'\t\t\t\t(font\n'
+        f'\t\t\t\t\t(size 1.27 1.27)\n'
+        f'\t\t\t\t)\n'
+        f'\t\t\t\t(justify left)\n'
+        f'\t\t\t)\n'
+        f'\t\t)\n'
+        f'\t\t(property "Value" "{value}"\n'
+        f'\t\t\t(at {round(x+val_dx,4)} {round(y+val_dy,4)} 0)\n'
+        f'\t\t\t(show_name no)\n'
+        f'\t\t\t(do_not_autoplace no)\n'
+        f'\t\t\t(effects\n'
+        f'\t\t\t\t(font\n'
+        f'\t\t\t\t\t(size 1.27 1.27)\n'
+        f'\t\t\t\t)\n'
+        f'\t\t\t\t(justify left)\n'
+        f'\t\t\t)\n'
+        f'\t\t)\n'
+        f'\t\t(property "Footprint" "{footprint}"\n'
+        f'\t\t\t(at {fp_x} {fp_y} {fp_rot})\n'
+        f'\t\t\t(hide yes)\n'
+        f'\t\t\t(show_name no)\n'
+        f'\t\t\t(do_not_autoplace no)\n'
+        f'\t\t\t(effects\n'
+        f'\t\t\t\t(font\n'
+        f'\t\t\t\t\t(size 1.27 1.27)\n'
+        f'\t\t\t\t)\n'
+        f'\t\t\t)\n'
+        f'\t\t)\n'
+        f'\t\t(property "Datasheet" ""\n'
+        f'\t\t\t(at {x} {y} 0)\n'
+        f'\t\t\t(hide yes)\n'
+        f'\t\t\t(show_name no)\n'
+        f'\t\t\t(do_not_autoplace no)\n'
+        f'\t\t\t(effects\n'
+        f'\t\t\t\t(font\n'
+        f'\t\t\t\t\t(size 1.27 1.27)\n'
+        f'\t\t\t\t)\n'
+        f'\t\t\t)\n'
+        f'\t\t)\n'
+        f'\t\t(property "Description" "{description}"\n'
+        f'\t\t\t(at {x} {y} 0)\n'
+        f'\t\t\t(hide yes)\n'
+        f'\t\t\t(show_name no)\n'
+        f'\t\t\t(do_not_autoplace no)\n'
+        f'\t\t\t(effects\n'
+        f'\t\t\t\t(font\n'
+        f'\t\t\t\t\t(size 1.27 1.27)\n'
+        f'\t\t\t\t)\n'
+        f'\t\t\t)\n'
+        f'\t\t)\n'
+        f'\t\t(pin "1"\n'
+        f'\t\t\t(uuid "{new_uuid()}")\n'
+        f'\t\t)\n'
+        f'\t\t(pin "2"\n'
+        f'\t\t\t(uuid "{new_uuid()}")\n'
+        f'\t\t)\n'
+        f'\t\t(instances\n'
+        f'\t\t\t(project "phantom-injector-hat"\n'
+        f'\t\t\t\t(path "/{PROJECT_PATH_UUID}"\n'
+        f'\t\t\t\t\t(reference "{ref}")\n'
+        f'\t\t\t\t\t(unit 1)\n'
+        f'\t\t\t\t)\n'
+        f'\t\t\t)\n'
+        f'\t\t)\n'
+        f'\t)\n'
+    )
+
+
 # ─── Schematic parser ───────────────────────────────────────────────────────────
 def find_block_end(text, start):
     """Return the index just past the closing ) of the S-expr block starting at start."""
@@ -327,11 +452,11 @@ def extract_placed_components(content):
 
         abs_pos = pos + m.start()
 
-        # Include leading whitespace (back to previous newline)
-        line_start = remaining.rfind('\n', 0, abs_pos) + 1
-
         block_end = find_block_end(remaining, abs_pos)
-        block = remaining[line_start:block_end]  # includes leading \t
+        # Prepend the single-tab indent explicitly rather than scanning back
+        # to line_start — scanning back would include leftover ')' from the
+        # previous block on the same input line, accumulating on each run.
+        block = '\t' + remaining[abs_pos:block_end]
 
         # Keep only real component instances (skip power:, GND_ symbols)
         lib_m = re.search(r'\(lib_id\s*"([^"]+)"', block)
@@ -374,6 +499,17 @@ def main():
     placed = get_placed_refs(content)
 
     print(f'Found {len(placed)} placed component instances')
+
+    # Inject new components not yet in the schematic
+    new_sym_blocks = []
+    for ref, (lib_id, x, y, rot, value, footprint, desc) in NEW_COMPONENTS.items():
+        if ref not in placed:
+            new_sym_blocks.append(gen_new_symbol(lib_id, ref, value, footprint, desc, x, y, rot))
+            placed[ref] = (lib_id, x, y, rot)
+            print(f'  Injecting new component: {ref} ({lib_id}) at ({x}, {y})')
+        else:
+            print(f'  Component {ref} already present, skipping injection')
+
     print(f'Netlist entries: {len(NETLIST)}')
 
     # Build connectivity elements
@@ -407,33 +543,15 @@ def main():
             # No-connect flag
             no_connects.append(gen_no_connect(ax, ay))
 
-        elif net == 'GND':
-            power_syms.append(gen_power_symbol('power:GND', 'GND', ax, ay, rot=0))
-
-        elif net == '+5V_PI':
-            power_syms.append(gen_power_symbol('power:+5V', '+5V_PI', ax, ay, rot=0))
-
         else:
+            # Use net labels for all nets including GND and +5V_PI.
+            # This avoids lib_symbol_mismatch and power_pin_not_driven ERC noise.
             labels.append(gen_label(net, ax, ay, la))
-
-    # PWR_FLAG for GND and +5V — place near J1 pin 6 (GND) and pin 2 (+5V)
-    if j1_info:
-        lib_id, sx, sy, sr = j1_info
-        pin_defs = LIB_PINS[lib_id]
-
-        p6x, p6y, _ = pin_defs['6']
-        gx, gy = pin_abs(sx, sy, sr, p6x, p6y)
-        power_syms.append(gen_pwr_flag(gx - 5.08, gy, 'power:GND'))
-        power_syms.append(gen_power_symbol('power:GND', 'GND', gx - 5.08, gy, rot=0))
-
-        p2x, p2y, _ = pin_defs['2']
-        fx, fy = pin_abs(sx, sy, sr, p2x, p2y)
-        power_syms.append(gen_pwr_flag(fx - 5.08, fy, 'power:+5V'))
-        power_syms.append(gen_power_symbol('power:+5V', '+5V_PI', fx - 5.08, fy, rot=0))
 
     # Assemble
     parts = [pre]
     parts.extend(comp_blocks)
+    parts.extend(new_sym_blocks)
     parts.extend(labels)
     parts.extend(no_connects)
     parts.extend(power_syms)
