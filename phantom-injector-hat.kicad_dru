@@ -1,0 +1,32 @@
+(version 1)
+
+# Default clearance / trace width for signal traces
+(rule "signal"
+   (constraint clearance (min 0.2mm))
+   (constraint track_width (min 0.2mm))
+)
+
+# Power traces: +5V_PI, +5V_FILT, SW_NODE, +48V_RAW, +48V, GND
+# SW_NODE carries pulsed current; +5V and GND carry ~200mA continuous
+(rule "power"
+   (constraint track_width (min 0.5mm))
+   (constraint clearance (min 0.3mm))
+   (condition "A.NetName =~ '\\+5V.*' || A.NetName == 'GND' || A.NetName == 'SW_NODE' || A.NetName =~ '\\+48V.*'")
+)
+
+# SW_NODE gets extra clearance from all other nets — fast edges radiate
+(rule "sw_node_isolation"
+   (constraint clearance (min 0.5mm))
+   (condition "A.NetName == 'SW_NODE' && B.NetName != 'SW_NODE'")
+)
+
+# Minimum drill size (0805 passives use 0.9mm THT pads; U1 MSOP vias will be 0.3mm)
+(rule "min_drill"
+   (constraint hole_size (min 0.25mm))
+)
+
+# Thermal stitching vias under U1 EP: 0.3mm drill, 0.6mm pad
+(rule "thermal_via"
+   (constraint via_diameter (min 0.6mm))
+   (constraint via_drill (min 0.3mm))
+)
