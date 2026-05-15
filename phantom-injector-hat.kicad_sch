@@ -6324,7 +6324,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q"
 			(at 320.04 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -7712,7 +7712,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q"
 			(at 320.04 64.77 0)
 			(hide yes)
 			(show_name no)
