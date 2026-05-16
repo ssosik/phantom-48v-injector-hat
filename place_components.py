@@ -52,10 +52,10 @@ PLACEMENTS = {
     # All at x=127.5; courtyard x=126.875–128.125; clear of L2 and U1 by >2.5mm
     'R5':   (132.0,  55.0,    0),   # 100kΩ EN/UVLO pullup — right of C1 (C1 right=129.65, gap>0.5mm)
     'C17':  (127.5,  60.0,   90),   # 1µF INTVCC bypass
-    'C18':  (127.5,  63.0,   90),   # 100nF BIAS bypass
-    'C2':   (127.5,  66.5,   90),   # 1µF VC comp
+    'C18':  (127.5,  64.5,   90),   # 100nF BIAS bypass — 4.5mm from C17 (0805@90° courtyard 3.79mm)
+    'C2':   (127.5,  69.0,   90),   # 1µF VC comp — 4.5mm from C18
     'R4':   (132.5,  70.5,    0),   # 22.1kΩ VC comp
-    'C4':   (127.5,  69.5,   90),   # 1nF VC HF comp
+    'C4':   (132.5,  67.5,    0),   # 1nF VC HF comp — moved to R4 column, between U1 and R4
 
     # Feedback divider — keep away from SW_NODE, routed to FBX pin
     # NOTE: C12 shows 1812 courtyard in PCB — run Update PCB from Schematic again to fix
@@ -84,12 +84,12 @@ PLACEMENTS = {
 
     # ── LED indicator — just below J1 courtyard (y>53.12), right side ────
     'R10':  (157.0,  55.5,    0),   # 12kΩ LED current limit
-    'D2':   (162.0,  57.5,    0),   # Green LED 3mm THT
+    'D2':   (161.0,  57.5,    0),   # Green LED 3mm THT — x=161 keeps pin2 1.46mm from right edge
 
     # ── Phantom injection — enable switches (right edge) ─────────────────
     # SW footprint (rot +90°): actuator points in +X (off right board edge)
-    'SW1':  (160.0,  78.0,   90),   # L channel enable, actuator →right board edge
-    'SW2':  (160.0,  90.0,   90),   # R channel enable, actuator →right board edge
+    'SW1':  (160.0,  75.0,   90),   # L channel enable, actuator →right board edge
+    'SW2':  (160.0,  87.5,   90),   # R channel enable — moved up to clear MH4 courtyard
 
     # Bias resistors (between switch output and DC-block caps)
     # 0805 at 90°: courtyard ~3.79mm tall — 4.5mm spacing clears overlap
@@ -106,8 +106,8 @@ PLACEMENTS = {
     'C16':  (143.0,  86.5,   90),   # 2.2µF R-
 
     # XLR pigtail headers (1×3, horizontal)
-    'J3':   (126.0,  84.5,    0),   # L channel XLR (pin1=GND, 2=HOT, 3=COLD)
-    'J4':   (128.0,  93.0,    0),   # R channel XLR
+    'J3':   (126.0,  82.0,    0),   # L channel XLR (pin1=GND, 2=HOT, 3=COLD)
+    'J4':   (126.0,  91.0,    0),   # R channel XLR — same x as J3, 2.88mm gap between courtyards
 
     # HiFiBerry J4 connector — POSITION TBD (measure physical board)
     # Placeholder: move after measuring HiFiBerry J4 relative to J1 pin-1

@@ -20,6 +20,13 @@
    (condition "A.NetName == 'SW_NODE' && B.NetName != 'SW_NODE'")
 )
 
+# U1 MSOP-16-EP: 0.5mm pin pitch gives 0.1956mm pad-to-pad gap, below the 0.2mm signal rule.
+# Relax clearance for intra-U1 pad pairs only.
+(rule "msop_clearance"
+   (constraint clearance (min 0.15mm))
+   (condition "A.Reference == 'U1' && B.Reference == 'U1'")
+)
+
 # Minimum drill size (THT pads and vias)
 (rule "min_drill"
    (constraint hole_size (min 0.25mm))
