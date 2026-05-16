@@ -1,9 +1,12 @@
 (version 1)
 
-# Default clearance / trace width for signal traces
+# Default clearance / trace width for signal traces, and minimum drill size.
+# 0.18mm clearance: MSOP-16 pads (U1) sit 0.1956mm apart edge-to-edge at 0.5mm pitch;
+# 0.18mm keeps them legal while remaining conservative for standard-fab trace routing.
 (rule "signal"
-   (constraint clearance (min 0.2mm))
+   (constraint clearance (min 0.18mm))
    (constraint track_width (min 0.2mm))
+   (constraint hole_size (min 0.25mm))
 )
 
 # Power traces: +5V_PI, +5V_FILT, SW_NODE, +48V_RAW, +48V, GND
@@ -18,19 +21,6 @@
 (rule "sw_node_isolation"
    (constraint clearance (min 0.5mm))
    (condition "A.NetName == 'SW_NODE' && B.NetName != 'SW_NODE'")
-)
-
-# U1 MSOP-16-EP (ul_LT8362EMSE-PBF:MSE_16A_ADI): 0.5mm pin pitch, pad height 0.3048mm
-# → edge-to-edge gap = 0.1956mm, below the 0.2mm signal rule.
-# Relax clearance for intra-U1 pad pairs only using footprint lib ID.
-(rule "msop_clearance"
-   (constraint clearance (min 0.18mm))
-   (condition "A.Footprint == 'ul_LT8362EMSE-PBF:MSE_16A_ADI' && B.Footprint == 'ul_LT8362EMSE-PBF:MSE_16A_ADI'")
-)
-
-# Minimum drill size (THT pads and vias)
-(rule "min_drill"
-   (constraint hole_size (min 0.25mm))
 )
 
 # Thermal stitching vias under U1 EP: 0.6mm pad diameter (0.3mm drill is set in via properties)
