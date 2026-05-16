@@ -11,7 +11,7 @@
 (rule "power"
    (constraint track_width (min 0.5mm))
    (constraint clearance (min 0.3mm))
-   (condition "A.NetName =~ '\\+5V.*' || A.NetName == 'GND' || A.NetName == 'SW_NODE' || A.NetName =~ '\\+48V.*'")
+   (condition "A.NetName == '+5V_PI' || A.NetName == '+5V_FILT' || A.NetName == 'GND' || A.NetName == 'SW_NODE' || A.NetName == '+48V_RAW' || A.NetName == '+48V'")
 )
 
 # SW_NODE gets extra clearance from all other nets — fast edges radiate
@@ -20,13 +20,13 @@
    (condition "A.NetName == 'SW_NODE' && B.NetName != 'SW_NODE'")
 )
 
-# Minimum drill size (0805 passives use 0.9mm THT pads; U1 MSOP vias will be 0.3mm)
+# Minimum drill size (THT pads and vias)
 (rule "min_drill"
    (constraint hole_size (min 0.25mm))
 )
 
-# Thermal stitching vias under U1 EP: 0.3mm drill, 0.6mm pad
+# Thermal stitching vias under U1 EP: 0.6mm pad diameter (0.3mm drill is set in via properties)
 (rule "thermal_via"
    (constraint via_diameter (min 0.6mm))
-   (constraint via_drill (min 0.3mm))
+   (condition "A.NetName == 'GND'")
 )
