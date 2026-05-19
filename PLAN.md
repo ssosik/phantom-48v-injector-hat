@@ -7,3 +7,5 @@
 #3 - Should there be separate GND planes? Or other separation of components?
 
 #4 - how can I be sure this won't fry the HiFiBerry board, or the Pi?
+
+#5 - what width traces should be used?
