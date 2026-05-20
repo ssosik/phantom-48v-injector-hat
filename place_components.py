@@ -3,17 +3,20 @@
 Component placement script for phantom-injector-hat.
 Run AFTER "Tools > Update PCB from Schematic" (F8) in KiCad.
 
-Board: 65×56.5mm Pi HAT
-  TL corner: (100, 43.5)  TR: (165, 43.5)
-  BL corner: (100, 100)   BR: (165, 100)
-  Mounting holes: (103.5,47.5), (161.5,47.5), (103.5,96.5), (161.5,96.5)
+Board: 65×38mm Pi HAT (shortened to y=82 to clear HiFiBerry RCA jacks)
+  TL corner: (100, 44)    TR: (165, 44)
+  BL corner: (101, 82)    BR: (162, 82)   [1mm radius at BL, 3mm elsewhere]
+  Mounting holes: (103.5,47.5), (161.5,47.5), (103.5,78.5), (161.5,78.5)
   J1 (40-pin GPIO): fixed at (108.37, 48.77) rot -90°
 
-Coordinate system: KiCad absolute mm (positive Y = down)
+Layout zones:
+  Boost stage:       x 113-160, y  50-75
+  Phantom inject:    x 109-160, y  63-82
+  SW1/SW2 near MH3:  x 109,     y  65/75
 
-Layout zones (right of J1):
-  Boost stage:       x 115-160, y  50-75
-  Phantom inject:    x 115-160, y  75-95
+J2 (HiFiBerry connector) position is a placeholder — measure the HiFiBerry
+DAC2 ADC Pro J4 connector position relative to pin 1 of the 2x20 GPIO header
+before finalizing J2's placement.
 """
 
 import sys
@@ -30,88 +33,98 @@ PCB_PATH = '/Users/stevesosik/Documents/KiCad/phantom-injector-hat/phantom-injec
 # Rotation follows KiCad convention: CCW positive, 0° = default footprint orientation
 PLACEMENTS = {
     # ── J1: GPIO header (fixed by Pi HAT spec) ──────────────────────────
-    'J1':   (108.37, 48.77,   90),
+    'J1':  (108.37, 48.77,  -90),
 
-    # ── Boost converter input (left of L2 EMI filter) ───────────────────
-    # C6, C8: input bulk/EMI caps, before L2 — shifted left to clear L2 courtyard
-    'C6':   (113.5,  57.0,   90),   # 22µF/16V 1210, bulk input
-    'C8':   (113.5,  65.0,   90),   # 4.7µF/50V 1210, EMI filter
+    # ── Mounting holes ──────────────────────────────────────────────────
+    'MH1': (103.5,  47.5,    0),
+    'MH2': (161.5,  47.5,    0),
+    'MH3': (103.5,  78.5,    0),   # board bottom now y=82
+    'MH4': (161.5,  78.5,    0),
 
-    # L2: EMI filter inductor (8.3×7.4mm courtyard) — moved left, right edge→124.15
-    'L2':   (120.0,  61.0,    0),   # 2.2µH Würth HCI-7040
+    # ── Channel enable switches — left side near MH3 ─────────────────────
+    # At rot=90°, SW courtyard: x=[cx-2.7, cx+6.7], y=[cy-7.7, cy+3.7]
+    # SW1 NPTH (local -2.1): PCB y=cy+2.1. SW2 NPTH (local 6.1): PCB y=cy-6.1.
+    # Minimum center spacing for no pad overlap: |Δcy| > 11.95mm → Δcy=12mm.
+    # Note: SW courtyard overlaps C8/L2 (different heights — physically OK).
+    'SW1': (109.5,  65.0,   90),   # L channel enable
+    'SW2': (109.5,  77.0,   90),   # R channel enable (12mm from SW1, fixes NPTH clearance)
 
-    # C1: VIN bypass — above cluster, right of L2 (courtyard gap ≥2.6mm each side)
-    'C1':   (128.0,  55.0,   90),   # 10µF/50V 1210
+    # ── Boost converter input ────────────────────────────────────────────
+    'C6':  (113.5,  58.73,  180),  # 22µF/16V 1210 bulk input
+    'C8':  (113.5,  62.79,  180),  # 4.7µF/50V 1210 EMI filter
+    'L2':  (120.0,  61.0,     0),  # 2.2µH Würth HCI-7040
+
+    # ── Control passives ─────────────────────────────────────────────────
+    'C1':  (126.4,  58.6,   180),  # 10µF/50V 1210 VIN bypass
+    'R5':  (130.3,  58.6,   180),  # 100kΩ EN/UVLO pullup
+    'C17': (127.2,  62.41,  180),  # 1µF INTVCC bypass
+    'C18': (127.2,  64.82,  180),  # 100nF BIAS bypass
+    'C2':  (129.2,  68.4,   -90),  # 1µF VC comp
+    'R4':  (131.8,  68.36,  -90),  # 22.1kΩ VC comp
+    'C4':  (131.8,  72.8,   -90),  # 1nF VC HF comp
 
     # ── U1: LT8362 MSOP-16-EP ────────────────────────────────────────────
-    # Left-side pins (1–8): EN/UVLO, VIN, INTVCC, BIAS, VC
-    # Right-side pins (9–16): FBX, RT, SS, SYNC, SW2, SW1
-    'U1':   (133.5,  63.5,    0),
+    'U1':  (133.5,  63.5,     0),
 
-    # ── Control passives — column between L2 right (124.15) and U1 left (130.7)
-    # All at x=127.5; courtyard x=126.875–128.125; clear of L2 and U1 by >2.5mm
-    'R5':   (132.0,  55.0,    0),   # 100kΩ EN/UVLO pullup — right of C1 (C1 right=129.65, gap>0.5mm)
-    'C17':  (127.5,  60.0,   90),   # 1µF INTVCC bypass
-    'C18':  (127.5,  64.5,   90),   # 100nF BIAS bypass — 4.5mm from C17 (0805@90° courtyard 3.79mm)
-    'C2':   (127.5,  69.0,   90),   # 1µF VC comp — 4.5mm from C18
-    'R4':   (132.5,  70.5,    0),   # 22.1kΩ VC comp
-    'C4':   (132.5,  67.5,    0),   # 1nF VC HF comp — moved to R4 column, between U1 and R4
+    # ── Feedback divider ─────────────────────────────────────────────────
+    'R1':  (139.4,  72.06,   90),  # 1MΩ FBX top
+    'C12': (142.7,  72.06,   90),  # 4.7pF FBX feedforward
+    'R2':  (136.3,  72.06,  -90),  # 34.8kΩ FBX bottom
 
-    # Feedback divider — keep away from SW_NODE, routed to FBX pin
-    # NOTE: C12 shows 1812 courtyard in PCB — run Update PCB from Schematic again to fix
-    'R1':   (130.0,  73.5,    0),   # 1MΩ FBX top
-    'C12':  (136.0,  73.5,    0),   # 4.7pF FBX feedforward (placed right of R1, 6mm gap)
-    'R2':   (130.0,  78.0,    0),   # 34.8kΩ FBX bottom
+    # ── Timing / soft-start ──────────────────────────────────────────────
+    'R3':  (140.0,  67.74,    0),  # 121kΩ RT
+    'C5':  (140.0,  65.08,    0),  # 10nF SS
+    'R11': (140.0,  62.41,    0),  # 100kΩ SYNC/MODE
 
-    # Timing / soft-start — right of U1 (these go to RT, SS, SYNC pins)
-    'R3':   (140.0,  68.5,    0),   # 121kΩ RT
-    'C5':   (140.0,  71.5,    0),   # 10nF SS
-    'R11':  (140.0,  74.5,    0),   # 100kΩ SYNC/MODE to GND
+    # ── L1: boost inductor ───────────────────────────────────────────────
+    'L1':  (136.3,  57.2,     0),  # 22µH Coilcraft XAL5030
 
-    # ── L1: boost inductor, right of U1 SW pins (~6mm courtyard) ─────────
-    'L1':   (142.5,  61.0,    0),   # 22µH Coilcraft XAL5030
+    # ── D1: Schottky rectifier ───────────────────────────────────────────
+    'D1':  (143.7,  58.0,     0),  # SMA
 
-    # ── D1: Schottky rectifier (anode ← L1, cathode → +48V_RAW) ─────────
-    'D1':   (150.5,  58.0,    0),   # SMA, rot 0° puts cathode on right
+    # ── Output bulk + filter chain ───────────────────────────────────────
+    'C9':  (149.6,  56.44,   90),  # 10µF/50V 1210 bulk output
+    'FB1': (151.2,  61.65,  180),  # 1206 ferrite bead
+    'C3':  (151.7,  64.95,  180),  # 1µF/100V 1206
+    'C7':  (151.7,  68.12,  180),  # 100nF 0805
+    'C10': (151.7,  71.3,   180),  # 100nF 0805
+    'C11': (151.7,  74.47,  180),  # 100nF 0805
 
-    # ── Output bulk + filter chain (+48V_RAW → FB1 → +48V) ──────────────
-    'C9':   (156.0,  62.0,   90),   # 10µF/50V 1210, bulk output
-    'FB1':  (156.0,  67.5,   90),   # 1206 ferrite bead
-    'C3':   (150.0,  67.0,    0),   # 1µF/100V 1206 output filter
-    'C7':   (150.0,  70.5,    0),   # 100nF 0805 output bypass
-    'C10':  (155.0,  73.0,    0),   # 100nF 0805 output bypass — moved down from 70.5 to clear FB1
-    'C11':  (155.0,  76.5,    0),   # 100nF 0805 output bypass
+    # ── LED indicator ────────────────────────────────────────────────────
+    'R10': (154.6,  55.5,     0),  # 12kΩ LED current limit
+    'D2':  (161.0,  55.42,    0),  # Green LED 3mm THT
 
-    # ── LED indicator — just below J1 courtyard (y>53.12), right side ────
-    'R10':  (157.0,  55.5,    0),   # 12kΩ LED current limit
-    'D2':   (161.0,  57.5,    0),   # Green LED 3mm THT — x=161 keeps pin2 1.46mm from right edge
+    # ── XLR pigtail connectors — right side between boost caps and bottom
+    # 1×3 vertical header at rot=90°. Using correct rot=90° formula:
+    #   PCB_x = cx + local_y,  PCB_y = cy - local_x
+    # Header courtyard (local x=[-1.5, 5.58], y=[-1.5, 1.5]):
+    #   PCB x=[cx-1.5, cx+1.5],  PCB y=[cy-5.58, cy+1.5]
+    # J4 at cy=73.5: y=[67.92, 75.0] — 1mm gap from MH4 courtyard top (y=76)
+    'J3':  (156.25, 64.0,    90),  # L channel XLR
+    'J4':  (156.25, 73.5,    90),  # R channel XLR (moved up from 74.5 to clear MH4)
 
-    # ── Phantom injection — enable switches (right edge) ─────────────────
-    # SW footprint (rot +90°): actuator points in +X (off right board edge)
-    'SW1':  (160.0,  75.0,   90),   # L channel enable, actuator →right board edge
-    'SW2':  (160.0,  87.5,   90),   # R channel enable — moved up to clear MH4 courtyard
+    # ── Phantom injection bias resistors (0805) ──────────────────────────
+    # Moved right to clear SW2 courtyard right edge at x≈116.2
+    'R6':  (119.0,  75.5,     0),  # 6.81kΩ L+  (was x=116)
+    'R7':  (119.0,  79.0,     0),  # 6.81kΩ L-  (was x=116)
+    'R8':  (122.5,  75.5,     0),  # 6.81kΩ R+  (was x=120.5)
+    'R9':  (122.5,  79.0,     0),  # 6.81kΩ R-  (was x=120.5)
 
-    # Bias resistors (between switch output and DC-block caps)
-    # 0805 at 90°: courtyard ~3.79mm tall — 4.5mm spacing clears overlap
-    'R6':   (149.0,  77.5,   90),   # 6.81kΩ L+
-    'R7':   (149.0,  82.0,   90),   # 6.81kΩ L-
-    'R8':   (149.0,  86.5,   90),   # 6.81kΩ R+
-    'R9':   (149.0,  91.0,   90),   # 6.81kΩ R-
+    # ── DC-block caps 1812, rot=90° (4.06mm wide in X, 6.46mm tall in Y) ─
+    # Four caps in two x-columns, two y-positions each.
+    # Column 1 (x=127): C13 top, C15 bottom  — gap between them: 0.54mm
+    # Column 2 (x=136): C14 top, C16 bottom  — clear of U1 (x≤136.8, y≤65.8)
+    'C13': (127.0,  70.0,    90),  # 2.2µF L+
+    'C14': (120.5,  70.0,    90),  # 2.2µF L- (moved left of C13 to clear R2 courtyard)
+    'C15': (127.0,  77.0,    90),  # 2.2µF R+
+    'C16': (136.0,  77.0,    90),  # 2.2µF R-
 
-    # DC-block caps 1812 (XLR signal nodes to HiFiBerry J4)
-    # 1812 at 90°: courtyard ~6.45mm tall — 2-column layout with 7mm spacing
-    'C13':  (137.0,  79.5,   90),   # 2.2µF L+
-    'C14':  (137.0,  86.5,   90),   # 2.2µF L-
-    'C15':  (143.0,  79.5,   90),   # 2.2µF R+
-    'C16':  (143.0,  86.5,   90),   # 2.2µF R-
-
-    # XLR pigtail headers (1×3, horizontal)
-    'J3':   (126.0,  82.0,    0),   # L channel XLR (pin1=GND, 2=HOT, 3=COLD)
-    'J4':   (126.0,  91.0,    0),   # R channel XLR — same x as J3, 2.88mm gap between courtyards
-
-    # HiFiBerry J4 connector — POSITION TBD (measure physical board)
-    # Placeholder: move after measuring HiFiBerry J4 relative to J1 pin-1
-    'J2':   (119.0,  90.0,    0),   # 2×3 to HiFiBerry J4 (TBD)
+    # ── HiFiBerry ADC input — 2×3 placeholder (measure before finalizing)
+    # J2 must align with HiFiBerry DAC2 ADC Pro J4 connector.
+    # Measure HiFiBerry J4 offset from GPIO pin 1, then update this position.
+    # Pin 1 is the footprint anchor; footprint extends +5.08mm in Y, +2.54mm in X.
+    # At y=75.0: bottom pads at y≈80.1, courtyard bottom ≈y=81.1 — fits within y<82.
+    'J2':  (143.0,  75.0,     0),  # 2×3 to HiFiBerry J4 (TBD)
 }
 
 
@@ -136,7 +149,7 @@ def main():
         fp.SetPosition(pos)
         fp.SetOrientationDegrees(rot)
         placed.append(ref)
-        print(f"  {ref:5s}  ({x_mm:6.1f}, {y_mm:6.1f})  rot={rot:4}°")
+        print(f"  {ref:5s}  ({x_mm:7.2f}, {y_mm:7.2f})  rot={rot:5}°")
 
     if missing:
         print(f"\nWARNING: not found on board (run Update PCB from Schematic first): {missing}")
