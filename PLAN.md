@@ -10,6 +10,6 @@
 
 #5 - what width traces should be used?
 
-#6 - Are two switches really necessary, or would one suffice? What are the switches for, to disable the 48v phantom power? When would this be used?
+#6 - :check: Are two switches really necessary, or would one suffice? What are the switches for, to disable the 48v phantom power? When would this be used?
 
 #7 - Locate our J2 connector on the bottom side of the board to match up with J2 of the HiFiBerry

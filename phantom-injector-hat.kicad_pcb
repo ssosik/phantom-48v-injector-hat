@@ -4888,11 +4888,11 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "71164162-f84b-427f-b466-47a695a28427")
-		(at 113.5 62.79 180)
+		(at 108.4836 53.0901 -90)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C8"
-			(at 0 -1.68 0)
+			(at 2.6631 0.0508 180)
 			(layer "F.SilkS")
 			(uuid "88fcec35-6240-45eb-b59c-c37edaf906a1")
 			(effects
@@ -4903,7 +4903,7 @@
 			)
 		)
 		(property "Value" "4.7 µF / 50V X7R"
-			(at 0 1.68 0)
+			(at 0 1.68 90)
 			(layer "F.Fab")
 			(uuid "bd2c152f-55f0-4fe7-a9d5-fa4a76e43111")
 			(effects
@@ -4914,7 +4914,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2f6d6e73-e805-486f-955b-fe3d28783706")
@@ -4925,7 +4925,7 @@
 			)
 		)
 		(property "Description" "Input EMI filter"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "54fe4b16-ab77-49b7-ac38-d92102db91f3")
@@ -4936,7 +4936,7 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "6c9c1930-62d3-4d51-9866-0816c1659be3")
@@ -5002,7 +5002,7 @@
 			(uuid "2059404b-c9e8-4766-9e49-01fae78715c0")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "585b52bb-a096-44cf-b122-dd4ccd8e2cd0")
 			(effects
@@ -5013,7 +5013,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.0375 0 180)
+			(at -1.0375 0 270)
 			(size 1.175 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.212766)
@@ -5022,7 +5022,7 @@
 			(uuid "d1274ef3-043b-4c01-9c8e-f66d93764eb7")
 		)
 		(pad "2" smd roundrect
-			(at 1.0375 0 180)
+			(at 1.0375 0 270)
 			(size 1.175 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.212766)
@@ -6158,7 +6158,7 @@
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "9de0ebb2-031a-4545-bd87-07500d9b946c")
+			(uuid "e3ebb8c9-9255-406b-b6a7-df0d78f93d74")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6170,7 +6170,7 @@
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "21a99b86-ac00-48a6-90be-f93f0ca7376b")
+			(uuid "2a279786-24fd-465b-8df3-4d7f7637580c")
 			(effects
 				(font
 					(size 1 1)
@@ -6182,7 +6182,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1f154e4c-5f29-4663-99d1-099bc5231e89")
+			(uuid "bb93e699-2aa6-4916-93ea-3406e374d516")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6193,7 +6193,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8233b697-8074-485e-97a6-0361d8bfbab4")
+			(uuid "287c342c-bff3-4ff6-8b40-4483ef74573e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6572,11 +6572,11 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "c8f7655f-3e25-4e84-a680-5e453fcc4323")
-		(at 113.5 58.73 180)
+		(at 105.592 53.0901 -90)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C6"
-			(at 0 -1.68 0)
+			(at 2.7139 0.004 180)
 			(layer "F.SilkS")
 			(uuid "a0a533a8-b237-471b-aa1e-c7260cb4b364")
 			(effects
@@ -6587,7 +6587,7 @@
 			)
 		)
 		(property "Value" "22 µF / 16V X7R"
-			(at 0 1.68 0)
+			(at 0 1.68 90)
 			(layer "F.Fab")
 			(uuid "f9293023-207f-4878-a979-5ee9cb21c23a")
 			(effects
@@ -6598,7 +6598,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "63efcef5-956b-48b6-8187-63843e6aec27")
@@ -6609,7 +6609,7 @@
 			)
 		)
 		(property "Description" "Bulk input"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3e40354d-51a7-4ce5-9206-d4a3c3f74009")
@@ -6620,7 +6620,7 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "f233f254-4552-4493-9180-45a5e5cca74f")
@@ -6686,7 +6686,7 @@
 			(uuid "d0e6a3ed-9130-4699-88c2-c1b7d60c7559")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "7cc8c998-abab-49b0-8b70-3a0f78b73888")
 			(effects
@@ -6697,7 +6697,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.0375 0 180)
+			(at -1.0375 0 270)
 			(size 1.175 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.212766)
@@ -6706,7 +6706,7 @@
 			(uuid "44c04728-9495-4f79-b00e-2454ce24c931")
 		)
 		(pad "2" smd roundrect
-			(at 1.0375 0 180)
+			(at 1.0375 0 270)
 			(size 1.175 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.212766)
@@ -6730,7 +6730,7 @@
 	(footprint "Inductor_SMD:L_Wuerth_HCI-7040"
 		(layer "F.Cu")
 		(uuid "d8e9e2fb-adce-40c0-a0e0-41b4aeb564d9")
-		(at 120 61)
+		(at 114.996 54.8388)
 		(descr "Inductor, Wuerth, HCI-7040, 6.9x6.9x3.8mm, (https://www.we-online.com/components/products/datasheet/744311022.pdf)")
 		(tags "flat-wire shielded Würth SMT")
 		(property "Reference" "L2"
@@ -8804,6 +8804,22 @@
 				(thickness 0.15)
 			)
 		)
+	)
+	(segment
+		(start 105.592 49.008)
+		(end 105.592 52.0526)
+		(width 1)
+		(layer "F.Cu")
+		(net "/+5V_PI")
+		(uuid "66c48fb4-fbcc-47e6-b1ed-6051f0a70b7c")
+	)
+	(segment
+		(start 108.37 46.23)
+		(end 105.592 49.008)
+		(width 1)
+		(layer "F.Cu")
+		(net "/+5V_PI")
+		(uuid "8c8f3e55-40c6-4d8d-b00a-0c9d2311469d")
 	)
 	(zone
 		(net "/GND")
