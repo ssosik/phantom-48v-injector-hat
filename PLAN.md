@@ -13,3 +13,7 @@
 #6 - :check: Are two switches really necessary, or would one suffice? What are the switches for, to disable the 48v phantom power? When would this be used?
 
 #7 - Locate our J2 connector on the bottom side of the board to match up with J2 of the HiFiBerry
+
+#8 - should i add vias?
+
+#9 - what component groups should be separated from the others, and by how much?

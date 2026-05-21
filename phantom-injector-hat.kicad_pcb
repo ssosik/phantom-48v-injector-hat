@@ -8844,28 +8844,20 @@
 		(uuid "f751a0d8-4ca4-465e-87bd-0e3f1b8c47d0")
 	)
 	(segment
-		(start 131.8008 72.6504)
-		(end 131.8008 69.3879)
+		(start 131.7633 66.2504)
+		(end 131.7633 69.3504)
 		(width 0.25)
 		(layer "F.Cu")
 		(net "/FBX")
-		(uuid "287b71b7-f515-4845-aa37-0fd0efc8f6b6")
+		(uuid "05559b56-7d33-4066-b146-e27402e763ef")
 	)
 	(segment
 		(start 131.7633 69.3504)
-		(end 131.7633 66.2504)
+		(end 131.7633 69.4825)
 		(width 0.25)
 		(layer "F.Cu")
 		(net "/FBX")
-		(uuid "59ef71be-44ad-4552-a1dc-bae28a634394")
-	)
-	(segment
-		(start 131.7893 66.2764)
-		(end 131.7633 66.2504)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "/FBX")
-		(uuid "c43dd5ca-f2d3-4c96-875d-a59998294e6f")
+		(uuid "1b384735-c086-4037-b367-506fb1b4d51a")
 	)
 	(segment
 		(start 137.95014 66.2764)
@@ -8873,7 +8865,31 @@
 		(width 0.25)
 		(layer "F.Cu")
 		(net "/FBX")
-		(uuid "dabd3fd4-65f0-4d1c-9a3f-2475605f53d0")
+		(uuid "1b4bde6b-fd14-4a7e-9fd4-739129226ae8")
+	)
+	(segment
+		(start 131.8008 69.52)
+		(end 131.8008 72.6504)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/FBX")
+		(uuid "cf06e754-523d-4fb4-a2e1-e4707d91d075")
+	)
+	(segment
+		(start 131.7633 69.4825)
+		(end 131.8008 69.52)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/FBX")
+		(uuid "d315d712-b940-4bcf-a895-8085e1fd8ab6")
+	)
+	(segment
+		(start 131.7893 66.2764)
+		(end 131.7633 66.2504)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "/FBX")
+		(uuid "d73a6722-d072-4fd2-a156-0456710bf6a0")
 	)
 	(segment
 		(start 138.9509 69.3612)
@@ -8894,7 +8910,7 @@
 	(segment
 		(start 124.13 84.5568)
 		(end 126.9748 84.5568)
-		(width 0.25)
+		(width 1)
 		(layer "F.Cu")
 		(net "/XLR_L_HOT")
 		(uuid "4163c068-9aff-4ebd-95b8-889ece4659ba")
@@ -8902,7 +8918,7 @@
 	(segment
 		(start 126.9748 84.5568)
 		(end 129.8008 84.5568)
-		(width 0.25)
+		(width 1)
 		(layer "F.Cu")
 		(net "/XLR_L_HOT")
 		(uuid "c306e4a6-61a2-4f72-a62f-c43e6c6a7259")
@@ -8910,7 +8926,7 @@
 	(segment
 		(start 119.2024 84.5568)
 		(end 122.055 84.5568)
-		(width 0.2)
+		(width 1)
 		(layer "F.Cu")
 		(net "/J4_L+")
 		(uuid "4c147822-41bb-46ab-8fff-cd5696ce3686")
@@ -8934,7 +8950,7 @@
 	(segment
 		(start 124.13 82.0168)
 		(end 126.9748 82.0168)
-		(width 0.25)
+		(width 1)
 		(layer "F.Cu")
 		(net "/XLR_L_COLD")
 		(uuid "4cb02190-fe10-428c-9cc6-c8a8866d28d1")
@@ -8942,7 +8958,7 @@
 	(segment
 		(start 126.9748 82.0168)
 		(end 129.8008 82.0168)
-		(width 0.25)
+		(width 1)
 		(layer "F.Cu")
 		(net "/XLR_L_COLD")
 		(uuid "c86f701f-1477-4e88-abef-2fb34d8b88dd")
@@ -9102,7 +9118,7 @@
 	(segment
 		(start 103.5052 84.5568)
 		(end 106.35 84.5568)
-		(width 0.25)
+		(width 1)
 		(layer "F.Cu")
 		(net "/XLR_R_HOT")
 		(uuid "7b8f546c-fbaf-4903-82f4-7711381e9d12")
@@ -9110,7 +9126,7 @@
 	(segment
 		(start 106.35 84.5568)
 		(end 109.1932 84.5568)
-		(width 0.25)
+		(width 1)
 		(layer "F.Cu")
 		(net "/XLR_R_HOT")
 		(uuid "d8de353e-fd55-4c9a-8408-912ddb4e97a6")
@@ -9118,7 +9134,7 @@
 	(segment
 		(start 103.5052 82.0168)
 		(end 106.35 82.0168)
-		(width 0.25)
+		(width 1)
 		(layer "F.Cu")
 		(net "/XLR_R_COLD")
 		(uuid "17562b31-4f68-46c6-b6d4-b4e568910a13")
@@ -9126,7 +9142,7 @@
 	(segment
 		(start 106.35 82.0168)
 		(end 109.1932 82.0168)
-		(width 0.25)
+		(width 1)
 		(layer "F.Cu")
 		(net "/XLR_R_COLD")
 		(uuid "24a64338-0ecc-4b2c-8d40-79b98b2f1d54")
@@ -9134,7 +9150,7 @@
 	(segment
 		(start 111.2682 84.5568)
 		(end 114.1224 84.5568)
-		(width 0.2)
+		(width 1)
 		(layer "F.Cu")
 		(net "/J4_R+")
 		(uuid "c1389bba-e694-4acf-b536-7f1f91a29623")
@@ -9142,7 +9158,7 @@
 	(segment
 		(start 111.2682 82.0168)
 		(end 114.1224 82.0168)
-		(width 0.2)
+		(width 1)
 		(layer "F.Cu")
 		(net "/J4_R-")
 		(uuid "e5e19b74-a33a-4d76-bbf9-43f14c8f2973")
@@ -9150,7 +9166,7 @@
 	(segment
 		(start 119.2024 82.0168)
 		(end 122.055 82.0168)
-		(width 0.2)
+		(width 1)
 		(layer "F.Cu")
 		(net "/J4_L-")
 		(uuid "a85de8d2-a4e3-41ab-a8b3-c1033461aed0")
@@ -9174,7 +9190,7 @@
 	(segment
 		(start 107.9916 61.9508)
 		(end 104.7752 61.9508)
-		(width 0.5)
+		(width 1)
 		(layer "F.Cu")
 		(net "/LED_A")
 		(uuid "a687dbde-9599-4faa-a879-1eb4aec76b24")
