@@ -75,10 +75,10 @@ NETLIST = {
     ('R3','1'): 'RT',        ('R3','2'): 'GND',
     ('R4','1'): 'VC',        ('R4','2'): 'VC_COMP',
     ('R5','1'): 'EN_UVLO',   ('R5','2'): '+5V_FILT',
-    ('R6','1'): '+48V_L',    ('R6','2'): 'XLR_L_HOT',
-    ('R7','1'): '+48V_L',    ('R7','2'): 'XLR_L_COLD',
-    ('R8','1'): '+48V_R',    ('R8','2'): 'XLR_R_HOT',
-    ('R9','1'): '+48V_R',    ('R9','2'): 'XLR_R_COLD',
+    ('R6','1'): '+48V_SW',   ('R6','2'): 'XLR_L_HOT',
+    ('R7','1'): '+48V_SW',   ('R7','2'): 'XLR_L_COLD',
+    ('R8','1'): '+48V_SW',   ('R8','2'): 'XLR_R_HOT',
+    ('R9','1'): '+48V_SW',   ('R9','2'): 'XLR_R_COLD',
     ('R10','1'): '+48V',     ('R10','2'): 'LED_A',
     # R11: 100kΩ SYNC/MODE pull-down for Burst+SSFM mode
     ('R11','1'): 'SYNC_MODE', ('R11','2'): 'GND',
@@ -108,8 +108,7 @@ NETLIST = {
     # D2 LED (rot=270): pin 2=Anode (top), pin 1=Cathode (bottom)
     ('D2','2'): 'LED_A',     ('D2','1'): 'GND',
 
-    ('SW1','1'): '+48V',     ('SW1','2'): '+48V_L',
-    ('SW2','1'): '+48V',     ('SW2','2'): '+48V_R',
+    ('SW1','1'): '+48V',     ('SW1','2'): '+48V_SW',
 
     ('J2','1'): 'J4_R+',  ('J2','2'): 'J4_R-',
     ('J2','3'): 'GND',    ('J2','4'): 'GND',
@@ -479,10 +478,19 @@ def extract_placed_components(content):
 
 
 def get_placed_refs(content):
-    """Extract all placed instances: {ref: (lib_id, sx, sy, sr)}"""
+    """Extract all placed instances: {ref: (lib_id, sx, sy, sr)}
+
+    Handles both KiCad single-line format:
+      (symbol (lib_id "Foo:Bar") (at x y r) (unit 1) ...
+    and script-injected multi-line format:
+      (symbol
+        (lib_id "Foo:Bar")
+        (at x y r)
+    """
     result = {}
+    # \s* between tokens allows both " " (single-line) and "\n\t\t" (multi-line)
     pattern = (
-        r'\(symbol\s*\n\s*\(lib_id\s*"([^"]+)"\)\s*\n\s*'
+        r'\(symbol\s*\(lib_id\s*"([^"]+)"\)\s*'
         r'\(at\s+([\d.-]+)\s+([\d.-]+)\s+([\d.-]+)\)'
         r'.*?\(property\s*"Reference"\s*"([^"]+)"'
     )

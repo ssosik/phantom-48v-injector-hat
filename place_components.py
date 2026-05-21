@@ -12,7 +12,7 @@ Board: 65×38mm Pi HAT (shortened to y=82 to clear HiFiBerry RCA jacks)
 Layout zones:
   Boost stage:       x 113-160, y  50-75
   Phantom inject:    x 109-160, y  63-82
-  SW1/SW2 near MH3:  x 109,     y  65/75
+  SW1 near MH3:      x 109,     y  71
 
 J2 (HiFiBerry connector) position is a placeholder — measure the HiFiBerry
 DAC2 ADC Pro J4 connector position relative to pin 1 of the 2x20 GPIO header
@@ -41,13 +41,11 @@ PLACEMENTS = {
     'MH3': (103.5,  78.5,    0),   # board bottom now y=82
     'MH4': (161.5,  78.5,    0),
 
-    # ── Channel enable switches — left side near MH3 ─────────────────────
-    # At rot=90°, SW courtyard: x=[cx-2.7, cx+6.7], y=[cy-7.7, cy+3.7]
-    # SW1 NPTH (local -2.1): PCB y=cy+2.1. SW2 NPTH (local 6.1): PCB y=cy-6.1.
-    # Minimum center spacing for no pad overlap: |Δcy| > 11.95mm → Δcy=12mm.
-    # Note: SW courtyard overlaps C8/L2 (different heights — physically OK).
-    'SW1': (109.5,  65.0,   90),   # L channel enable
-    'SW2': (109.5,  77.0,   90),   # R channel enable (12mm from SW1, fixes NPTH clearance)
+    # ── Channel enable switch — left side near MH3 ───────────────────────
+    # Single switch: gates +48V to +48V_SW feeding all four bias resistors.
+    # At rot=90°, courtyard: x=[cx-2.7, cx+6.7], y=[cy-7.7, cy+3.7].
+    # Note: courtyard overlaps C8/L2 (different heights — physically OK).
+    'SW1': (109.5,  71.0,   90),   # phantom power enable (centered, was 65/77 for two switches)
 
     # ── Boost converter input ────────────────────────────────────────────
     'C6':  (113.5,  58.73,  180),  # 22µF/16V 1210 bulk input
