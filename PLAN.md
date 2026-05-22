@@ -17,3 +17,5 @@
 #8 - should i add vias?
 
 #9 - what component groups should be separated from the others, and by how much?
+
+#10 - should the LED be on all the time, or only when the 48v switch is set?
