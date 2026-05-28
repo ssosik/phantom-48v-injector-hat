@@ -6377,7 +6377,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder"
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 76.962 30.48 90)
 			(show_name yes)
 			(do_not_autoplace no)
