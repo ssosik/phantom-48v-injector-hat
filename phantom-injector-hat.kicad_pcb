@@ -9063,7 +9063,7 @@
 	)
 	(gr_line
 		(start 100 47)
-		(end 100 63)
+		(end 100 85.83908)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -9125,7 +9125,7 @@
 		(uuid "33096a0f-01a8-4245-82e2-5bc88f4c8d23")
 	)
 	(gr_line
-		(start 165 85.8268)
+		(start 165 85.83908)
 		(end 165 47)
 		(stroke
 			(width 0.12)
