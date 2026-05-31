@@ -113,9 +113,11 @@ PLACEMENTS = {
     'C15': (110.2307, 84.5568,    0),   # 2.2µF R+
     'C16': (110.2307, 82.0168,    0),   # 2.2µF R-
 
-    # ── HiFiBerry ADC input — 2×3 (measure before finalizing) ────────────
-    # J2 must align with HiFiBerry DAC2 ADC Pro J4 connector.
-    'J2':  (114.1224, 84.5568,   90),   # 2×3 to HiFiBerry J4 (TBD)
+    # ── HiFiBerry ADC input — 2×3 (B.Cu — body faces down toward HiFiBerry)
+    # J4 pin 1 measured from MH1: +11.32mm east, +37.14mm south.
+    # J4 pin 1 = R- (lower-right corner as viewed from below).
+    # 4-tuple: (x, y, rot, layer) — script flips to B.Cu automatically.
+    'J2':  (114.82,   84.64,    90, 'F.Cu'),  # 2×3 to HiFiBerry J4
 }
 
 
@@ -130,7 +132,14 @@ def main():
     placed = []
     missing = []
 
-    for ref, (x_mm, y_mm, rot) in PLACEMENTS.items():
+    for ref, entry in PLACEMENTS.items():
+        if len(entry) == 3:
+            x_mm, y_mm, rot = entry
+            target_layer = None
+        else:
+            x_mm, y_mm, rot, layer_name = entry
+            target_layer = pcbnew.B_Cu if layer_name == 'B.Cu' else pcbnew.F_Cu
+
         if ref not in fp_map:
             missing.append(ref)
             continue
@@ -138,9 +147,14 @@ def main():
         fp = fp_map[ref]
         pos = pcbnew.VECTOR2I(pcbnew.FromMM(x_mm), pcbnew.FromMM(y_mm))
         fp.SetPosition(pos)
+
+        if target_layer is not None and fp.GetLayer() != target_layer:
+            fp.Flip(pos, pcbnew.FLIP_DIRECTION_LEFT_RIGHT)
+
         fp.SetOrientationDegrees(rot)
         placed.append(ref)
-        print(f"  {ref:5s}  ({x_mm:8.4f}, {y_mm:8.4f})  rot={rot:6}°")
+        layer_str = f"  layer={layer_name}" if target_layer is not None else ""
+        print(f"  {ref:5s}  ({x_mm:8.4f}, {y_mm:8.4f})  rot={rot:6}°{layer_str}")
 
     if missing:
         print(f"\nWARNING: not found on board (run Update PCB from Schematic first): {missing}")
