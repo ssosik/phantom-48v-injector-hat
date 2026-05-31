@@ -5415,12 +5415,12 @@
 		(uuid "384ce0d4-868e-4738-84bf-60ab4bb54959")
 	)
 	(label "FBX"
-		(at 36.83 62.23 90)
+		(at 36.83 62.23 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "3f328657-26f4-4636-8e84-7af44827742a")
 	)
@@ -5435,12 +5435,12 @@
 		(uuid "417b6c23-43b0-4ff3-8e22-c9b83e676529")
 	)
 	(label "XLR_L_HOT"
-		(at 127 62.23 90)
+		(at 127 62.23 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "450e8128-e262-4b33-aac0-71bc6cf48aca")
 	)
@@ -5525,12 +5525,12 @@
 		(uuid "60eedf1d-b0b0-460c-852d-8cd67bed3bfb")
 	)
 	(label "XLR_R_COLD"
-		(at 226.06 62.23 90)
+		(at 226.06 62.23 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "619296dd-d308-4937-a41f-ed597432b712")
 	)
@@ -5665,22 +5665,22 @@
 		(uuid "777c2e87-859e-426d-8a06-c49f9205bc36")
 	)
 	(label "GND"
-		(at 72.39 62.23 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "77e7da26-9e5e-464a-a11e-1d85b5c99709")
-	)
-	(label "+48V_SW"
-		(at 160.02 54.61 270)
+		(at 72.39 62.23 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
+		)
+		(uuid "77e7da26-9e5e-464a-a11e-1d85b5c99709")
+	)
+	(label "+48V_SW"
+		(at 160.02 54.61 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
 		)
 		(uuid "78b33240-0c6e-496a-8489-9d1431c2741b")
 	)
@@ -5695,12 +5695,12 @@
 		(uuid "7dbf2a35-9adc-45a4-9948-92dd92ecc520")
 	)
 	(label "+48V_RAW"
-		(at 36.83 54.61 270)
+		(at 36.83 54.61 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "7f92ca8c-42cc-40e0-b4ee-8036468c626f")
 	)
@@ -5895,32 +5895,32 @@
 		(uuid "9be34d96-4aa7-426e-b123-50dbcd474fb4")
 	)
 	(label "XLR_L_COLD"
-		(at 160.02 62.23 90)
+		(at 160.02 62.23 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "a25ed5fb-ac11-427a-93c8-6473429006d3")
 	)
 	(label "GND"
-		(at 53.34 62.23 90)
+		(at 53.34 62.23 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "a3be8e1b-3bb6-4e12-bbb8-a5c617373130")
 	)
 	(label "SW_NODE"
-		(at 40.64 34.29 90)
+		(at 40.64 34.29 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "a40e4aca-8c9b-4895-8ad1-dd30f0a5e478")
 	)
@@ -5935,12 +5935,12 @@
 		(uuid "a4b95c9a-f831-49b7-b711-57196da8e17a")
 	)
 	(label "+5V_FILT"
-		(at 53.34 34.29 90)
+		(at 53.34 34.29 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "ad407cef-6b3c-4088-8698-8bde6e2d98a4")
 	)
@@ -5955,22 +5955,22 @@
 		(uuid "ae96ef7a-5aec-4bd8-b28e-54123c4396ed")
 	)
 	(label "+5V_FILT"
-		(at 107.95 62.23 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ba49416f-0964-41eb-a85d-1a0b8463a842")
-	)
-	(label "+48V_SW"
-		(at 127 54.61 270)
+		(at 107.95 62.23 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
+		)
+		(uuid "ba49416f-0964-41eb-a85d-1a0b8463a842")
+	)
+	(label "+48V_SW"
+		(at 127 54.61 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
 		)
 		(uuid "bbcc099f-c368-46ac-bc8e-2790b12837ba")
 	)
@@ -6005,22 +6005,22 @@
 		(uuid "c46592c7-6989-4deb-86b2-444414feeed6")
 	)
 	(label "EN_UVLO"
-		(at 107.95 54.61 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c48a4894-74eb-4c56-bc10-6f9091544af7")
-	)
-	(label "VC_COMP"
-		(at 90.17 62.23 90)
+		(at 107.95 54.61 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
+		)
+		(uuid "c48a4894-74eb-4c56-bc10-6f9091544af7")
+	)
+	(label "VC_COMP"
+		(at 90.17 62.23 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
 		)
 		(uuid "c4959fdc-2de3-41d4-bbc6-6266601f7b44")
 	)
@@ -6045,12 +6045,12 @@
 		(uuid "cafaf772-e65d-47a7-96c9-0534bdb1ae4b")
 	)
 	(label "LED_A"
-		(at 261.62 62.23 90)
+		(at 261.62 62.23 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "ccf253ea-d444-4bdc-8a36-8492984dbf8b")
 	)
@@ -6074,23 +6074,13 @@
 		)
 		(uuid "d0b7cb71-a874-4652-9dbe-cd08af71bb41")
 	)
-	(label "+48V"
-		(at 261.62 54.61 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d3e4c5a7-fb47-46c6-a48e-557cef9c9d86")
-	)
 	(label "+48V_SW"
-		(at 226.06 54.61 270)
+		(at 226.06 54.61 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "d6ccf98c-bc38-44cb-b6da-e4767176f98d")
 	)
@@ -6125,12 +6115,12 @@
 		(uuid "e5c19818-0f9c-4b57-a972-eb9d5a438681")
 	)
 	(label "+5V_FILT"
-		(at 40.64 26.67 270)
+		(at 40.64 26.67 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "e7af4292-512b-4fc5-b5ef-01b373876e71")
 	)
@@ -6155,12 +6145,12 @@
 		(uuid "edcd14ad-fe14-4f43-9bcb-38096136d53b")
 	)
 	(label "FBX"
-		(at 53.34 54.61 270)
+		(at 53.34 54.61 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "ee46a6c4-bcde-4356-9bae-494ccfc870b8")
 	)
@@ -6185,14 +6175,24 @@
 		(uuid "f159ec3e-0a77-4356-b8a5-d401e7067cc8")
 	)
 	(label "RT"
-		(at 72.39 54.61 270)
+		(at 72.39 54.61 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "f22ba7d2-a7e5-4c75-8e73-4f11dccaa048")
+	)
+	(label "+48V_SW"
+		(at 261.62 54.61 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f258726b-fab9-4714-8238-cabceecf8c31")
 	)
 	(label "+48V_SW"
 		(at 325.12 53.34 0)
@@ -6205,12 +6205,12 @@
 		(uuid "f4538ce1-8928-45fa-a550-6dd11c16aea2")
 	)
 	(label "VC"
-		(at 90.17 54.61 270)
+		(at 90.17 54.61 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "f52ca1a8-5dbf-466f-8437-8cea80d06d4e")
 	)

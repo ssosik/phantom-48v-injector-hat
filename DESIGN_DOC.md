@@ -86,8 +86,7 @@ Raspberry Pi 4B
 | R7 | 6.81 kΩ 0.1% | XLR pin 3, L channel bias | 0805 | Susumu RR1220P-682-D | 1 |
 | R8 | 6.81 kΩ 0.1% | XLR pin 2, R channel bias | 0805 | Susumu RR1220P-682-D | 1 |
 | R9 | 6.81 kΩ 0.1% | XLR pin 3, R channel bias | 0805 | Susumu RR1220P-682-D | 1 |
-| SW1 | SPST slide | P48 enable, L channel | RA PCB | C&K OS102011MA1QN1 | 1 |
-| SW2 | SPST slide | P48 enable, R channel | RA PCB | C&K OS102011MA1QN1 | 1 |
+| SW1 | SPST slide | P48 enable, both channels | RA PCB | C&K OS102011MA1QN1 | 1 |
 | C12 | 2.2 µF / 100V X7R | DC-block, L+ to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
 | C13 | 2.2 µF / 100V X7R | DC-block, L- to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
 | C14 | 2.2 µF / 100V X7R | DC-block, R+ to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
@@ -110,8 +109,8 @@ Raspberry Pi 4B
 
 | Item | 1 unit | 5 units (+10% spares) |
 |------|--------|-----------------------|
-| Total distinct line items | 28 | 28 |
-| Total placements | ~35 | ~175 |
+| Total distinct line items | 27 | 27 |
+| Total placements | ~34 | ~170 |
 
 ---
 
@@ -127,9 +126,8 @@ Raspberry Pi 4B
 | `+5V_FILT` | Post-EMI-filtered 5V | L2 (output-side terminal); L1 (input-side terminal); U1 `V_IN`; C1 |
 | `SW_NODE` | Boost switch node | L1 (output-side terminal); D1 anode; U1 `SW` |
 | `+48V_RAW` | Boost output before output filter | D1 cathode; C9; FB1 (input-side terminal) |
-| `+48V` | Filtered phantom rail | FB1 (output-side terminal); C3; C7; C10a; C10b; R10; SW1 (common terminal); SW2 (common terminal) |
-| `+48V_L` | L-channel phantom (after SW1) | SW1 (switched terminal); R6; R7 |
-| `+48V_R` | R-channel phantom (after SW2) | SW2 (switched terminal); R8; R9 |
+| `+48V` | Filtered phantom rail | FB1 (output-side terminal); C3; C7; C10a; C10b; R10; SW1 (common terminal) |
+| `+48V_SW` | Switched phantom rail (both channels) | SW1 (switched terminal); R6; R7; R8; R9 |
 | `XLR_L_HOT` | L channel XLR pin 2 | R6 (XLR-side terminal); C12 (XLR-side terminal); J3 pin 2 |
 | `XLR_L_COLD` | L channel XLR pin 3 | R7 (XLR-side terminal); C13 (XLR-side terminal); J3 pin 3 |
 | `XLR_R_HOT` | R channel XLR pin 2 | R8 (XLR-side terminal); C14 (XLR-side terminal); J4 pin 2 |
@@ -304,7 +302,7 @@ LT8362's spread-spectrum frequency modulation (SSFM) dithers the switching frequ
 ```
 +-------------------------------------------+
 |  XLR pigtails J3, J4    [top edge]        |
-|  Slide switches SW1, SW2 ... ~~~~~~~~~~~  |
+|  Slide switch SW1  ......... ~~~~~~~~~~~  |
 |                                            |
 |  Phantom injection: R6-R9, C12-C15        |
 |  (analog, keep quiet)                     |
