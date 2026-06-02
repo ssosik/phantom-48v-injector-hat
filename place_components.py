@@ -6,15 +6,16 @@ Run AFTER "Tools > Update PCB from Schematic" (F8) in KiCad.
 Board: 65×44.84mm Pi HAT (shorter than standard 56.5mm to clear HiFiBerry RCA jacks)
   TL corner: (100, 44)      TR: (165, 44)
   BL corner: (100, 88.839)  BR: (165, 88.839)   [3mm radius at all corners]
-  Mounting holes: (103.5,47.5), (161.5,47.5), (103.5,78.5), (161.5,78.5)
-  J9 (40-pin GPIO, Pi HAT spec position): (108.37, 48.77) rot -90°
+  Mounting holes: (103.5,47.5), (161.5,47.5)
   J1 (40-pin GPIO, HiFiBerry top-side header): (108.37, 53.91) rot -90°
-    — 2.6mm gap between J9 odd row and J1 even row
 
 Layout zones:
-  Boost stage:       x 113-162, y  50-82
-  Phantom inject:    x 100-135, y  68-90
-  SW1 near MH3:      x 107,     y  69
+  Input caps:        x 106-115, y  59-62
+  Boost row:         x 144-165, y  60-68  (L1→D1→C9 horizontal)
+  U1 + passives:     x 140-158, y  65-76
+  Output cap column: x 156-160, y  66-78  (FB1 + C11→C3 vertical)
+  Phantom inject:    x 100-145, y  79-88
+  SW1:               x 138-143, y  80-84
 
 J2 (HiFiBerry connector): measured from MH1 +11.32mm east, +37.14mm south.
   Pin 1 (R−) is at the lower-right corner of J4 on the HiFiBerry.
@@ -34,62 +35,56 @@ PCB_PATH = '/Users/stevesosik/Documents/KiCad/phantom-injector-hat/phantom-injec
 # Rotation follows KiCad convention: CCW positive, 0° = default footprint orientation.
 # A 4-tuple layer name ('F.Cu' or 'B.Cu') triggers an automatic flip if needed.
 PLACEMENTS = {
-    # ── J9: GPIO socket at Pi HAT spec position (B.Cu, faces Pi below) ──
-    'J9':  (108.37,    48.77,    -90),
-
     # ── J1: GPIO socket connecting to HiFiBerry top-side header ──────────
-    # HiFiBerry DAC2 ADC Pro top-side header is shifted from standard Pi
-    # HAT position. Measured: 2.6mm gap (J9 odd row → J1 even row)
-    # → center_y = 48.77 + 2.6 + 2.54 = 53.91mm
+    # HiFiBerry DAC2 ADC Pro top-side header shifted from standard Pi HAT.
+    # Measured: 2.6mm gap (J9 odd row → J1 even row) → center_y = 53.91mm
     'J1':  (108.37,    53.91,    -90, 'B.Cu'),
 
     # ── Mounting holes ────────────────────────────────────────────────────
     'MH1': (103.5,     47.5,       0),
     'MH2': (161.5,     47.5,       0),
 
-    # ── Channel enable switch ─────────────────────────────────────────────
-    'SW1': (138.7564,  83.6932,    0),
+    # ── Channel enable switch (body overhangs board bottom by design) ─────
+    'SW1': (140.4688,  81.9660,    0),
 
     # ── Boost converter input ─────────────────────────────────────────────
-    'C6':  (106.2484,  60.7531,  -90),   # 22µF/16V 1210 bulk input
-    'C8':  (109.1400,  60.7531,  -90),   # 4.7µF/50V 1210 EMI filter
+    'C6':  (106.2484,  60.7531,  -90),   # 22µF/16V bulk input
+    'C8':  (109.1400,  60.7531,  -90),   # 4.7µF/50V EMI filter
     'L2':  (114.9960,  59.7156,    0),   # 2.2µH Würth HCI-7040
 
-    # ── Control passives ──────────────────────────────────────────────────
-    'C1':  (153.3400,  61.9217,   90),   # 10µF/50V 1210 VIN bypass
-    'R5':  (162.2808,  63.5764,   90),   # 100kΩ EN/UVLO pullup
-    'C17': (148.7680,  61.8631,   90),   # 1µF INTVCC bypass
-    'C18': (151.1048,  61.9139,   90),   # 100nF BIAS bypass
-    'C2':  (146.3896,  63.8148,   90),   # 1µF VC comp
-    'R4':  (144.1452,  63.8548,   90),   # 22.1kΩ VC comp
-    'C4':  (144.1452,  59.7908,   90),   # 1nF VC HF comp
+    # ── Boost row: L1 → D1 → C9 horizontal at y≈61.5 ────────────────────
+    'L1':  (144.1700,  61.4732,    0),   # 22µH Coilcraft XAL5030
+    'D1':  (151.0092,  61.4936,    0),   # SMA Schottky
+    'C9':  (158.1152,  61.4936,    0),   # 10µF/50V 1210 bulk output
 
     # ── U1: LT8362 MSOP-16-EP ────────────────────────────────────────────
-    'U1':  (152.0967,  66.9546,  -90),
+    'U1':  (146.8878,  67.3393,    0),
 
-    # ── Feedback divider ──────────────────────────────────────────────────
-    'R1':  (144.0944,  70.0552,   90),   # 1MΩ FBX top
-    'C12': (146.3296,  70.0927,   90),   # 4.7pF FBX feedforward
-    'R2':  (148.5648,  68.0740,   90),   # 34.8kΩ FBX bottom
+    # ── Control passives (left column around U1) ──────────────────────────
+    'R5':  (143.5096,  57.1552,  180),   # 100kΩ EN/UVLO pullup
+    'C1':  (141.4606,  66.0960,  180),   # 10µF/50V 1210 VIN bypass
+    'C18': (141.4528,  68.3312,  180),   # 100nF BIAS bypass
+    'C17': (141.4020,  70.6680,  180),   # 1µF INTVCC bypass
+    'C2':  (143.7481,  73.0464,  180),   # 1µF VC comp
+    'R4':  (143.7880,  75.2908,  180),   # 22.1kΩ VC comp
+    'C4':  (139.7241,  75.2908,  180),   # 1nF VC HF comp
 
-    # ── Timing / soft-start ───────────────────────────────────────────────
-    'R3':  (148.9204,  72.4080,  -90),   # 121kΩ RT
-    'C5':  (151.2572,  72.4080,  -90),   # 10nF SS
-    'R11': (153.5940,  72.4080,  -90),   # 100kΩ SYNC/MODE
+    # ── Timing / soft-start (right column around U1) ──────────────────────
+    'R11': (152.3412,  65.8420,    0),   # 100kΩ SYNC/MODE
+    'C5':  (152.3412,  68.1788,    0),   # 10nF SS
+    'R3':  (152.3412,  70.5156,    0),   # 121kΩ RT
 
-    # ── L1: boost inductor ────────────────────────────────────────────────
-    'L1':  (157.9628,  64.2368,  -90),   # 22µH Coilcraft XAL5030
+    # ── Feedback divider (below U1 right) ─────────────────────────────────
+    'R2':  (148.0072,  70.8712,  180),   # 34.8kΩ FBX bottom  (1.78mm pad→U1 FBX)
+    'C12': (150.0259,  73.1064,  180),   # 4.7pF FBX feedforward
+    'R1':  (149.9884,  75.3416,  180),   # 1MΩ FBX top
 
-    # ── D1: Schottky rectifier ────────────────────────────────────────────
-    'D1':  (156.6928,  71.0760,  -90),   # SMA
-
-    # ── Output bulk + filter chain ────────────────────────────────────────
-    'C9':  (156.6928,  77.3233,  -90),   # 10µF/50V 1210 bulk output
-    'FB1': (152.6288,  76.6580,    0),   # 1206 ferrite bead
-    'C3':  (142.5500,  77.7033,  -90),   # 1µF/100V 1206
-    'C7':  (144.8056,  77.7033,  -90),   # 100nF 0805
-    'C10': (147.0916,  77.7033,  -90),   # 100nF 0805
-    'C11': (149.3776,  77.7033,  -90),   # 100nF 0805
+    # ── FB1 + output cap column (vertical at x≈157.6) ────────────────────
+    'FB1': (156.5912,  66.8072,   90),   # 1206 ferrite bead
+    'C11': (157.6365,  70.0584,    0),   # 100nF 0805
+    'C10': (157.6365,  72.3444,    0),   # 100nF 0805
+    'C7':  (157.6365,  74.6304,    0),   # 100nF 0805
+    'C3':  (157.6365,  76.8860,    0),   # 1µF/100V 1206
 
     # ── LED indicator ─────────────────────────────────────────────────────
     'R10': (107.5184,  75.4984,   90),   # 12kΩ LED current limit

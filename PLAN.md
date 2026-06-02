@@ -47,3 +47,29 @@
 #15 - :check: J4 vs J3 inconsistency: incorrect, close this item.
    J4 is 2.54mm above R8, J3 is 2.54mm below R6 — both are exactly one pin pitch from their
    bias resistors, symmetric by design. No issue.
+
+## Pre-routing checklist (from assembly/edge audit)
+
+#17 - :check: SW1 pads are within board. Body overhang is by design.
+   All SW1 pads at y=81.97mm (7mm inside board). Bbox extends to y=90.51mm because the
+   switch housing/actuator extends 8.5mm below the pad row — panel-mount style. Copper OK.
+
+#18 - :check: J9 not required. Board connects directly J1↔HiFiBerry; no Pi GPIO pass-through needed.
+
+#19 - :check: C6/C8 pad gap confirmed safe. Actual pad width=1.175mm (not 2.8mm as assumed).
+   Pad-to-pad gap = 2.89 − 2×0.725 = 1.44mm. Passes 0.18mm DRC rule by wide margin.
+
+#20 - :check: C13/C14 and C15/C16 pad gap confirmed safe.
+   Pad height (y-dimension) = 1.450mm → ±0.725mm. Gap = 2.54 − 2×0.725 = 1.09mm. Fine.
+
+#21 - Place 3×3 thermal vias under U1 EP before copper pour.
+   U1 EP (pad17/GND) at (146.89, 67.34). Per DRC rule thermal_via: min 0.6mm via diameter.
+   Place via grid before running GND pour so the pour connects through them.
+
+#22 - Plan the +48V bus from output cap column to injection resistors.
+   Filtered +48V exits C3 at (157.64, 76.89) and must reach R6 at x=131.5 (27mm) and
+   R8 at x=103.2 (54mm). Route as a continuous 0.5mm bus (power DRC rule); at ~12mA total
+   load the voltage drop is negligible. The bus crosses the full board width — plan the
+   route before laying GND pour.
+
+#23 - :check: R5 moved. Now at (143.51, 57.16), bbox right=147.85mm. Well clear of board edge.
