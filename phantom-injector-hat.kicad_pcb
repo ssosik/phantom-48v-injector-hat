@@ -4402,7 +4402,7 @@
 		(property "Reference" "R6"
 			(at 0 -1.65 0)
 			(layer "F.SilkS")
-			(uuid "a1c0c4f3-87bc-41d3-a9f9-126055db3771")
+			(uuid "59dec9dc-888f-4756-abd1-b4a002b2ba3d")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -4413,7 +4413,7 @@
 		(property "Value" "6.81 kΩ 0.1%"
 			(at 0 1.65 0)
 			(layer "F.Fab")
-			(uuid "e519bd8d-095d-4f20-b81f-dbbebf1cc66b")
+			(uuid "793204cf-7a0f-4fa4-bc18-e3a99fcc5687")
 			(effects
 				(font
 					(size 1 1)
@@ -4425,7 +4425,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "33c46fc3-38cb-4d79-8c1b-33c083ec8c04")
+			(uuid "87525043-4092-48b5-959a-6de4c46d57ec")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4436,7 +4436,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f41cf228-a084-4cdf-ab47-971be92926e0")
+			(uuid "d1e3fc28-c569-430c-a1d3-b857cfa44613")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5979,7 +5979,7 @@
 		(at 153.8747 66.9546 -90)
 		(tags "LT8362EMSE-PBF ")
 		(property "Reference" "U1"
-			(at 0.0254 -3.1229 0)
+			(at -1.5494 3.1763 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "45d0ce12-a84d-4905-982d-599780d39510")

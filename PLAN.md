@@ -31,16 +31,21 @@
    +48V_RAW runs D1 → FB1 (6.9mm) → filtered +48V left to cap row → injection resistors.
 
 #13 - Move C9 (bulk output cap) closer to D1 cathode. Target ≤2mm.
-   D1 and C9 are now both at x=158.47; gap is still 6.25mm (Δy only). The straight-column
-   geometry is good but the gap needs to close. Move C9 up to y≈76–77 (≤2mm below D1).
+   D1=(158.47, 71.08), C9=(158.47, 77.32) — same x column, Δy=6.25mm. The straight-column
+   geometry is ideal for routing but the gap is too large. Move C9 up to y≈72–73 (≤2mm
+   below D1). FB1 at y=76.66 and output cap row at y=77.70 will need to shift down
+   slightly (~4mm) to restore the FB1→C11 clearance after C9 moves.
 
-#14 - FBX network: R2→U1 is 10.05mm, needs ≤8mm. R1→D1 is 12.44mm.
-   Current positions: R1=(146.08,73.62), C12=(148.31,73.66), R2=(143.89,71.64).
-   R2 is the high-impedance FBX sense node — the trace from R2 to U1 FBX pin is 10mm.
-   R1→D1 at 12mm is less critical: R1 is 1MΩ and senses +48V_RAW, which is filtered DC
-   after C9; noise coupling into FBX via R1 is attenuated ≈97% by the divider ratio.
-   Primary fix: move R2 (and R1/C12 together) right/up until R2→U1 ≤8mm.
-   With U1 at (153.87, 70.52), target R2 near (148–151, 71–73).
+#14 - :check: FBX network resolved. R2→U1 = 3.71mm. ✓
+   R2=(150.34, 68.07), U1=(153.87, 66.95) — 3.71mm separation. Excellent.
+   R1→D1 = 12.64mm; accepted as non-critical (R1 is 1MΩ; noise into FBX attenuated
+   ≈97% by divider ratio; +48V_RAW after C9 is filtered DC).
+
+#16 - L1 x-offset from D1 is 3.1mm. Review after C9 repositioning.
+   L1=(161.57, 64.24), D1=(158.47, 71.08) — Δx=3.10mm. The switching loop
+   SW→L1→D1→C9 wants L1 and D1 co-linear in x to minimise loop inductance. A 3mm
+   lateral offset adds a ~3mm jog on the SW node trace. Consider shifting L1 left
+   to x≈158–159 to realign with D1.
 
 #15 - :check: J4 vs J3 inconsistency: incorrect, close this item.
    J4 is 2.54mm above R8, J3 is 2.54mm below R6 — both are exactly one pin pitch from their
