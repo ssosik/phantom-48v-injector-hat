@@ -5235,12 +5235,12 @@
 		(uuid "03b9fd39-cb48-4a67-a611-5601196186cc")
 	)
 	(label "+48V"
-		(at 314.96 53.34 180)
+		(at 325.12 53.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "04503c0d-cb9a-4430-a8cf-8a315439cc22")
 	)
@@ -6195,12 +6195,12 @@
 		(uuid "f258726b-fab9-4714-8238-cabceecf8c31")
 	)
 	(label "+48V_SW"
-		(at 325.12 53.34 0)
+		(at 314.96 53.34 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "f4538ce1-8928-45fa-a550-6dd11c16aea2")
 	)
