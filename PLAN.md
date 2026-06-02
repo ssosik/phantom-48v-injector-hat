@@ -22,17 +22,26 @@
 
 ## PCB layout optimizations (from placement review)
 
-#11 - Move C1 (VIN bypass 10µF) and C18 (BIAS bypass 100nF) closer to U1.
-   Currently at y=59.72, 10.8–11.8mm from U1. Should be within 3–5mm of U1's VIN and BIAS pins (target y≈66–68, between C17 and U1). At current distance the bypass inductance makes these caps nearly useless against HF VIN noise.
+#11 - :check: Move C1 (VIN bypass 10µF) and C18 (BIAS bypass 100nF) closer to U1.
+   Resolved: C1 and C18 moved to y=65.48, now 5.1–5.3mm from U1. Acceptable.
 
-#12 - Move FB1 to y≈71–72 to match the output filter cap row.
-   FB1 is at y=79.27, output caps C3/C7/C10/C11 are at y=70.16 — a 9mm mismatch creating a 21.8mm diagonal +48V trace from FB1 to C11. Moving FB1 into the same y-band as the caps makes +48V a clean horizontal run and cuts FB1→SW1 trace length significantly.
+#12 - :check: FB1 y-mismatch with output cap row resolved. New problem: D1→FB1 is 32mm.
+   FB1 is now at (128.40, 69.11), only 1mm from C11 — alignment fixed. But the +48V_RAW
+   trace from D1 (160.10, 74.64) to FB1 is now 32mm. Ripple from the switching node travels
+   32mm unfiltered before reaching FB1. FB1 needs to move back right to ≤10mm from D1, while
+   keeping FB1 at y≈69–70 to stay aligned with the output cap row.
 
-#13 - Move C9 (bulk output cap) from y=80.89 to y≈77–78 (≤2mm from D1 cathode).
-   Current D1→C9 gap is 6.25mm. The bulk cap must be immediately adjacent to D1 to absorb switching transients at their source; a 6mm stub adds inductance to the +48V_RAW node.
+#13 - Move C9 (bulk output cap) to y≈77–78 (≤2mm from D1 cathode).
+   D1→C9 gap is still 6.25mm (both at x=160.10). The bulk cap must be immediately adjacent
+   to D1 cathode to absorb switching transients; a 6mm stub adds inductance to +48V_RAW.
 
-#14 - Rearrange FBX network (R1, R2, C12) to horizontal, move R1 closer to D1.
-   Current vertical column at x≈147 puts R1 12.9mm from D1 (+48V_RAW source) and wedges the FBX traces between the timing row and FB1. A horizontal arrangement with R1 at x≈155–158 shortens the +48V_RAW sensing trace and reduces routing congestion.
+#14 - Find a stable position for the FBX network (R1, R2, C12) that satisfies both constraints.
+   R1 must be close to D1 (the +48V_RAW source for feedback sensing) and R2 must be close to
+   U1's FBX pin. Current position (R1 at 154.31,81.12 / R2 at 148.72,80.09) puts R1 8.69mm
+   from D1 (improved) but R2 10.87mm from U1 (worse — was 7.2mm). The FBX trace now climbs
+   10mm from y=80 to U1 at y=70.5, crossing the timing row at y=75.97. Target: position the
+   network so R2→U1 ≤8mm and R1→D1 ≤10mm simultaneously.
 
-#15 - Move J4 (R channel XLR pigtail) down to y≈86–87 to match J3 (L channel).
-   J4 is at y=79.58, 10mm above R8/R9 (y=82–85), requiring a trace running upward from the bias resistors. J3 (L channel) is correctly below R6/R7. Moving J4 to the same y-band as J3 makes both channels consistent and straightens the XLR_R routing.
+#15 - :check: J4 vs J3 inconsistency: incorrect, close this item.
+   J4 is 2.54mm above R8, J3 is 2.54mm below R6 — both are exactly one pin pitch from their
+   bias resistors, symmetric by design. No issue.
