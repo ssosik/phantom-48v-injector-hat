@@ -510,8 +510,8 @@ After basic function is confirmed, before committing to the design across all 5 
 
 1. ~~**LT8362 pin numbering**~~ — resolved by using the AD-provided KiCad symbol. Wire by pin name, not pin number. See section 3.2.
 2. **V_FB (feedback reference voltage)** — the AD typical-application schematic uses R1=1M, R2=34.8k for 48V output, which implies V_FB ≈ 1.6V. Verify against the Electrical Characteristics table.
-3. **SYNC/MODE pin configuration for SSFM** — datasheet should specify whether SSFM is enabled by tying SYNC/MODE to GND, to V_IN, or via a resistor.
-4. **BIAS pin connection** — datasheet shows it tied to V_IN in some examples; verify our 5V V_IN is high enough to use BIAS or if it should be left floating.
+3. ~~**SYNC/MODE pin configuration for SSFM**~~ — resolved. Datasheet page 7 SYNC/MODE table: a 100kΩ resistor to GND selects Burst/SSFM mode. R11 = 100kΩ to GND is correct.
+4. ~~**BIAS pin connection**~~ — resolved. Datasheet page 7: "INTVCC draws power from the BIAS pin if 4.4V ≤ BIAS ≤ VIN." With BIAS = +5V_FILT = VIN = 5V, both conditions are met (4.4V ≤ 5V ≤ 5V). This reduces VIN quiescent current from ~1200 µA to ~22 µA (55× improvement at light load). BIAS tied to +5V_FILT via C18 bypass is correct and optimal. "If unused, tie to GND" applies only when no suitable voltage is available.
 5. **HiFiBerry J4 pinout** — confirmed pinout in section 3.4 above against the DAC2 ADC Pro datasheet PDF. Worth re-verifying before locking the board.
 6. **C&K OS102011MA1QN1 footprint** — KiCad's `Switch:SW_SPST` symbol works for ERC but the PCB footprint needs to match the actual mechanical drawing. Pull from C&K's datasheet.
 7. **Pi 5V current draw under transient (e.g., startup inrush of LT8362)** — should not exceed 600 mA on GPIO. C5 soft-start (10 nF) limits inrush; verify in LTspice if uncertain.
