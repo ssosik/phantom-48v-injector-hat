@@ -3,9 +3,9 @@
 Component placement script for phantom-injector-hat.
 Run AFTER "Tools > Update PCB from Schematic" (F8) in KiCad.
 
-Board: 65×38mm Pi HAT (shortened to y=82 to clear HiFiBerry RCA jacks)
-  TL corner: (100, 44)    TR: (165, 44)
-  BL corner: (101, 82)    BR: (162, 82)   [1mm radius at BL, 3mm elsewhere]
+Board: 65×44.84mm Pi HAT (shorter than standard 56.5mm to clear HiFiBerry RCA jacks)
+  TL corner: (100, 44)      TR: (165, 44)
+  BL corner: (100, 88.839)  BR: (165, 88.839)   [3mm radius at all corners]
   Mounting holes: (103.5,47.5), (161.5,47.5), (103.5,78.5), (161.5,78.5)
   J9 (40-pin GPIO, Pi HAT spec position): (108.37, 48.77) rot -90°
   J1 (40-pin GPIO, HiFiBerry top-side header): (108.37, 53.91) rot -90°
