@@ -69,12 +69,12 @@ Raspberry Pi 4B
 | C7 | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
 | C8 | 4.7 µF / 50V X7R | Input EMI filter | 1210 | Murata GRM32ER71H475KA88L | 1 |
 | C9 | 10 µF / 50V X7R | Bulk output | 1210 | Murata GRM32ER71H106KA12L | 1 |
-| C10a | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
-| C10b | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
-| C11 | 4.7 pF C0G | FBX feedforward | 0805 | Murata GRM2165C1H4R7CA01D | 1 |
+| C10 | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
+| C11 | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
+| C12 | 4.7 pF C0G | FBX feedforward | 0805 | Murata GRM2165C1H4R7CA01D | 1 |
 
 **Notes**:
-- Reference designators C1–C11, R1–R5, L1–L2, D1, FB1, U1 mirror the LT8362 typical-application schematic exactly to make cross-checking trivial.
+- Reference designators C1–C9, R1–R5, L1–L2, D1, FB1, U1 mirror the LT8362 typical-application schematic to make cross-checking trivial. C10 and C11 replace the AD reference's C10a/C10b (split into two individually-placed 0805s), and C12 replaces the AD reference's C11 as the FBX feedforward cap.
 - C8 placement: on the **input** side of L2 (between Pi and the inductor), in parallel with C6 as part of the input EMI filter. C1 is the V_IN bypass on the **output** side of L2 (between the inductor and U1).
 - C7, C3, C10a, C10b are arranged around FB1 in a Pi-filter network on the output.
 
@@ -87,10 +87,10 @@ Raspberry Pi 4B
 | R8 | 6.81 kΩ 0.1% | XLR pin 2, R channel bias | 0805 | Susumu RR1220P-682-D | 1 |
 | R9 | 6.81 kΩ 0.1% | XLR pin 3, R channel bias | 0805 | Susumu RR1220P-682-D | 1 |
 | SW1 | SPST slide | P48 enable, both channels | RA PCB | C&K OS102011MA1QN1 | 1 |
-| C12 | 2.2 µF / 100V X7R | DC-block, L+ to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
-| C13 | 2.2 µF / 100V X7R | DC-block, L- to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
-| C14 | 2.2 µF / 100V X7R | DC-block, R+ to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
-| C15 | 2.2 µF / 100V X7R | DC-block, R- to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
+| C13 | 2.2 µF / 100V X7R | DC-block, L+ to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
+| C14 | 2.2 µF / 100V X7R | DC-block, L- to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
+| C15 | 2.2 µF / 100V X7R | DC-block, R+ to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
+| C16 | 2.2 µF / 100V X7R | DC-block, R- to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
 
 **Note on R6–R9 matching**: phantom bias network CMRR depends on matching between the two resistors feeding each XLR pair. The 0.1% Susumu RR1220P series is matched within ±0.1%, giving roughly 60 dB CMRR contribution from the resistor pair. For wildlife recording this is excellent. If a single 0.1% spec is unavailable, hand-selecting four resistors from a 1% reel by sorting on a DMM works too.
 
@@ -126,17 +126,17 @@ Raspberry Pi 4B
 | `+5V_FILT` | Post-EMI-filtered 5V | L2 (output-side terminal); L1 (input-side terminal); U1 `V_IN`; C1 |
 | `SW_NODE` | Boost switch node | L1 (output-side terminal); D1 anode; U1 `SW` |
 | `+48V_RAW` | Boost output before output filter | D1 cathode; C9; FB1 (input-side terminal) |
-| `+48V` | Filtered phantom rail | FB1 (output-side terminal); C3; C7; C10a; C10b; R10; SW1 (common terminal) |
+| `+48V` | Filtered phantom rail | FB1 (output-side terminal); C3; C7; C10; C11; R10; SW1 (common terminal) |
 | `+48V_SW` | Switched phantom rail (both channels) | SW1 (switched terminal); R6; R7; R8; R9 |
-| `XLR_L_HOT` | L channel XLR pin 2 | R6 (XLR-side terminal); C12 (XLR-side terminal); J3 pin 2 |
-| `XLR_L_COLD` | L channel XLR pin 3 | R7 (XLR-side terminal); C13 (XLR-side terminal); J3 pin 3 |
-| `XLR_R_HOT` | R channel XLR pin 2 | R8 (XLR-side terminal); C14 (XLR-side terminal); J4 pin 2 |
-| `XLR_R_COLD` | R channel XLR pin 3 | R9 (XLR-side terminal); C15 (XLR-side terminal); J4 pin 3 |
-| `J4_L+` | HiFiBerry J4 L+ | C12 (J4-side terminal); J2 pin 5 |
-| `J4_L-` | HiFiBerry J4 L- | C13 (J4-side terminal); J2 pin 6 |
-| `J4_R+` | HiFiBerry J4 R+ | C14 (J4-side terminal); J2 pin 1 |
-| `J4_R-` | HiFiBerry J4 R- | C15 (J4-side terminal); J2 pin 2 |
-| `FBX` | Feedback to U1 | U1 `FBX`; R1 (between +48V_RAW and FBX); R2 (between FBX and GND); C11 (parallel with R1) |
+| `XLR_L_HOT` | L channel XLR pin 2 | R6 (XLR-side terminal); C13 (XLR-side terminal); J3 pin 2 |
+| `XLR_L_COLD` | L channel XLR pin 3 | R7 (XLR-side terminal); C14 (XLR-side terminal); J3 pin 3 |
+| `XLR_R_HOT` | R channel XLR pin 2 | R8 (XLR-side terminal); C15 (XLR-side terminal); J4 pin 2 |
+| `XLR_R_COLD` | R channel XLR pin 3 | R9 (XLR-side terminal); C16 (XLR-side terminal); J4 pin 3 |
+| `J4_L+` | HiFiBerry J4 L+ | C13 (J4-side terminal); J2 pin 5 |
+| `J4_L-` | HiFiBerry J4 L- | C14 (J4-side terminal); J2 pin 6 |
+| `J4_R+` | HiFiBerry J4 R+ | C15 (J4-side terminal); J2 pin 1 |
+| `J4_R-` | HiFiBerry J4 R- | C16 (J4-side terminal); J2 pin 2 |
+| `FBX` | Feedback to U1 | U1 `FBX`; R1 (between +48V_RAW and FBX); R2 (between FBX and GND); C12 (parallel with R1) |
 | `VC` | Compensation | U1 `VC`; R4 (in series with C4 to GND); C2 (to GND) |
 | `RT` | Frequency-setting | U1 `RT`; R3 (to GND) |
 | `SS` | Soft-start | U1 `SS`; C5 (to GND) |
@@ -144,10 +144,10 @@ Raspberry Pi 4B
 | `BIAS` | Internal bias | U1 `BIAS`; tied to +5V_FILT (verify in datasheet — see open item 4) |
 | `INTVCC` | Internal regulator output | U1 `INTVCC`; bypass cap to GND (typ. 1 µF / 16V, verify in datasheet) |
 | `SYNC_MODE` | Mode select | U1 `SYNC/MODE`; GND for SSFM-enabled operation (verify in datasheet) |
-| `GND` | System ground | J1 pins 6, 9, 14, 20, 25, 30, 34, 39; J2 pins 3, 4; U1 `GND` and exposed pad; R2 (bottom terminal); R3 (ground-side terminal); C2, C4, C5, C7, C10a, C10b (ground-side terminal each); C6, C8 (ground-side terminal each); C9 (ground-side terminal); C1 (ground-side terminal); D2 cathode; XLR pin 1 on J3 and J4 |
+| `GND` | System ground | J1 pins 6, 9, 14, 20, 25, 30, 34, 39; J2 pins 3, 4; U1 `GND` and exposed pad; R2 (bottom terminal); R3 (ground-side terminal); C2, C4, C5, C7, C10, C11 (ground-side terminal each); C6, C8 (ground-side terminal each); C9 (ground-side terminal); C1 (ground-side terminal); D2 cathode; XLR pin 1 on J3 and J4 |
 
 **Convention notes**:
-- **All capacitors in this design are non-polarized ceramic** (X7R or C0G). Use `Device:C` (the symmetric symbol with two parallel plates), not `Device:C_Polarized`. Either terminal can connect to either net — orientation does not matter for assembly. Where the netlist describes a cap's terminals (e.g., "C12 (XLR-side terminal)"), it's identifying *which* net the terminal sits on, not implying a polarity requirement.
+- **All capacitors in this design are non-polarized ceramic** (X7R or C0G). Use `Device:C` (the symmetric symbol with two parallel plates), not `Device:C_Polarized`. Either terminal can connect to either net — orientation does not matter for assembly. Where the netlist describes a cap's terminals (e.g., "C13 (XLR-side terminal)"), it's identifying *which* net the terminal sits on, not implying a polarity requirement.
 - **L1 (boost inductor)** sits between `+5V_FILT` (input side) and `SW_NODE` (output side). The "input-side terminal" is the one closer to U1's V_IN pin; the "output-side terminal" is the one closer to the SW pin and D1. Inductors are non-polarized; orientation doesn't matter.
 - **L2 (input EMI filter)** sits between `+5V_PI` (input side, Pi GPIO) and `+5V_FILT` (output side, filtered). Non-polarized.
 - **FB1 (output ferrite bead)** sits between `+48V_RAW` (boost converter output, ripple-bearing) and `+48V` (filtered rail, clean). Non-polarized.
