@@ -1,53 +1,11 @@
 ** Drc report for phantom-injector-hat.kicad_pcb **
-** Created on 2026-06-03T14:04:57 **
+** Created on 2026-06-03T14:24:50 **
 ** Report includes: Errors, Warnings **
 
-** Found 12 DRC violations **
-[clearance]: Clearance violation (rule 'sw_node_isolation' clearance 0.5000 mm; actual 0.2508 mm)
-    Rule: sw_node_isolation; error
-    @(148.9960 mm, 67.5895 mm): Track [/SYNC_MODE] on F.Cu, length 0.5977 mm
-    @(148.9960 mm, 66.5887 mm): Track [/SW_NODE] on F.Cu, length 1.0008 mm
-[clearance]: Clearance violation (rule 'signal' clearance 0.1800 mm; actual 0.1366 mm)
-    Rule: signal; error
-    @(149.0072 mm, 70.8712 mm): Track [/FBX] on F.Cu, length 1.7694 mm
-    @(148.9960 mm, 68.5902 mm): Track [/RT] on F.Cu, length 0.7065 mm
-[clearance]: Clearance violation (rule 'signal' clearance 0.1800 mm; actual 0.1254 mm)
-    Rule: signal; error
-    @(149.0072 mm, 69.1018 mm): Track [/FBX] on F.Cu, length 0.0158 mm
-    @(148.9960 mm, 68.5902 mm): Track [/RT] on F.Cu, length 0.7065 mm
-[clearance]: Clearance violation (rule 'signal' clearance 0.1800 mm; actual 0.1092 mm)
-    Rule: signal; error
-    @(149.0072 mm, 70.8712 mm): Track [/FBX] on F.Cu, length 1.7694 mm
-    @(148.9960 mm, 68.5902 mm): Pad 10 [/RT] of U1 on F.Cu
-[clearance]: Clearance violation (rule 'sw_node_isolation' clearance 0.5000 mm; actual 0.3803 mm)
-    Rule: sw_node_isolation; error
-    @(149.5937 mm, 67.5895 mm): Track [/SYNC_MODE] on F.Cu, length 2.4713 mm
-    @(148.9960 mm, 66.5887 mm): Track [/SW_NODE] on F.Cu, length 1.0008 mm
-[clearance]: Clearance violation (rule 'sw_node_isolation' clearance 0.5000 mm; actual 0.4404 mm)
-    Rule: sw_node_isolation; error
-    @(145.8250 mm, 61.4732 mm): Track [/SW_NODE] on F.Cu, length 3.1638 mm
-    @(144.5096 mm, 57.1552 mm): Track [/EN_UVLO] on F.Cu, length 8.1628 mm
-[clearance]: Clearance violation (rule 'sw_node_isolation' clearance 0.5000 mm; actual 0.2234 mm)
-    Rule: sw_node_isolation; error
-    @(148.9960 mm, 67.5895 mm): Pad 12 [/SYNC_MODE] of U1 on F.Cu
-    @(148.9960 mm, 66.5887 mm): Track [/SW_NODE] on F.Cu, length 1.0008 mm
-[clearance]: Clearance violation (rule 'signal' clearance 0.1800 mm; actual 0.0980 mm)
-    Rule: signal; error
-    @(148.9960 mm, 68.5902 mm): Pad 10 [/RT] of U1 on F.Cu
-    @(149.0072 mm, 69.1018 mm): Track [/FBX] on F.Cu, length 0.0158 mm
-[track_width]: Track width (board setup constraints min width 0.5000 mm; actual 0.2500 mm)
-    Rule: power; error
-    @(150.9884 mm, 73.1814 mm): Track [/+48V_RAW] on F.Cu, length 0.1061 mm
-[track_width]: Track width (board setup constraints min width 0.5000 mm; actual 0.2500 mm)
-    Rule: power; error
-    @(151.0634 mm, 75.2666 mm): Track [/+48V_RAW] on F.Cu, length 0.1061 mm
+** Found 1 DRC violations **
 [track_width]: Track width (board setup constraints min width 0.5000 mm; actual 0.2500 mm)
     Rule: power; error
     @(142.7493 mm, 68.5902 mm): Track [/+5V_FILT] on F.Cu, length 2.0303 mm
-[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; 1 spokes connected to isolated island)
-    Local override; error
-    @(101.0026 mm, 88.5095 mm): Zone 'GND' [/GND] on F.Cu and B.Cu, priority 0
-    @(107.0534 mm, 79.5784 mm): PTH pad 1 [/GND] of J4
 
 ** Found 0 unconnected pads **
 
