@@ -90,10 +90,15 @@
    Pad edge to board edge ≈ 0.84mm (1.6mm THT pad). Passes standard fab rules (JLCPCB 0.3mm,
    PCBWay 0.5mm). Flag if fab changes — this is the tightest pad on the board.
 
-#26 - Via transitions required: J1 (+5V_PI pads 2,4) is on B.Cu at y=51.37; C6/C8/L2 are
-   on F.Cu at y=59.72. Place explicit vias near J1 pads before routing. A dangling F.Cu
-   track exists at (110.91, 51.31) — verify it is the intended via stub or delete it.
+#26 - :check: +5V_PI fully routed — no vias needed. J1 is THT (PAD_ATTRIB_PTH); pads 2 and 4
+   are directly accessible from F.Cu. Six 1.0mm-wide F.Cu tracks connect:
+   J1:4 ↔ J1:2 (2.54mm) → diagonal/vertical → C6 → C8 → L2 (bus at y=59.716).
+   Dangling track resolved — it is the track ending at J1 pad4.
 
-#27 - Board has 101 existing copper tracks (partial routing). Run DRC before routing further
-   to confirm no clearance violations in the existing traces.
-   See TESTS.md for DRC command.
+#27 - :check: (superseded) +5V_FILT is also routed: 23mm bus from L2:2 at (117.55,59.72)
+   east to junction at x≈142.5, branching north to R5 and south to C1 → U1 VIN.
+   ⚠ ISSUE: Short stubs into U1 VIN pins (pad3, pad7) are 0.25mm wide — violates the
+   `power` DRC rule (min 0.5mm). Redraw those stubs at ≥0.5mm before running DRC.
+   Affected tracks: near (145.0,66.6), (145.5,67-68), (145.3,68.6).
+
+#28 - assess the layout for hand-placed hot plate soldering. Are these components too close?

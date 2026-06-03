@@ -2,6 +2,21 @@
 
 ## Headless checks (run any time)
 
+### Net connectivity — drift checker
+```bash
+# After every "Update PCB from Schematic" (F8):
+python3 check_netlist.py
+
+# Re-save golden when you intentionally change the schematic:
+python3 check_netlist.py --save
+
+# Print the full current netlist:
+python3 check_netlist.py --dump
+```
+Compares the 24 named nets (104 pad assignments) against `netlist_golden.json`.
+Ignores `unconnected-` auto-names so unused J1 GPIO pins don't generate false positives.
+Exits 0 on clean match, exits 1 and prints per-net diffs on any drift.
+
 ### DRC — PCB design rules
 ```bash
 /Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli pcb drc \
