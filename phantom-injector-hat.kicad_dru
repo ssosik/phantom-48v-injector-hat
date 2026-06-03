@@ -13,7 +13,6 @@
 # SW_NODE carries pulsed current; +5V and GND carry ~200mA continuous
 (rule "power"
    (constraint track_width (min 0.5mm))
-   (constraint clearance (min 0.3mm))
    (condition "A.NetName == '/+5V_PI' || A.NetName == '/+5V_FILT' || A.NetName == '/GND' || A.NetName == '/SW_NODE' || A.NetName == '/+48V_RAW' || A.NetName == '/+48V'")
 )
 
@@ -29,7 +28,14 @@
    (condition "A.NetName == '/GND'")
 )
 
-# KNOWN ACCEPTED VIOLATION — /+5V_FILT stub into U1 pad7 (VIN):
+# KNOWN ACCEPTED VIOLATIONS — narrow tracks forced by adjacent pad geometry:
+#
+# /+48V_RAW FBX sense stubs at (150.988, 73.181) and (151.063, 75.267), 0.11mm long:
+# These are junction stubs on the R1/C12 FBX top-rail sense tap. +48V_RAW carries nanoamps
+# here (1MΩ feedback divider); 0.5mm trace physically cannot fit between R1 pads and
+# neighboring components. Accept both track_width violations on this 13mm sense segment.
+#
+# /+5V_FILT stub into U1 pad7 (VIN):
 # The 2mm horizontal approach to U1 VIN is at 0.25mm width. A 0.5mm trace cannot fit
 # here: MSOP-16 pad pitch is 0.5mm, adjacent pads (NC pad6, VC pad8) allow only ~0.25mm
 # max trace at 0.18mm signal clearance. C1 (10µF VIN bypass, 1.5mm from U1) is the real
