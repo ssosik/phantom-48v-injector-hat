@@ -1,50 +1,26 @@
 ** Drc report for phantom-injector-hat.kicad_pcb **
-** Created on 2026-05-29T21:29:30 **
+** Created on 2026-06-03T13:29:57 **
 ** Report includes: Errors, Warnings **
 
-** Found 10 DRC violations **
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(108.3700 mm, 48.7700 mm): Footprint J9
-    @(108.3700 mm, 53.9100 mm): Footprint J1
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(107.0400 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(107.0400 mm, 48.7700 mm): Segment of J9 on B.Silkscreen
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(107.0400 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(107.0400 mm, 50.1000 mm): Segment of J9 on B.Silkscreen
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(107.0400 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(107.0400 mm, 48.7700 mm): Segment of J9 on B.Silkscreen
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(107.0400 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(107.0400 mm, 50.1000 mm): Segment of J9 on B.Silkscreen
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(107.0400 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(109.6400 mm, 47.5000 mm): Segment of J9 on B.Silkscreen
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(107.0400 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(109.6400 mm, 50.1000 mm): Segment of J9 on B.Silkscreen
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(157.9600 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(109.6400 mm, 50.1000 mm): Segment of J9 on B.Silkscreen
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(107.0400 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(157.9600 mm, 44.9000 mm): Segment of J9 on B.Silkscreen
-[silk_overlap]: Silkscreen clearance
-    Rule: board setup constraints silk; warning
-    @(157.9600 mm, 50.0400 mm): Segment of J1 on B.Silkscreen
-    @(157.9600 mm, 44.9000 mm): Segment of J9 on B.Silkscreen
+** Found 3 DRC violations **
+[clearance]: Clearance violation (rule 'signal' clearance 0.1800 mm; actual 0.1254 mm)
+    Rule: signal; error
+    @(144.7796 mm, 69.0906 mm): Track [/VC] on F.Cu, length 3.9498 mm
+    @(142.7493 mm, 68.5902 mm): Track [/+5V_FILT] on F.Cu, length 2.0303 mm
+[clearance]: Clearance violation (rule 'signal' clearance 0.1800 mm; actual 0.0980 mm)
+    Rule: signal; error
+    @(142.7493 mm, 68.5902 mm): Track [/+5V_FILT] on F.Cu, length 2.0303 mm
+    @(144.7796 mm, 69.0906 mm): Pad 8 [/VC] of U1 on F.Cu
+[clearance]: Clearance violation (rule 'signal' clearance 0.1800 mm; actual 0.0980 mm)
+    Rule: signal; error
+    @(142.7493 mm, 68.5902 mm): Track [/+5V_FILT] on F.Cu, length 2.0303 mm
+    @(144.7796 mm, 68.0899 mm): Pad 6 [unconnected-(U1-NC-Pad6)] of U1 on F.Cu
 
-** Found 0 unconnected pads **
+** Found 1 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(142.4395 mm, 70.6680 mm): Pad 1 [/INTVCC] of C17 on F.Cu
+    @(144.7796 mm, 67.5895 mm): Pad 5 [/INTVCC] of U1 on F.Cu
 
 ** Found 0 Footprint errors **
 
