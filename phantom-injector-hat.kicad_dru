@@ -14,17 +14,24 @@
 (rule "power"
    (constraint track_width (min 0.5mm))
    (constraint clearance (min 0.3mm))
-   (condition "A.NetName == '+5V_PI' || A.NetName == '+5V_FILT' || A.NetName == 'GND' || A.NetName == 'SW_NODE' || A.NetName == '+48V_RAW' || A.NetName == '+48V'")
+   (condition "A.NetName == '/+5V_PI' || A.NetName == '/+5V_FILT' || A.NetName == '/GND' || A.NetName == '/SW_NODE' || A.NetName == '/+48V_RAW' || A.NetName == '/+48V'")
 )
 
 # SW_NODE gets extra clearance from all other nets — fast edges radiate
 (rule "sw_node_isolation"
    (constraint clearance (min 0.5mm))
-   (condition "A.NetName == 'SW_NODE' && B.NetName != 'SW_NODE'")
+   (condition "A.NetName == '/SW_NODE' && B.NetName != '/SW_NODE'")
 )
 
 # Thermal stitching vias under U1 EP: 0.6mm pad diameter (0.3mm drill is set in via properties)
 (rule "thermal_via"
    (constraint via_diameter (min 0.6mm))
-   (condition "A.NetName == 'GND'")
+   (condition "A.NetName == '/GND'")
 )
+
+# KNOWN ACCEPTED VIOLATION — /+5V_FILT stub into U1 pad7 (VIN):
+# The 2mm horizontal approach to U1 VIN is at 0.25mm width. A 0.5mm trace cannot fit
+# here: MSOP-16 pad pitch is 0.5mm, adjacent pads (NC pad6, VC pad8) allow only ~0.25mm
+# max trace at 0.18mm signal clearance. C1 (10µF VIN bypass, 1.5mm from U1) is the real
+# power delivery point; this stub carries only average current at negligible resistance.
+# Accept the one track_width DRC violation at (142.749, 68.590).
