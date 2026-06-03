@@ -15,7 +15,7 @@ Layout zones:
   U1 + passives:     x 140-158, y  65-76
   Output cap column: x 156-160, y  66-78  (FB1 + C11→C3 vertical)
   Phantom inject:    x 100-145, y  79-88
-  SW1:               x 138-143, y  80-84
+  SW1 + LED:         x 138-165, y  79-88  (SW1 beside C3 column; D2/R10 at x≈138.6)
 
 J2 (HiFiBerry connector): measured from MH1 +11.32mm east, +37.14mm south.
   Pin 1 (R−) is at the lower-right corner of J4 on the HiFiBerry.
@@ -44,8 +44,8 @@ PLACEMENTS = {
     'MH1': (103.5,     47.5,       0),
     'MH2': (161.5,     47.5,       0),
 
-    # ── Channel enable switch (body overhangs board bottom by design) ─────
-    'SW1': (140.4688,  81.9660,    0),
+    # ── Channel enable switch — directly below C3, +48V input is 5mm vertical ──
+    'SW1': (154.6060,  81.9660,    0),
 
     # ── Boost converter input ─────────────────────────────────────────────
     'C6':  (106.2484,  60.7531,  -90),   # 22µF/16V bulk input
@@ -86,9 +86,9 @@ PLACEMENTS = {
     'C7':  (157.6365,  74.6304,    0),   # 100nF 0805
     'C3':  (157.6365,  76.8860,    0),   # 1µF/100V 1206
 
-    # ── LED indicator ─────────────────────────────────────────────────────
-    'R10': (107.5184,  75.4984,   90),   # 12kΩ LED current limit
-    'D2':  (104.1308,  73.1776,  180),   # Green LED 3mm THT
+    # ── LED indicator — vertical column at x≈138.6, above injection row ─────
+    'R10': (138.5572,  80.3056,  -90),   # 12kΩ LED current limit
+    'D2':  (138.5732,  84.6932,  -90),   # Green LED 3mm THT
 
     # ── XLR pigtail connectors ────────────────────────────────────────────
     'J3':  (127.6782,  87.1984,  180),   # L channel XLR

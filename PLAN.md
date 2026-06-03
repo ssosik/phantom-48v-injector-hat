@@ -68,14 +68,15 @@
    3 additional GND stitching vias placed near boost section: (143.69, 65.30), (143.79, 70.89),
    (149.99, 69.88) — all GND net, same spec. Confirm these are intentional before pour.
 
-#22 - Plan the +48V / +48V_SW bus before copper pour.
-   Filtered +48V exits C3 at (157.64, 76.89) → SW1 pad2 (+48V) at (142.47, 81.97).
-   SW1 pad1 (+48V_SW) at (140.47, 81.97) fans out to:
-     • R6/R7 (x=131.5, y=82–85) — L channel injection
-     • R8/R9 (x=102.2, y=82–85) — R channel injection
-     • R10 (x=107.52, y=75.50)  — LED current limiter (LED lights when phantom active)
-   Route strategy: 0.5mm bus east→SW1 along y≈80, exit SW1 west along y≈82 to injection
-   resistors, branch north to R10 near x=107. Plan all branches before GND pour.
+#22 - :check: SW1 moved to x=154.6, directly below C3. +48V input is now a 5.08mm
+   vertical trace (C3 pad at x=156.60 → SW1 pad2 at x=156.61). LED (D2/R10) moved
+   to x≈138.6, forming a vertical column above the injection row.
+   Routing plan (route before GND pour):
+     • C3 → SW1 pad2: 5mm vertical at x≈156.6 (trivial)
+     • SW1 pad1 (+48V_SW) west along y≈82 → R7 (x=132.5) → R8 (x=102.2)
+     • Short stub from main bus → R10 pad1 at (138.56, 79.31): 2.7mm north of y=82
+     • R6 and R9 are on y=84.66 — branch south from main bus
+   D2 pad2 (GND) at y=87.233 — margin 1.61mm to board edge; same as J3, acceptable.
 
 #23 - :check: R5 moved. Now at (143.51, 57.16), bbox right=147.85mm. Well clear of board edge.
 
