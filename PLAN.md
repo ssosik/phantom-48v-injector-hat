@@ -2,23 +2,23 @@
 
    -> The HiFiBerry pin headers are not inline with the Pi pin headers, and the HiFiBerry has some tall components on the edge of the board opposite the pin headers.
 
-#2 - Get proper placement of J2
+#2 - :check: Get proper placement of J2
 
-#3 - Should there be separate GND planes? Or other separation of components?
+#3 - :check: Should there be separate GND planes? Or other separation of components?
 
 #4 - how can I be sure this won't fry the HiFiBerry board, or the Pi?
 
-#5 - what width traces should be used?
+#5 - :check: what width traces should be used?
 
 #6 - :check: Are two switches really necessary, or would one suffice? → Decision: one switch (SW1) controls both channels simultaneously. Phantom power is a board-level enable/disable. The EM272 capsules used here all require phantom, so per-channel independent switching adds no value. SW2 removed from design.
 
-#7 - Locate our J2 connector on the bottom side of the board to match up with J2 of the HiFiBerry
+#7 - :check: Locate our J2 connector on the bottom side of the board to match up with J2 of the HiFiBerry
 
 #8 - should i add vias?
 
 #9 - what component groups should be separated from the others, and by how much?
 
-#10 - should the LED be on all the time, or only when the 48v switch is set?
+#10 - :check: should the LED be on all the time, or only when the 48v switch is set?
 
 ## PCB layout optimizations (from placement review)
 
@@ -102,3 +102,32 @@
    Affected tracks: near (145.0,66.6), (145.5,67-68), (145.3,68.6).
 
 #28 - assess the layout for hand-placed hot plate soldering. Are these components too close?
+
+## Simulation findings (2026-06-03)
+
+#29 - :check: SYNC_MODE wiring confirmed correct.
+   U1 pin 12 routes through R11 (100kΩ) to GND → Burst + SSFM mode enabled.
+   SSFM spreads the 404 kHz tone across ±20%, replacing a discrete EMI tone with
+   low-level broadband noise. Correct for audio applications. ✓
+
+#30 - :check: V_FBX confirmed 1.600V (typ). DESIGN_DOC open item 2 closed.
+   R1=1MΩ, R2=34.8kΩ → Vout = 1.60 × (1000/34.8 + 1) = 47.6V.
+   Within IEC 61938 phantom power spec 48V ±4V (44–52V). ✓
+
+#31 - :check: Boost converter checks passed (ngspice simulation).
+   IL_peak = 0.390A  (limit: 1.4A Isat, XAL5030-223MEC)  — 3.6× margin ✓
+   Output ripple = 33.7mV peak-peak  (limit: 100mV) ✓
+   DCM confirmed at 16mA full load ✓
+   Open-loop Vout = 46.1V at D=69.2%; closed-loop FB regulates to 47.6V ✓
+
+#32 - :check: Pi 5V rail filter passes at 404 kHz (analytical simulation).
+   Attenuation = −51.6 dB  (target: < −40 dB) — 11.6 dB margin ✓
+   π-filter topology (C1 → L2 → C6║C8) gives 12 dB extra vs a simple LC.
+   Noise at Pi rail: 0.107 mV per amp of switching current.
+
+#33 - :check: Audio path −3dB corner confirmed (analytical simulation).
+   Nominal (2.2µF, no bias derating): 8.8 Hz
+   Derated  (1.3µF effective at 48V): 15.0 Hz  ← design operating point
+   Both below 20 Hz audio band; BirdNET bandwidth (0.05–12 kHz) is flat. ✓
+   Note: TESTS.md listed 10.6 Hz (used R_inj=6.81kΩ as reference impedance — wrong).
+   Correct formula uses R_HFB=8kΩ (HiFiBerry PCM1863 input Z). Simulation confirms 15 Hz.
