@@ -82,6 +82,11 @@
 
 ## Fresh-eyes routing pre-flight (2026-06-03)
 
+#34 - :check: 2-hole mounting configuration accepted (MH1 at 103.5,47.5 and MH2 at 161.5,47.5,
+   both top edge). Board cannot extend south to Pi HAT standard 4-hole positions because the
+   HiFiBerry board has tall components on its south edge that constrain the stack height.
+   2-point mounting via top standoffs is the correct solution for this stack.
+
 #24 - SW1 floating pads: pad3 and an unnamed pad have no net assignment.
    Verify these are the NC throw and mechanical retention pin — intentionally unconnected.
    Add no-connect markers in schematic to suppress ERC warnings.
