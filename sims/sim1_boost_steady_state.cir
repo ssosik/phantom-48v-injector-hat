@@ -1,0 +1,53 @@
+* sim1_boost_steady_state.cir
+* LT8362 boost converter — open-loop DCM steady state
+*
+* Vin=5V, L1=22uH, fsw=404kHz, Rload=3kOhm (47.6V / 16mA)
+*
+* Duty cycle derivation for DCM at 16mA / 47.6V from 5V:
+*   t_on = D/fsw, Ipeak = Vin*t_on/L = D*Vin/(L*fsw)
+*   t_dis = Ipeak*L/(Vout-Vin), Iout = 0.5*Ipeak*t_dis/T
+*   → D = sqrt(2*L*fsw*Iout*(Vout-Vin)/Vin) = 0.692
+*
+* Key checks:
+*   1. Ipeak < Isat = 1.4A (XAL5030-223MEC)
+*   2. IL returns to zero → DCM confirmed
+*   3. Output ripple < 100mV
+
+.title LT8362 Boost Steady State Open-Loop DCM
+
+Vin  vin 0 DC 5
+
+RL1  vin l1a 40m
+L1   l1a swnode 22u IC=0
+
+* D=69.2%, T=2.475us → ton=1.713us
+Vpwm pwm 0 PULSE(0 5 0 5n 5n 1.713u 2.475u)
+S1   swnode 0 pwm 0 SWMOD
+.model SWMOD SW(RON=165m ROFF=1MEG VT=2.5 VH=0.5)
+
+D1   swnode vout_raw SCHKY
+.model SCHKY D(IS=5e-6 N=1.08 RS=0.08 CJO=80p BV=60)
+
+RC9  vout_raw c9a 10m
+C9   c9a 0 10u IC=5
+
+Rload vout_raw 0 3k
+
+.options method=gear reltol=1e-3 abstol=1e-9 itl4=100
+
+.control
+tran 10n 8m uic
+meas tran vout_avg avg v(vout_raw) from=5m to=8m
+meas tran vout_pp  pp  v(vout_raw) from=5m to=8m
+meas tran il_peak  max i(L1)       from=5m to=8m
+meas tran il_min   min i(L1)       from=5m to=8m
+echo ""
+echo "=== Boost Converter Results ==="
+echo "Vout_avg (V)   :" $&vout_avg
+echo "Vout_pp  (mV)  :" $&vout_pp
+echo "IL_peak  (A)   :" $&il_peak
+echo "IL_min   (A)   :" $&il_min
+echo "L1 Isat limit  : 1.4A"
+.endc
+
+.end

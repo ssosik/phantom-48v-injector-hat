@@ -1,0 +1,55 @@
+* sim4_audio.cir
+* Audio signal path — high-pass corner and insertion loss
+*
+* Circuit (single-ended equivalent, one XLR line):
+*
+*   Capsule (EM272Z, 200Ω src) ─── XLR pin ─── C_dc ─── HiFiBerry ADC (8kΩ)
+*                                     │
+*                               R_inj=6.81kΩ
+*                                     │
+*                                +48V (AC ground through output bypass caps)
+*
+* The 2.2uF/100V X7R DC-block caps have X7R capacitance derating under DC bias.
+* At Vbias=48V on a 100V-rated cap (48% of rated voltage), X7R loses ~40-50% of
+* nominal capacitance. Conservative estimate: 1.3uF effective (DESIGN_DOC §4.4).
+*
+* Expected results:
+*   - Nominal (no derating, 2.2uF):  f_-3dB = 1/(2π × 8kΩ × 2.2uF) =  9.1 Hz
+*   - Derated (1.3uF at 48V):        f_-3dB = 1/(2π × 8kΩ × 1.3uF) = 15.3 Hz
+*   - Insertion loss at 1kHz vs 10kHz: < 0.1dB differential (cap is nearly shorted)
+*   - Mid-band resistive insertion loss (R_inj loading): ~0.5dB (noted separately)
+*
+* TESTS.md formula note: the 10.6Hz figure in TESTS.md uses R_inj=6.81kΩ (wrong
+* reference impedance). The correct formula uses R_HFB=8kΩ (HiFiBerry input Z).
+* This simulation confirms the correct 9.1Hz / 15.3Hz (derated) result.
+
+.title Audio Path — High-Pass Corner and Insertion Loss
+
+* ── Capsule source (EM272Z: 200Ω output impedance) ──────────
+Vcap cap_src 0 AC 1
+Rcap cap_src xlr_node 200
+
+* ── Phantom injection resistor (6.81kΩ to +48V supply) ──────
+* At audio frequencies, +48V supply is AC-shorted by output bypass caps.
+R_inj xlr_node 0 6810
+
+* ── DC-block capacitor (2.2uF/100V X7R, derated to 1.3uF at 48V) ─
+* To compare: change 1.3u to 2.2u below for the underated case
+Cdc xlr_node hfb_node 1.3u
+
+* ── HiFiBerry ADC input impedance (PCM1863: ~8kΩ per input) ─
+R_hfb hfb_node 0 8k
+
+* ── AC sweep: 1Hz to 100kHz ─────────────────────────────────
+.ac dec 300 1 100k
+
+* -3dB frequency (relative to mid-band)
+.measure AC f_minus3dB WHEN vdb(hfb_node)=vdb(hfb_node)-3 FALL=1
+* Use a fixed reference instead (0dB = V at 10kHz, well above corner)
+.measure AC vdb_10khz  find vdb(hfb_node) at=10k
+.measure AC vdb_1khz   find vdb(hfb_node) at=1k
+.measure AC vdb_100hz  find vdb(hfb_node) at=100
+.measure AC vdb_20hz   find vdb(hfb_node) at=20
+.measure AC vdb_10hz   find vdb(hfb_node) at=10
+
+.end

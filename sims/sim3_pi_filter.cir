@@ -1,0 +1,61 @@
+* sim3_pi_filter.cir
+* Pi 5V rail — switching noise attenuation
+*
+* The input filter is a π-topology (not a simple LC):
+*
+*   Pi GPIO 5V
+*       │
+*   [C6=22uF ║ C8=4.7uF] shunt to GND  (Pi side)
+*       │
+*   [L2=2.2uH, DCR=120mOhm] series
+*       │
+*   [C1=10uF] shunt to GND             (U1 VIN side = +5V_FILT)
+*       │
+*     U1 VIN
+*
+* Analysis: inject 1A AC noise current at U1 VIN node (switching demand).
+* Measure resulting voltage ripple at Pi rail. Report transimpedance in dBΩ.
+* At 404kHz: want < -40dB attenuation relative to noise source.
+*
+* Component values from BOM:
+*   L2 = 2.2uH (Würth 74437324022); DCR ≈ 120mOhm typical
+*   C1 = 10uF/50V X7R 1210 (VIN bypass); ESR ≈ 10mOhm at 400kHz
+*   C6 = 22uF/16V X7R 1210; ESR ≈ 5mOhm at 400kHz
+*   C8 = 4.7uF/50V X7R 1210; ESR ≈ 5mOhm at 400kHz
+*   Pi GPIO 5V source impedance: ~100mOhm (trace + connector resistance)
+
+.title LT8362 Pi Input Filter — Switching Noise Attenuation
+
+* ── Pi 5V supply (ideal AC source, finite output impedance) ───
+Vpi_supply pi_supply 0 DC 5 AC 0
+Rpi_src    pi_supply pi_rail 100m
+
+* ── C6 and C8: shunt caps on Pi-side of L2 ─────────────────
+RC6 pi_rail c6_node 5m
+C6  c6_node 0 22u
+RC8 pi_rail c8_node 5m
+C8  c8_node 0 4.7u
+
+* ── L2: series filter (2.2uH, DCR=120mOhm) ─────────────────
+RL2 pi_rail l2_mid 120m
+L2  l2_mid  filt_node 2.2u
+
+* ── C1: shunt cap on U1 VIN side ────────────────────────────
+RC1 filt_node c1_node 10m
+C1  c1_node 0 10u
+
+* ── Switching noise: 1A AC current drawn from +5V_FILT ──────
+* (Unit source for transfer function — multiply result by actual
+*  switching current Fourier component for real noise voltage)
+I_sw filt_node 0 AC 1
+
+* ── AC sweep: 1kHz to 10MHz ─────────────────────────────────
+.ac dec 200 1k 10Meg
+
+* Transimpedance (Ohms = V/A) at Pi rail for 1A noise injection
+* dBΩ: 0dBΩ = 1V per amp → -40dBΩ = 10mV per amp
+.measure AC Z_pi_404k  find vdb(pi_rail)  at=404k
+.measure AC Z_filt_404k find vdb(filt_node) at=404k
+.measure AC attenuation_dB param='Z_pi_404k - Z_filt_404k'
+
+.end
