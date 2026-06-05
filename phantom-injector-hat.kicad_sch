@@ -7932,7 +7932,7 @@
 		(fields_autoplaced yes)
 		(uuid "828d0c6c-2cbf-4325-8163-c8f3c389744c")
 		(property "Reference" "C6"
-			(at 166.37 81.2799 0)
+			(at 166.37 78.7399 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -7943,7 +7943,7 @@
 			)
 		)
 		(property "Value" "22 µF / 16V X7R"
-			(at 166.37 83.8199 0)
+			(at 166.37 81.2799 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -7953,14 +7953,15 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 163.5252 86.36 0)
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
+			(at 166.37 83.8199 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Datasheet" ""
@@ -7974,13 +7975,14 @@
 			)
 		)
 		(property "Description" "Bulk input"
-			(at 162.56 82.55 0)
+			(at 166.37 86.3599 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(pin "2"
