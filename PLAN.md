@@ -120,7 +120,7 @@
    Within IEC 61938 phantom power spec 48V ±4V (44–52V). ✓
 
 #31 - :check: Boost converter checks passed (ngspice simulation).
-   IL_peak = 0.390A  (limit: 1.4A Isat, XAL5030-223MEC)  — 3.6× margin ✓
+   IL_peak = 0.390A  (limit: 1.4A Isat, XAL5050-223MEC)  — 3.6× margin ✓
    Output ripple = 33.7mV peak-peak  (limit: 100mV) ✓
    DCM confirmed at 16mA full load ✓
    Open-loop Vout = 46.1V at D=69.2%; closed-loop FB regulates to 47.6V ✓

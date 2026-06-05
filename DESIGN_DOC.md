@@ -51,7 +51,7 @@ Raspberry Pi 4B
 | Ref | Value | Description | Package | Mfr Part # | Qty/board |
 |-----|-------|-------------|---------|------------|-----------|
 | U1 | LT8362 | Boost controller, 60V SW, H-grade | MSOP-16-EP | LT8362HMSE#PBF | 1 |
-| L1 | 22 µH | Shielded power inductor, ≥1.4A Isat | 5×5 mm SMT | Coilcraft XAL5030-223MEC | 1 |
+| L1 | 22 µH | Shielded power inductor, ≥1.4A Isat | 5×5 mm SMT | Coilcraft XAL5050-223MEC | 1 |
 | L2 | 2.2 µH | Input EMI filter inductor | 7×7 mm SMT | Würth 74437324022 | 1 |
 | D1 | B260A | 60V 2A Schottky, low VF | SMA / DO-214AC | Diodes Inc B260A-13-F | 1 |
 | FB1 | Ferrite bead | 600Ω @ 100MHz, 1A | 1206 | Würth 742792044 | 1 |
