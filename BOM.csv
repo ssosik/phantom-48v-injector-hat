@@ -16,7 +16,7 @@ C2,1,1 µF / 25V X7R,VC compensation cap,Capacitor_SMD:C_0805_2012Metric_Pad1.18
 C3 C7 C10 C11,4,0.1 µF / 100V X7R,Output bypass (×3) + output filter (×1),Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Yageo,CS0805KKX7R0BB104,311-3556-2-ND,https://www.digikey.com/en/products/detail/yageo/CS0805KKX7R0BB104/6097980,0.21,0.84,C3 described as 1µF in schematic — verify. If 0.1µF is correct for C3 use this part for all four.
 C4,1,1 nF X7R,FBX compensation high-freq,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Yageo,CC0805KRX7R9BB102,311-1165-2-ND,https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB102/2103120,0.10,0.10,
 C5,1,10 nF X7R,Soft-start capacitor,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Yageo,CC0805KRX7R9BB103,311-1167-2-ND,https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB103/2103122,0.10,0.10,
-C6,1,22 µF / 16V X7R,Bulk input cap Pi-side,Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder,Yageo,CC1210KKX7R7BB226,311-2028-2-ND,https://www.digikey.com/en/products/detail/yageo/CC1210KKX7R7BB226/5195434,0.68,0.68,⚠ Schematic footprint is 0805 — change to 1210. 22µF X7R does not exist in 0805. Update place_components.py and KiCad footprint.
+C6,1,22 µF / 16V X7R,Bulk input cap Pi-side,Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder,Yageo,CC1210KKX7R7BB226,311-2028-2-ND,https://www.digikey.com/en/products/detail/yageo/CC1210KKX7R7BB226/5195434,0.68,0.68,Footprint updated to 1210 in schematic and PCB. ✓
 C8,1,4.7 µF / 50V X7R,Input EMI filter cap,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,TDK,CGA4J1X7R1H475K125AC,445-181404-1-ND,https://www.digikey.com/en/products/detail/tdk/CGA4J1X7R1H475K125AC/9742505,0.56,0.56,
 C9,1,10 µF / 63V X7R,Bulk output cap 48V rail,Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder,Yageo,CC1210KKX7R2BB106,311-1577-2-ND,https://www.digikey.com/en/products/detail/yageo/CC1210KKX7R2BB106/5195446,0.80,0.80,⚠ Schematic shows 50V — upgraded to 63V here. 48V output + switching transients make 50V marginal. 63V X7R 1210 recommended. Update schematic value.
 C12,1,4.7 pF C0G,FBX feedforward cap,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Murata,GRM2195C1H4R7CA01D,490-1372-2-ND,https://www.digikey.com/en/products/detail/murata-electronics/GRM2195C1H4R7CA01D/587594,0.20,0.20,C0G dielectric required; stable over voltage
@@ -36,7 +36,7 @@ R10,1,12 kΩ 1/4W,LED current limiter,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.4
 ,,OPEN ITEMS — resolve before ordering,,,,,,,,,,
 ,,1. C9 voltage rating upgraded 50V→63V in this BOM — update schematic to match,,,,,,,,,,
 ,,2. C1 voltage rating corrected 50V→16V in this BOM — update schematic to match,,,,,,,,,,
-,,3. C6 footprint must change from 0805 to 1210 — update PCB layout and schematic,,,,,,,,,,
+,,3. :check: C6 footprint updated to 1210 in schematic and PCB.,,,,,,,,,,
 ,,4. J2 pads 3 and 4 unconnected — resolve HiFiBerry J4 pinout (DESIGN_DOC open item 5),,,,,,,,,,
 ,,5. J3 and J4 GND pins need F.Cu connection (track or GND pour),,,,,,,,,,
 ,,6. J1 pin length — verify GPIO socket height for Pi→HAT→HiFiBerry stack clearance,,,,,,,,,,
