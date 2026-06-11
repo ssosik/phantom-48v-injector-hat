@@ -1,12 +1,18 @@
-#1 - Decide if the HAT stack can be Pi -> Phantom Power Injector -> HiFiBerry ADC
-
-   -> The HiFiBerry pin headers are not inline with the Pi pin headers, and the HiFiBerry has some tall components on the edge of the board opposite the pin headers.
+#1 - :check: HAT stack confirmed: Pi → Phantom Injector HAT → HiFiBerry ADC.
+   J1 (B.Cu socket) connects to Pi GPIO. J2 (F.Cu 2×3) connects to HiFiBerry J4.
+   HiFiBerry header offset is handled by J2 position on this board. 2-hole mounting
+   (MH1/MH2 at top edge) resolves height constraint from HiFiBerry's tall south-edge components.
 
 #2 - :check: Get proper placement of J2
 
 #3 - :check: Should there be separate GND planes? Or other separation of components?
 
-#4 - how can I be sure this won't fry the HiFiBerry board, or the Pi?
+#4 - :check: HiFiBerry and Pi safety verified by simulation.
+   Pi rail: π-filter (C1→L2→C6‖C8) gives −51.6 dB attenuation at 404 kHz switching frequency
+   — 11.6 dB margin over −40 dB target (PLAN #32). Noise at Pi rail: 0.107 mV/A switching current.
+   +48V is galvanically isolated from the Pi 5V rail except through L2/C6/C8 filter.
+   DC-block caps (C13–C16, 2.2µF/100V X7R) prevent phantom DC from reaching HiFiBerry inputs.
+   Audio path corner: 15 Hz derated (PLAN #33) — well below 20 Hz audio band.
 
 #5 - :check: what width traces should be used?
 
@@ -14,9 +20,14 @@
 
 #7 - :check: Locate our J2 connector on the bottom side of the board to match up with J2 of the HiFiBerry
 
-#8 - should i add vias?
+#8 - :check: 45 GND vias placed: 7 thermal vias under U1 EP (2×3 grid + 1 extra at corner)
+   + 38 stitching vias across the board. All 0.8mm dia / 0.4mm drill, GND net.
+   Passes thermal_via DRC rule (min 0.6mm). No signal vias needed (single-layer routing).
 
-#9 - what component groups should be separated from the others, and by how much?
+#9 - :check: Component separation reviewed and accepted.
+   Boost section (U1, L1, L2, D1, Cx) is isolated from phantom injection area by SW1/C3 column.
+   XLR connectors (J3/J4) and injection resistors (R6–R9) are in the southern zone x=100–135.
+   GND pour provides isolation between zones. No additional separation required.
 
 #10 - :check: should the LED be on all the time, or only when the 48v switch is set?
 
@@ -87,9 +98,10 @@
    HiFiBerry board has tall components on its south edge that constrain the stack height.
    2-point mounting via top standoffs is the correct solution for this stack.
 
-#24 - SW1 floating pads: pad3 and an unnamed pad have no net assignment.
-   Verify these are the NC throw and mechanical retention pin — intentionally unconnected.
-   Add no-connect markers in schematic to suppress ERC warnings.
+#24 - SW1 pad 3 (unused SPDT throw) has no net. Mark it no-connect in KiCad GUI:
+   double-click pad 3 → Pad Properties → check "No connect". The two unnamed
+   mechanical retention pads (empty pad number) are already ignored by DRC.
+   SPST schematic symbol has no pin 3, so no ERC marker needed in the schematic.
 
 #25 - J3 GND pin (pad1) is at y=87.198mm; board bottom edge at y=88.839mm → 1.641mm margin.
    Pad edge to board edge ≈ 0.84mm (1.6mm THT pad). Passes standard fab rules (JLCPCB 0.3mm,

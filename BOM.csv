@@ -13,7 +13,8 @@ J4,1,1×3 pin header,XLR pigtail right channel,Connector_PinHeader_2.54mm:PinHea
 MH1 MH2,2,M2.5 standoff,M2.5 mounting hardware,MountingHole:MountingHole_2.7mm_M2.5,(Hardware),(M2.5×11mm brass standoff + screw),(hardware),https://www.digikey.com/en/products/filter/standoffs-spacers/582,0.25,0.50,Board uses 2-hole mounting only (top edge); 11mm standoff height to clear GPIO connector
 C1,1,10 µF / 16V X7R,VIN bypass capacitor,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Murata,GRM21BR71C106KE51L,490-3897-2-ND,https://www.digikey.com/en/products/detail/murata-electronics/GRM21BR71C106KE51L/1399877,0.20,0.20,⚠ Schematic shows 50V rating but C1 is on the 5V VIN rail — 16V is correct and widely available in X7R/0805. Update schematic value.
 C2,1,1 µF / 25V X7R,VC compensation cap,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Murata,GRM21BR71E105KA99L,490-3938-2-ND,https://www.digikey.com/en/products/detail/murata-electronics/GRM21BR71E105KA99L/965947,0.15,0.15,
-C3 C7 C10 C11,4,0.1 µF / 100V X7R,Output bypass (×3) + output filter (×1),Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Yageo,CS0805KKX7R0BB104,311-3556-2-ND,https://www.digikey.com/en/products/detail/yageo/CS0805KKX7R0BB104/6097980,0.21,0.84,C3 described as 1µF in schematic — verify. If 0.1µF is correct for C3 use this part for all four.
+C3,1,1 µF / 100V X7R,Output filter cap (bottom of cap column),Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Murata,GRM21BC72A105KA12L,490-16774-2-ND,https://www.digikey.com/en/products/detail/murata-electronics/GRM21BC72A105KA12L/7676596,0.55,0.55,1µF/100V X7R 0805. Verified in schematic and place_components.py.
+C7 C10 C11,3,0.1 µF / 100V X7R,Output bypass caps,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Yageo,CS0805KKX7R0BB104,311-3556-2-ND,https://www.digikey.com/en/products/detail/yageo/CS0805KKX7R0BB104/6097980,0.21,0.63,
 C4,1,1 nF X7R,FBX compensation high-freq,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Yageo,CC0805KRX7R9BB102,311-1165-2-ND,https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB102/2103120,0.10,0.10,
 C5,1,10 nF X7R,Soft-start capacitor,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,Yageo,CC0805KRX7R9BB103,311-1167-2-ND,https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB103/2103122,0.10,0.10,
 C6,1,22 µF / 16V X7R,Bulk input cap Pi-side,Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder,Yageo,CC1210KKX7R7BB226,311-2028-2-ND,https://www.digikey.com/en/products/detail/yageo/CC1210KKX7R7BB226/5195434,0.68,0.68,Footprint updated to 1210 in schematic and PCB. ✓
@@ -31,14 +32,14 @@ R5 R11,2,100 kΩ 1%,EN/UVLO pull-up + SYNC/MODE pull-down,Resistor_SMD:R_0805_20
 R6 R7 R8 R9,4,6.81 kΩ 0.1%,Phantom power injection resistors,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,Panasonic,ERA-6AEB6811V,P6.81KDACT-ND,https://www.digikey.com/en/products/detail/panasonic-industry/ERA-6AEB6811V/2025739,0.10,0.40,0.1% tolerance required for IEC 61938 balance; 6.81kΩ per IEC standard
 R10,1,12 kΩ 1/4W,LED current limiter,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,Yageo,RC0805FR-0712KL,311-12KFRCT-ND,https://www.digikey.com/en/products/detail/yageo/RC0805FR-0712KL/730780,0.10,0.10,Limits LED current to ~3mA at 48V; 1/4W rated (P=192mW)
 ,,,,,,,,,,
-,,TOTALS,,,,,,,,22.96,Excludes: Coilcraft L1 (~$3 direct); M2.5 hardware; LED; generic connectors
+,,TOTALS,,,,,,,,23.30,Excludes: Coilcraft L1 (~$3 direct); M2.5 hardware; LED; generic connectors
 ,,,,,,,,,,
 ,,OPEN ITEMS — resolve before ordering,,,,,,,,,,
-,,1. C9 voltage rating upgraded 50V→63V in this BOM — update schematic to match,,,,,,,,,,
-,,2. C1 voltage rating corrected 50V→16V in this BOM — update schematic to match,,,,,,,,,,
+,,1. :check: C9 voltage rating upgraded 50V→63V — schematic updated to match.,,,,,,,,,,
+,,2. :check: C1 voltage rating corrected 50V→16V — schematic updated to match.,,,,,,,,,,
 ,,3. :check: C6 footprint updated to 1210 in schematic and PCB.,,,,,,,,,,
-,,4. J2 pads 3 and 4 unconnected — resolve HiFiBerry J4 pinout (DESIGN_DOC open item 5),,,,,,,,,,
-,,5. J3 and J4 GND pins need F.Cu connection (track or GND pour),,,,,,,,,,
+,,4. :check: J2 pads 3 and 4 assigned GND in wire_schematic.py NETLIST — verified in PCB.,,,,,,,,,,
+,,5. :check: J3 pad1 and J4 pad1 assigned /GND — connected via GND pour. Verified 0 unconnected in DRC.,,,,,,,,,,
 ,,6. J1 pin length — verify GPIO socket height for Pi→HAT→HiFiBerry stack clearance,,,,,,,,,,
 ,,7. L1 Coilcraft XAL5050-223MEC — order direct from coilcraft.com,,,,,,,,,,
-,,8. C3 value conflict: schematic says 1µF / PCB description says 'Output filter' at same footprint as 0.1µF bypass caps — verify,,,,,,,,,,
+,,8. :check: C3 value conflict resolved — C3 is 1µF/100V (output filter); C7/C10/C11 are 0.1µF/100V bypasses. BOM split into separate rows.,,,,,,,,,,
