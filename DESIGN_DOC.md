@@ -46,71 +46,84 @@ Raspberry Pi 4B
 
 ### 2.1 LT8362 boost converter section
 
-**Package sizing strategy**: All passives upsized to 0805 or larger (1206/1210) for hand assembly. Schottky upsized from SOD-123 to SMA. Compared to the AD reference design's 0402/0603 mix, this is much more forgiving with a fine-tip iron and tweezers.
+**Package sizing strategy**: 0805 is the default for all signal and bypass passives — manageable with a fine-tip iron and tweezers, and TDK's high-voltage 0805 X7R line covers 50V/100V values that used to need 1210/1812. 1210 is reserved for the two bulk caps where capacitance density actually requires it (C6, C9). Schottky upsized from SOD-123 to SMA. The authoritative parts list is `BOM.csv`; this table mirrors it.
 
 | Ref | Value | Description | Package | Mfr Part # | Qty/board |
 |-----|-------|-------------|---------|------------|-----------|
-| U1 | LT8362 | Boost controller, 60V SW, H-grade | MSOP-16-EP | LT8362HMSE#PBF | 1 |
-| L1 | 22 µH | Shielded power inductor, ≥1.4A Isat | 5×5 mm SMT | Coilcraft XAL5050-223MEC | 1 |
-| L2 | 2.2 µH | Input EMI filter inductor | 7×7 mm SMT | Würth 74437324022 | 1 |
+| U1 | LT8362 | Boost controller, 60V SW, E-grade | MSOP-16-EP | LT8362EMSE#PBF | 1 |
+| L1 | 22 µH | Shielded power inductor, Isat 2.55A | 5×5 mm SMT | Coilcraft XAL5050-223MEC | 1 |
+| L2 | 2.2 µH | Input EMI filter inductor, Isat 8.4A | 7×7 mm SMT | Würth 74437324022 | 1 |
 | D1 | B260A | 60V 2A Schottky, low VF | SMA / DO-214AC | Diodes Inc B260A-13-F | 1 |
-| FB1 | Ferrite bead | 600Ω @ 100MHz, 1A | 1206 | Würth 742792044 | 1 |
+| FB1 | 600Ω @ 100MHz, 2.3A | EMI filter ferrite bead | 0805 | Murata BLM21SP601SH1D | 1 |
 | R1 | 1 MΩ 1% | FBX top divider | 0805 | Yageo RC0805FR-071ML | 1 |
-| R2 | 34.8 kΩ 1% | FBX bottom divider | 0805 | Yageo RC0805FR-0734K8L | 1 |
-| R3 | 121 kΩ 1% | R_T, sets 400 kHz | 0805 | Yageo RC0805FR-07121KL | 1 |
+| R2 | 34.8 kΩ 1% | FBX bottom divider (Vout = 47.6V) | 0805 | Yageo RC0805FR-0734K8L | 1 |
+| R3 | 121 kΩ 1% | R_T, sets 404 kHz | 0805 | Yageo RC0805FR-07121KL | 1 |
 | R4 | 22.1 kΩ 1% | V_C compensation | 0805 | Yageo RC0805FR-0722K1L | 1 |
 | R5 | 100 kΩ 1% | EN/UVLO pull-up | 0805 | Yageo RC0805FR-07100KL | 1 |
-| C1 | 10 µF / 50V X7R | V_IN bypass | 1210 | Murata GRM32ER71H106KA12L | 1 |
+| R11 | 100 kΩ 1% | SYNC/MODE → Burst+SSFM mode | 0805 | Yageo RC0805FR-07100KL | 1 |
+| C1 | 10 µF / 16V X7R | V_IN bypass (on 5V rail) | 0805 | Murata GRM21BR71C106KE51L | 1 |
 | C2 | 1 µF / 25V X7R | V_C compensation | 0805 | Murata GRM21BR71E105KA99L | 1 |
-| C3 | 1 µF / 100V X7R | Output filter | 1206 | Murata GRM31CR72A105KA01L | 1 |
-| C4 | 1 nF X7R | Compensation high-freq | 0805 | Murata GRM21BR71H102KA01L | 1 |
-| C5 | 10 nF X7R | Soft-start | 0805 | Murata GRM21BR71H103KA01L | 1 |
-| C6 | 22 µF / 16V X7R | Bulk input | 1210 | Murata GRM32ER71C226KE15L | 1 |
-| C7 | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
-| C8 | 4.7 µF / 50V X7R | Input EMI filter | 1210 | Murata GRM32ER71H475KA88L | 1 |
-| C9 | 10 µF / 50V X7R | Bulk output | 1210 | Murata GRM32ER71H106KA12L | 1 |
-| C10 | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
-| C11 | 0.1 µF / 100V X7R | Output bypass | 0805 | Murata GRM21BR72A104KA01L | 1 |
-| C12 | 4.7 pF C0G | FBX feedforward | 0805 | Murata GRM2165C1H4R7CA01D | 1 |
+| C3 | 1 µF / 100V X7R | Output filter | 0805 | Murata GRM21BC72A105KA12L | 1 |
+| C4 | 1 nF X7R | Compensation high-freq | 0805 | Yageo CC0805KRX7R9BB102 | 1 |
+| C5 | 10 nF X7R | Soft-start | 0805 | Yageo CC0805KRX7R9BB103 | 1 |
+| C6 | 22 µF / 16V X7R | Bulk input | 1210 | Yageo CC1210KKX7R7BB226 | 1 |
+| C7 | 0.1 µF / 100V X7R | Output bypass | 0805 | Yageo CS0805KKX7R0BB104 | 1 |
+| C8 | 4.7 µF / 50V X7R | Input EMI filter | 0805 | TDK CGA4J1X7R1H475K125AC | 1 |
+| C9 | 10 µF / 63V X7R | Bulk output | 1210 | Yageo CC1210KKX7R2BB106 | 1 |
+| C10 | 0.1 µF / 100V X7R | Output bypass | 0805 | Yageo CS0805KKX7R0BB104 | 1 |
+| C11 | 0.1 µF / 100V X7R | Output bypass | 0805 | Yageo CS0805KKX7R0BB104 | 1 |
+| C12 | 4.7 pF C0G | FBX feedforward | 0805 | Murata GRM2195C1H4R7CA01D | 1 |
+| C17 | 1 µF / 10V X7R | INTVCC bypass | 0805 | Murata GRM21BR71A105KA01L | 1 |
+| C18 | 100 nF / 10V X7R | BIAS pin local bypass | 0805 | Murata GRM21BR71A104KA01L | 1 |
 
 **Notes**:
-- Reference designators C1–C9, R1–R5, L1–L2, D1, FB1, U1 mirror the LT8362 typical-application schematic to make cross-checking trivial. C10 and C11 replace the AD reference's C10a/C10b (split into two individually-placed 0805s), and C12 replaces the AD reference's C11 as the FBX feedforward cap.
+- Reference designators C1–C9, R1–R5, L1–L2, D1, FB1, U1 mirror the LT8362 typical-application schematic to make cross-checking trivial. C10 and C11 replace the AD reference's C10a/C10b (split into two individually-placed 0805s), and C12 replaces the AD reference's C11 as the FBX feedforward cap. C17 (INTVCC bypass) and C18 (BIAS bypass) are added per LT8362 datasheet §7; R11 sets Burst+SSFM mode.
 - C8 placement: on the **input** side of L2 (between Pi and the inductor), in parallel with C6 as part of the input EMI filter. C1 is the V_IN bypass on the **output** side of L2 (between the inductor and U1).
-- C7, C3, C10a, C10b are arranged around FB1 in a Pi-filter network on the output.
+- C7, C3, C10, C11 are arranged in a vertical column around FB1 on the +48V output net (Pi-filter network).
+- L1: BOM lists `Inductor_SMD:L_Coilcraft_XAL5030-XXX` as the KiCad footprint for the XAL5050 part. The XAL5030 and XAL5050 share the same 5×5 mm pad pattern; XAL5050 just has a taller body (5.1 mm vs. 3.1 mm). Verify clearance above L1 in the Pi/HAT/HiFiBerry stack.
+- C9 voltage rating is 63V (not 50V) — 48V output plus switching transients make 50V marginal.
 
 ### 2.2 Phantom injection section
 
 | Ref | Value | Description | Package | Mfr Part # | Qty/board |
 |-----|-------|-------------|---------|------------|-----------|
-| R6 | 6.81 kΩ 0.1% | XLR pin 2, L channel bias | 0805 | Susumu RR1220P-682-D | 1 |
-| R7 | 6.81 kΩ 0.1% | XLR pin 3, L channel bias | 0805 | Susumu RR1220P-682-D | 1 |
-| R8 | 6.81 kΩ 0.1% | XLR pin 2, R channel bias | 0805 | Susumu RR1220P-682-D | 1 |
-| R9 | 6.81 kΩ 0.1% | XLR pin 3, R channel bias | 0805 | Susumu RR1220P-682-D | 1 |
-| SW1 | SPST slide | P48 enable, both channels | RA PCB | C&K OS102011MA1QN1 | 1 |
-| C13 | 2.2 µF / 100V X7R | DC-block, L+ to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
-| C14 | 2.2 µF / 100V X7R | DC-block, L- to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
-| C15 | 2.2 µF / 100V X7R | DC-block, R+ to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
-| C16 | 2.2 µF / 100V X7R | DC-block, R- to J4 | 1812 | Murata GRM43ER72A225KE01L | 1 |
+| R6 | 6.81 kΩ 0.1% | XLR pin 2, L channel bias | 0805 | Panasonic ERA-6AEB6811V | 1 |
+| R7 | 6.81 kΩ 0.1% | XLR pin 3, L channel bias | 0805 | Panasonic ERA-6AEB6811V | 1 |
+| R8 | 6.81 kΩ 0.1% | XLR pin 2, R channel bias | 0805 | Panasonic ERA-6AEB6811V | 1 |
+| R9 | 6.81 kΩ 0.1% | XLR pin 3, R channel bias | 0805 | Panasonic ERA-6AEB6811V | 1 |
+| SW1 | SPDT slide | P48 enable, both channels (right-angle THT) | THT | C&K OS102011MA1QN1 | 1 |
+| C13 | 2.2 µF / 100V X7R | DC-block, L+ to J4 | 0805 | TDK CGA4J1X7R2A225K125AC | 1 |
+| C14 | 2.2 µF / 100V X7R | DC-block, L- to J4 | 0805 | TDK CGA4J1X7R2A225K125AC | 1 |
+| C15 | 2.2 µF / 100V X7R | DC-block, R+ to J4 | 0805 | TDK CGA4J1X7R2A225K125AC | 1 |
+| C16 | 2.2 µF / 100V X7R | DC-block, R- to J4 | 0805 | TDK CGA4J1X7R2A225K125AC | 1 |
 
-**Note on R6–R9 matching**: phantom bias network CMRR depends on matching between the two resistors feeding each XLR pair. The 0.1% Susumu RR1220P series is matched within ±0.1%, giving roughly 60 dB CMRR contribution from the resistor pair. For wildlife recording this is excellent. If a single 0.1% spec is unavailable, hand-selecting four resistors from a 1% reel by sorting on a DMM works too.
+**Note on R6–R9 matching**: phantom bias network CMRR depends on matching between the two resistors feeding each XLR pair. The 0.1% Panasonic ERA-6AEB6811V (or equivalent 0.1% E-series) gives roughly 60 dB CMRR contribution from the resistor pair. For wildlife recording this is excellent. If a single 0.1% spec is unavailable, hand-selecting four resistors from a 1% reel by sorting on a DMM works too.
+
+**Note on C13–C16 sizing**: 100V X7R in 0805 is recent — TDK's CGA4J1X7R2A225K125AC delivers 2.2 µF / 100V in 0805 (3.2×1.6 mm with hand-solder pads). After DC bias derating at 48 V applied, the effective capacitance is ~1.3 µF, giving a ~15 Hz corner into PCM1863's 8 kΩ input. This was previously specified in 1812; the 0805 part has the same electrical performance with a smaller footprint, simpler hand assembly, and lower cost.
 
 ### 2.3 Connectors and indicators
 
 | Ref | Value | Description | Mfr Part # | Qty/board |
 |-----|-------|-------------|------------|-----------|
-| J1 | 2×20 stacking header | RPi GPIO | Samtec SSQ-120-03-T-D | 1 |
-| J2 | 2×3 box header polarized | To HiFiBerry J4 | Würth 61300621121 | 1 |
-| J3 | 1×3 pin header 2.54mm | XLR pigtail, L channel | Würth 61300311121 | 1 |
-| J4 | 1×3 pin header 2.54mm | XLR pigtail, R channel | Würth 61300311121 | 1 |
-| D2 | Green LED 3mm | +48V rail indicator | Kingbright WP710A10GD | 1 |
-| R10 | 12 kΩ 1/4W | LED current limit (~3 mA @ 48V) | 0805 | Yageo standard | 1 |
+| J1 | 2×20 GPIO socket | RPi GPIO female stacking header | Sullins PPPC202LFBN-RC | 1 |
+| J2 | 2×3 pin header 2.54mm | To HiFiBerry J4 | Generic | 1 |
+| J3 | 1×3 pin header 2.54mm | XLR pigtail, L channel | Generic | 1 |
+| J4 | 1×3 pin header 2.54mm | XLR pigtail, R channel | Generic | 1 |
+| D2 | Green LED 3mm | +48V rail indicator (THT) | Generic 3mm green | 1 |
+| R10 | 12 kΩ 1/4W | LED current limit (~3 mA @ 48V), 0805 | Yageo RC0805FR-0712KL | 1 |
+| MH1, MH2 | M2.5 mounting hole | 2.7 mm drill; pairs with M2.5×11 mm standoff | — | 2 |
+
+**Note on J1**: PPPC202LFBN-RC is a standard-pin-length female stacking header. Verify the pin projection is adequate to mate with the Pi GPIO when the HiFiBerry is sandwiched below. If clearance is tight, switch to a tall stacking header (e.g., SparkFun PRT-14017).
 
 ### 2.4 Per-build totals
 
 | Item | 1 unit | 5 units (+10% spares) |
 |------|--------|-----------------------|
-| Total distinct line items | 27 | 27 |
-| Total placements | ~34 | ~170 |
+| Total distinct line items | ~30 | ~30 |
+| Total placements | ~42 | ~210 |
+| Approx. line-item cost (excl. L1 direct, hardware, generic connectors, LED) | $23.30 | $116 |
+
+See `BOM.csv` for the authoritative parts list with DigiKey part numbers, prices, and sourcing notes.
 
 ---
 
@@ -280,7 +293,7 @@ The 6.81 kΩ resistors feeding the two halves of each balanced line must match c
 
 ### 4.4 Why 2.2 µF / 100V DC-block caps (not film)
 
-Earlier discussion settled on 2.2 µF / 100V X7R 1812 ceramics as the compromise between size and audio quality. After DC bias derating (~50-60% at 48V applied), effective capacitance is ~1.3 µF, giving a 15 Hz corner into PCM1863's 8 kΩ input. This is sub-audible and fine for wildlife. A future "audiophile variant" board could swap to 4.7 µF / 63V WIMA MKS2 film caps with no other changes.
+The DC-block caps are 2.2 µF / 100V X7R ceramics — the compromise between size and audio quality. After DC bias derating (~50-60% at 48V applied), effective capacitance is ~1.3 µF, giving a 15 Hz corner into PCM1863's 8 kΩ input. Sub-audible and fine for wildlife. These are 0805 (TDK CGA4J high-V series); an "audiophile variant" board could swap to 4.7 µF / 63V WIMA MKS2 film caps with no other changes.
 
 ### 4.5 SSFM enabled
 
@@ -353,10 +366,10 @@ The MSOP-16-EP package has an exposed thermal pad on the underside of the chip t
 
 ### 5.7 Stack clearances
 
-- J1 header tops out at ~8.5 mm (Samtec SSQ-120-03-T-D plus mating socket)
-- Slide switches: ~6 mm tall (within Z budget)
+- J1 header tops out at ~8.5 mm (Sullins PPPC202LFBN-RC plus mating socket)
+- Slide switch: ~6 mm tall (within Z budget)
 - SW node passives: <1 mm tall (SMD)
-- WIMA film caps in future audiophile variant would be 5-7 mm — would need to check fit against HiFiBerry-above clearance, but the current 1812 ceramics are <2 mm.
+- WIMA film caps in future audiophile variant would be 5-7 mm — would need to check fit against HiFiBerry-above clearance, but the current 0805 ceramics are <1.5 mm.
 
 ### 5.8 Hand-assembly notes
 
@@ -394,9 +407,9 @@ All passives are 0805 or larger to support hand soldering with a fine-tip iron a
 
 3. **Place all SMD components** with tweezers:
    - The LT8362 first — light pressure, visual alignment, the orientation pin-1 dot must face the correct direction (verify against silkscreen)
-   - Then larger parts (inductors, SMA diode, 1812 caps)
-   - Then 1210 bulk caps, 1206 caps, ferrite bead
-   - Finally 0805 passives — order doesn't matter as long as all are placed before reflow
+   - Then larger parts (L1, L2 inductors, D1 SMA diode)
+   - Then 1210 bulk caps (C6, C9)
+   - Finally 0805 passives (everything else, including the 100V DC-block and output caps) — order doesn't matter as long as all are placed before reflow
    - Don't worry about minor misalignment for 0805+ parts — solder surface tension self-centers them during reflow
 
 4. **Slide the loaded PCB onto the hot plate**:
