@@ -7482,7 +7482,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10 nF X7R"
+		(property "Value" "22 nF X7R"
 			(at 143.51 83.8199 0)
 			(show_name yes)
 			(do_not_autoplace no)

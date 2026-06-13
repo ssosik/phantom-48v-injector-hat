@@ -65,7 +65,7 @@ Raspberry Pi 4B
 | C2 | 1 µF / 25V X7R | V_C compensation | 0805 | Murata GRM21BR71E105KA99L | 1 |
 | C3 | 1 µF / 100V X7R | Output filter | 0805 | Murata GRM21BC72A105KA12L | 1 |
 | C4 | 1 nF X7R | Compensation high-freq | 0805 | Yageo CC0805KRX7R9BB102 | 1 |
-| C5 | 10 nF X7R | Soft-start | 0805 | Yageo CC0805KRX7R9BB103 | 1 |
+| C5 | 22 nF X7R | Soft-start | 0805 | Kemet (DigiKey 399-17886-1-ND) | 1 |
 | C6 | 22 µF / 16V X7R | Bulk input | 1210 | Yageo CC1210KKX7R7BB226 | 1 |
 | C7 | 0.1 µF / 100V X7R | Output bypass | 0805 | Yageo CS0805KKX7R0BB104 | 1 |
 | C8 | 4.7 µF / 50V X7R | Input EMI filter | 0805 | TDK CGA4J1X7R1H475K125AC | 1 |
@@ -185,7 +185,7 @@ Pin numbers are deliberately omitted here. Connect using the pin function names 
 | `FBX` | Feedback | R1/R2 midpoint, C11 |
 | `VC` | Compensation | R4-C4 series to GND, C2 to GND |
 | `RT` | Frequency-setting | R3 (121 kΩ) to GND for ~400 kHz |
-| `SS` | Soft-start cap | C5 (10 nF) to GND |
+| `SS` | Soft-start cap | C5 (22 nF) to GND |
 | `INTVCC` | Internal regulator output | Bypass cap to GND (typ. 1 µF / 16V) |
 | `EP` (exposed pad) | Thermal + electrical ground | GND ground pour, with 3×3 thermal stitching vias to bottom-layer ground |
 | `NC` × 4 | No connect | Leave open (do NOT tie to GND or any net) |
@@ -527,7 +527,7 @@ After basic function is confirmed, before committing to the design across all 5 
 4. ~~**BIAS pin connection**~~ — resolved. Datasheet page 7: "INTVCC draws power from the BIAS pin if 4.4V ≤ BIAS ≤ VIN." With BIAS = +5V_FILT = VIN = 5V, both conditions are met (4.4V ≤ 5V ≤ 5V). This reduces VIN quiescent current from ~1200 µA to ~22 µA (55× improvement at light load). BIAS tied to +5V_FILT via C18 bypass is correct and optimal. "If unused, tie to GND" applies only when no suitable voltage is available.
 5. **HiFiBerry J4 pinout** — confirmed pinout in section 3.4 above against the DAC2 ADC Pro datasheet PDF. Worth re-verifying before locking the board.
 6. ~~**C&K OS102011MA1QN1 footprint**~~ — resolved (2026-06-12). KiCad's `Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q` footprint verified against C&K OS-series datasheet page 10. All critical dimensions match: 3 signal pins at 2.00 mm pitch (`.079"`), 2 mounting feet with 1.50 mm drill (`Ø.059"`) offset 2.10 mm (`.083"`) horizontally from the outer signal pins, total hole-pattern width 8.20 mm (`.323"`), body footprint 8.60 × 4.40 mm (`.339" × .173"`). Pin numbering matches SPDT schematic (pin 2 = common, pins 1/3 = throws). Single deviation: signal pin drill is 0.90 mm in KiCad vs 0.80 mm in datasheet — standard library practice (rounded to a common drill bit; 0.1 mm extra clearance eases insertion and stays within solderable annular-ring tolerance on the 1.5 mm pad).
-7. **Pi 5V current draw under transient (e.g., startup inrush of LT8362)** — should not exceed 600 mA on GPIO. C5 soft-start (10 nF) limits inrush; verify in LTspice if uncertain.
+7. ~~**Pi 5V current draw under transient (e.g., startup inrush of LT8362)**~~ — resolved (2026-06-12). Analytical analysis: t_ss = V_FBX × C5 / I_SS = 1.6V × C5 / 2µA. Output ramp current = C_OUT × (V_OUT/t_ss) where C_OUT ≈ 11.3 µF (C9 + C3 + C7/C10/C11). Input current = I_OUT × V_OUT / (V_IN × η) at η ≈ 85%. With original C5 = 10 nF → t_ss = 8 ms, I_IN ≈ **750 mA** for 8 ms (over the 600 mA HAT continuous spec). **Mitigation applied: C5 increased to 22 nF** → t_ss = 17.6 ms, I_IN ≈ **342 mA** (well under HAT spec). Schematic, BOM, and DigiKey order updated to match. Steady-state input current after startup is ~34 mA at full phantom load. Tradeoff: startup is 10 ms slower; irrelevant for phantom power. (Note: separate Pi 5V inrush event from C6+C8 charging at Pi power-on is governed by the Pi's own 5V slew rate and is independent of this analysis.)
 
 ---
 
