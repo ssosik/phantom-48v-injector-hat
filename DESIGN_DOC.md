@@ -216,8 +216,8 @@ J2 layout (looking at top of HAT):
 
 | Pin | Signal | Net |
 |-----|--------|-----|
-| 1 | R+ | J4_R+ |
-| 2 | R- | J4_R- |
+| 1 | R- | J4_R- |
+| 2 | R+ | J4_R+ |
 | 3 | GND | GND |
 | 4 | GND | GND |
 | 5 | L+ | J4_L+ |
@@ -525,7 +525,7 @@ After basic function is confirmed, before committing to the design across all 5 
 2. ~~**V_FB (feedback reference voltage)**~~ — resolved (2026-06-12). LT8362 datasheet Electrical Characteristics (page 3): FBX Regulation Voltage in boost mode is **1.600 V typ** (1.568 V min / 1.636 V max), spec'd over full −40 to 125°C. With R1=1MΩ, R2=34.8kΩ: V_OUT = V_FBX × (1 + R1/R2) = 1.6 × 29.736 = **47.58 V typ**. Silicon-only spread 46.6–48.7 V; with ±1% resistor tolerance expands to ~46.0–49.3 V — well inside IEC 61938 (48V ± 4V) phantom-power spec. FBX pin current ≤10 nA produces 0.35 mV offset through R2; negligible vs 1.6 µA divider bias.
 3. ~~**SYNC/MODE pin configuration for SSFM**~~ — resolved. Datasheet page 7 SYNC/MODE table: a 100kΩ resistor to GND selects Burst/SSFM mode. R11 = 100kΩ to GND is correct.
 4. ~~**BIAS pin connection**~~ — resolved. Datasheet page 7: "INTVCC draws power from the BIAS pin if 4.4V ≤ BIAS ≤ VIN." With BIAS = +5V_FILT = VIN = 5V, both conditions are met (4.4V ≤ 5V ≤ 5V). This reduces VIN quiescent current from ~1200 µA to ~22 µA (55× improvement at light load). BIAS tied to +5V_FILT via C18 bypass is correct and optimal. "If unused, tie to GND" applies only when no suitable voltage is available.
-5. **HiFiBerry J4 pinout** — confirmed pinout in section 3.4 above against the DAC2 ADC Pro datasheet PDF. Worth re-verifying before locking the board.
+5. ~~**HiFiBerry J4 pinout**~~ — resolved (2026-06-12). Re-verified §3.4 against HiFiBerry DAC2 ADC Pro datasheet (hifiberry.com/docs/data-sheets/datasheet-dac2-adc-pro/). **Bug found and fixed**: right channel +/− were swapped — §3.4 previously had pin 1 = R+ / pin 2 = R−, but the datasheet specifies pin 1 = in R− / pin 2 = in R+ (pin 1 is left bottom corner). Left channel and GND pins were correct. Without fix, the right channel would have inverted polarity vs the left, breaking stereo imaging and causing partial cancellation in any downstream mono sum. wire_schematic.py NETLIST and §3.4 table both updated; schematic regenerated.
 6. ~~**C&K OS102011MA1QN1 footprint**~~ — resolved (2026-06-12). KiCad's `Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q` footprint verified against C&K OS-series datasheet page 10. All critical dimensions match: 3 signal pins at 2.00 mm pitch (`.079"`), 2 mounting feet with 1.50 mm drill (`Ø.059"`) offset 2.10 mm (`.083"`) horizontally from the outer signal pins, total hole-pattern width 8.20 mm (`.323"`), body footprint 8.60 × 4.40 mm (`.339" × .173"`). Pin numbering matches SPDT schematic (pin 2 = common, pins 1/3 = throws). Single deviation: signal pin drill is 0.90 mm in KiCad vs 0.80 mm in datasheet — standard library practice (rounded to a common drill bit; 0.1 mm extra clearance eases insertion and stays within solderable annular-ring tolerance on the 1.5 mm pad).
 7. ~~**Pi 5V current draw under transient (e.g., startup inrush of LT8362)**~~ — resolved (2026-06-12). Analytical analysis: t_ss = V_FBX × C5 / I_SS = 1.6V × C5 / 2µA. Output ramp current = C_OUT × (V_OUT/t_ss) where C_OUT ≈ 11.3 µF (C9 + C3 + C7/C10/C11). Input current = I_OUT × V_OUT / (V_IN × η) at η ≈ 85%. With original C5 = 10 nF → t_ss = 8 ms, I_IN ≈ **750 mA** for 8 ms (over the 600 mA HAT continuous spec). **Mitigation applied: C5 increased to 22 nF** → t_ss = 17.6 ms, I_IN ≈ **342 mA** (well under HAT spec). Schematic, BOM, and DigiKey order updated to match. Steady-state input current after startup is ~34 mA at full phantom load. Tradeoff: startup is 10 ms slower; irrelevant for phantom power. (Note: separate Pi 5V inrush event from C6+C8 charging at Pi power-on is governed by the Pi's own 5V slew rate and is independent of this analysis.)
 
