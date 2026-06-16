@@ -1,58 +1,58 @@
-ERC report (2026-05-13T21:57:37, Encoding UTF8)
+ERC report (2026-06-15T20:37:46, Encoding UTF8)
 Report includes: Errors, Warnings
 
 ***** Sheet /
-[footprint_link_issues]: The current configuration does not include the footprint library ''
+[lib_symbol_mismatch]: Symbol 'LT8362EMSE-PBF' doesn't match copy in library 'Analog-Devices-LT8362-EMSE'
     ; warning
-    @(1.800 in, 7.000 in): Symbol U1 [LT8362EMSE-PBF]
+    @(45.72 mm, 177.80 mm): Symbol U1 [LT8362EMSE-PBF]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(1.800 in, 7.000 in): Symbol U1 Pin 1 [EN/UVLO, Unspecified, Line]
-    @(4.250 in, 2.150 in): Symbol R5 Pin 1 [Passive, Line]
+    @(45.72 mm, 177.80 mm): Symbol U1 Pin 1 [EN/UVLO, Unspecified, Line]
+    @(107.95 mm, 54.61 mm): Symbol R5 Pin 1 [Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Unspecified are connected
     ; warning
-    @(1.800 in, 7.100 in): Symbol U1 Pin 3 [VIN, Unspecified, Line]
-    @(1.800 in, 7.400 in): Symbol U1 Pin 7 [BIAS, Unspecified, Line]
+    @(45.72 mm, 180.34 mm): Symbol U1 Pin 3 [VIN, Unspecified, Line]
+    @(45.72 mm, 187.96 mm): Symbol U1 Pin 7 [BIAS, Unspecified, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(1.800 in, 7.200 in): Symbol U1 Pin 5 [INTVCC, Unspecified, Line]
-    @(1.300 in, 7.050 in): Symbol C17 Pin 1 [Passive, Line]
+    @(45.72 mm, 182.88 mm): Symbol U1 Pin 5 [INTVCC, Unspecified, Line]
+    @(33.02 mm, 179.07 mm): Symbol C17 Pin 1 [Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(1.800 in, 7.400 in): Symbol U1 Pin 7 [BIAS, Unspecified, Line]
-    @(0.900 in, 7.250 in): Symbol C18 Pin 1 [Passive, Line]
+    @(45.72 mm, 187.96 mm): Symbol U1 Pin 7 [BIAS, Unspecified, Line]
+    @(22.86 mm, 184.15 mm): Symbol C18 Pin 1 [Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(1.800 in, 7.500 in): Symbol U1 Pin 8 [VC, Unspecified, Line]
-    @(2.500 in, 3.100 in): Symbol C2 Pin 1 [Passive, Line]
+    @(45.72 mm, 190.50 mm): Symbol U1 Pin 8 [VC, Unspecified, Line]
+    @(63.50 mm, 78.74 mm): Symbol C2 Pin 1 [Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(4.000 in, 7.000 in): Symbol U1 Pin 17 [PGND/GND, Unspecified, Line]
-    @(4.500 in, 7.450 in): Symbol R11 Pin 2 [Passive, Line]
+    @(101.60 mm, 177.80 mm): Symbol U1 Pin 17 [PGND/GND, Unspecified, Line]
+    @(114.30 mm, 189.23 mm): Symbol R11 Pin 2 [Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(4.000 in, 7.100 in): Symbol U1 Pin 16 [SW1, Unspecified, Line]
-    @(2.600 in, 1.050 in): Symbol D1 Pin 1 [K, Passive, Line]
+    @(101.60 mm, 180.34 mm): Symbol U1 Pin 16 [SW1, Unspecified, Line]
+    @(66.04 mm, 26.67 mm): Symbol D1 Pin 1 [K, Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Unspecified are connected
     ; warning
-    @(4.000 in, 7.200 in): Symbol U1 Pin 14 [SW2, Unspecified, Line]
-    @(4.000 in, 7.100 in): Symbol U1 Pin 16 [SW1, Unspecified, Line]
+    @(101.60 mm, 182.88 mm): Symbol U1 Pin 14 [SW2, Unspecified, Line]
+    @(101.60 mm, 180.34 mm): Symbol U1 Pin 16 [SW1, Unspecified, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(4.000 in, 7.300 in): Symbol U1 Pin 12 [SYNC/MODE, Unspecified, Line]
-    @(4.500 in, 7.150 in): Symbol R11 Pin 1 [Passive, Line]
+    @(101.60 mm, 185.42 mm): Symbol U1 Pin 12 [SYNC/MODE, Unspecified, Line]
+    @(114.30 mm, 181.61 mm): Symbol R11 Pin 1 [Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(4.000 in, 7.400 in): Symbol U1 Pin 11 [SS, Unspecified, Line]
-    @(5.500 in, 3.100 in): Symbol C5 Pin 1 [Passive, Line]
+    @(101.60 mm, 187.96 mm): Symbol U1 Pin 11 [SS, Unspecified, Line]
+    @(139.70 mm, 78.74 mm): Symbol C5 Pin 1 [Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(4.000 in, 7.500 in): Symbol U1 Pin 10 [RT, Unspecified, Line]
-    @(2.850 in, 2.150 in): Symbol R3 Pin 1 [Passive, Line]
+    @(101.60 mm, 190.50 mm): Symbol U1 Pin 10 [RT, Unspecified, Line]
+    @(72.39 mm, 54.61 mm): Symbol R3 Pin 1 [Passive, Line]
 [pin_to_pin]: Pins of type Unspecified and Passive are connected
     ; warning
-    @(4.000 in, 7.600 in): Symbol U1 Pin 9 [FBX, Unspecified, Line]
-    @(3.650 in, 4.350 in): Symbol C12 Pin 2 [Passive, Line]
+    @(101.60 mm, 193.04 mm): Symbol U1 Pin 9 [FBX, Unspecified, Line]
+    @(92.71 mm, 110.49 mm): Symbol C12 Pin 2 [Passive, Line]
 
  ** ERC messages: 13  Errors 0  Warnings 13
 
