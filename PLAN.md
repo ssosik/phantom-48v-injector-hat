@@ -98,10 +98,13 @@
    HiFiBerry board has tall components on its south edge that constrain the stack height.
    2-point mounting via top standoffs is the correct solution for this stack.
 
-#24 - SW1 pad 3 (unused SPDT throw) has no net. Mark it no-connect in KiCad GUI:
-   double-click pad 3 → Pad Properties → check "No connect". The two unnamed
-   mechanical retention pads (empty pad number) are already ignored by DRC.
-   SPST schematic symbol has no pin 3, so no ERC marker needed in the schematic.
+#24 - :check: SUPERSEDED (2026-06-15). SW1 pad 3 is no longer a no-connect.
+   Switch was upgraded SPST → SPDT in the schematic; pad 3 is now wired to GND
+   so flipping SW1 off actively drains the phantom rail (+48V_SW → GND through
+   R6-R9) instead of letting it decay across the DC-block caps. Gives a cleaner
+   audible mute. wire_schematic.py NETLIST line for SW1 now has all three pins
+   bound: pin 1 = +48V, pin 2 = +48V_SW (common output to R6-R9), pin 3 = GND.
+   See commit 7cfcf93.
 
 #25 - J3 GND pin (pad1) is at y=87.198mm; board bottom edge at y=88.839mm → 1.641mm margin.
    Pad edge to board edge ≈ 0.84mm (1.6mm THT pad). Passes standard fab rules (JLCPCB 0.3mm,
