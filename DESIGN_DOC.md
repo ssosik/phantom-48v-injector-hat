@@ -109,7 +109,7 @@ Raspberry Pi 4B
 | J2 | 2×3 pin header 2.54mm | To HiFiBerry J4 | Generic | 1 |
 | J3 | 1×3 pin header 2.54mm | XLR pigtail, L channel | Generic | 1 |
 | J4 | 1×3 pin header 2.54mm | XLR pigtail, R channel | Generic | 1 |
-| D2 | Green LED 3mm | +48V rail indicator (THT) | Generic 3mm green | 1 |
+| D2 | Green LED 3mm | Phantom enable indicator (follows SW1; lit only when phantom is being applied) | Generic 3mm green | 1 |
 | R10 | 12 kΩ 1/4W | LED current limit (~3 mA @ 48V), 0805 | Yageo RC0805FR-0712KL | 1 |
 | MH1, MH2 | M2.5 mounting hole | 2.7 mm drill; pairs with M2.5×11 mm standoff | — | 2 |
 
@@ -139,8 +139,8 @@ See `BOM.csv` for the authoritative parts list with DigiKey part numbers, prices
 | `+5V_FILT` | Post-EMI-filtered 5V | L2 (output-side terminal); L1 (input-side terminal); U1 `V_IN`; C1 |
 | `SW_NODE` | Boost switch node | L1 (output-side terminal); D1 anode; U1 `SW` |
 | `+48V_RAW` | Boost output before output filter | D1 cathode; C9; FB1 (input-side terminal) |
-| `+48V` | Filtered phantom rail | FB1 (output-side terminal); C3; C7; C10; C11; R10; SW1 (common terminal) |
-| `+48V_SW` | Switched phantom rail (both channels) | SW1 (switched terminal); R6; R7; R8; R9 |
+| `+48V` | Filtered phantom rail (always on while boost converter runs) | FB1 (output-side terminal); C3; C7; C10; C11; SW1 pin 1 (ON throw) |
+| `+48V_SW` | Switched phantom rail (both channels, gated by SW1) | SW1 pin 2 (common); R6; R7; R8; R9; R10 (LED follows switch) |
 | `XLR_L_HOT` | L channel XLR pin 2 | R6 (XLR-side terminal); C13 (XLR-side terminal); J3 pin 2 |
 | `XLR_L_COLD` | L channel XLR pin 3 | R7 (XLR-side terminal); C14 (XLR-side terminal); J3 pin 3 |
 | `XLR_R_HOT` | R channel XLR pin 2 | R8 (XLR-side terminal); C15 (XLR-side terminal); J4 pin 2 |
@@ -157,7 +157,7 @@ See `BOM.csv` for the authoritative parts list with DigiKey part numbers, prices
 | `BIAS` | Internal bias | U1 `BIAS`; tied to +5V_FILT (verify in datasheet — see open item 4) |
 | `INTVCC` | Internal regulator output | U1 `INTVCC`; bypass cap to GND (typ. 1 µF / 16V, verify in datasheet) |
 | `SYNC_MODE` | Mode select | U1 `SYNC/MODE`; GND for SSFM-enabled operation (verify in datasheet) |
-| `GND` | System ground | J1 pins 6, 9, 14, 20, 25, 30, 34, 39; J2 pins 3, 4; U1 `GND` and exposed pad; R2 (bottom terminal); R3 (ground-side terminal); C2, C4, C5, C7, C10, C11 (ground-side terminal each); C6, C8 (ground-side terminal each); C9 (ground-side terminal); C1 (ground-side terminal); D2 cathode; XLR pin 1 on J3 and J4 |
+| `GND` | System ground | J1 pins 6, 9, 14, 20, 25, 30, 34, 39; J2 pins 3, 4; U1 `GND` and exposed pad; R2 (bottom terminal); R3 (ground-side terminal); C2, C4, C5, C7, C10, C11 (ground-side terminal each); C6, C8 (ground-side terminal each); C9 (ground-side terminal); C1 (ground-side terminal); D2 cathode; SW1 pin 3 (OFF throw — actively drains phantom rail); XLR pin 1 on J3 and J4 |
 
 **Convention notes**:
 - **All capacitors in this design are non-polarized ceramic** (X7R or C0G). Use `Device:C` (the symmetric symbol with two parallel plates), not `Device:C_Polarized`. Either terminal can connect to either net — orientation does not matter for assembly. Where the netlist describes a cap's terminals (e.g., "C13 (XLR-side terminal)"), it's identifying *which* net the terminal sits on, not implying a polarity requirement.

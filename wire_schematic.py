@@ -31,6 +31,8 @@ LIB_PINS = {
     'Device:LED':         {'1':(-3.81,0,0),   '2':(3.81,0,180)},
     'Diode:B260':         {'1':(-3.81,0,0),   '2':(3.81,0,180)},
     'Switch:SW_SPST':     {'1':(-5.08,0,0),   '2':(5.08,0,180)},
+    # SPDT: pin 2 = common (left), pin 1 = top throw (right), pin 3 = bottom throw (right)
+    'Switch:SW_SPDT':     {'1':(5.08,2.54,180), '2':(-5.08,0,0), '3':(5.08,-2.54,180)},
     'Connector_Generic:Conn_01x03': {
         '1':(-5.08,2.54,0), '2':(-5.08,0,0), '3':(-5.08,-2.54,0),
     },
@@ -79,7 +81,7 @@ NETLIST = {
     ('R7','1'): '+48V_SW',   ('R7','2'): 'XLR_L_COLD',
     ('R8','1'): '+48V_SW',   ('R8','2'): 'XLR_R_HOT',
     ('R9','1'): '+48V_SW',   ('R9','2'): 'XLR_R_COLD',
-    ('R10','1'): '+48V',     ('R10','2'): 'LED_A',
+    ('R10','1'): '+48V_SW',  ('R10','2'): 'LED_A',
     # R11: 100kΩ SYNC/MODE pull-down for Burst+SSFM mode
     ('R11','1'): 'SYNC_MODE', ('R11','2'): 'GND',
 
@@ -108,7 +110,8 @@ NETLIST = {
     # D2 LED (rot=270): pin 2=Anode (top), pin 1=Cathode (bottom)
     ('D2','2'): 'LED_A',     ('D2','1'): 'GND',
 
-    ('SW1','1'): '+48V',     ('SW1','2'): '+48V_SW',
+    # SPDT: pin 2 = common (output to bias resistors); pin 1 = +48V (ON), pin 3 = GND (OFF, actively drains rail)
+    ('SW1','1'): '+48V',     ('SW1','2'): '+48V_SW',   ('SW1','3'): 'GND',
 
     ('J2','1'): 'J4_R-',  ('J2','2'): 'J4_R+',
     ('J2','3'): 'GND',    ('J2','4'): 'GND',
