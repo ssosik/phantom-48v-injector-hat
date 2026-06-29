@@ -69,7 +69,7 @@ Raspberry Pi 4B
 | C6 | 22 µF / 16V X7R | Bulk input | 1210 | Yageo CC1210KKX7R7BB226 | 1 |
 | C7 | 0.1 µF / 100V X7R | Output bypass | 0805 | Yageo CS0805KKX7R0BB104 | 1 |
 | C8 | 4.7 µF / 50V X7R | Input EMI filter | 0805 | TDK CGA4J1X7R1H475K125AC | 1 |
-| C9 | 10 µF / 63V X7R | Bulk output | 1210 | Yageo CC1210KKX7R2BB106 | 1 |
+| C9 | 10 µF / 100V X7R | Bulk output | 1210 | TDK C3225X7R2A106K250AC | 1 |
 | C10 | 0.1 µF / 100V X7R | Output bypass | 0805 | Yageo CS0805KKX7R0BB104 | 1 |
 | C11 | 0.1 µF / 100V X7R | Output bypass | 0805 | Yageo CS0805KKX7R0BB104 | 1 |
 | C12 | 4.7 pF C0G | FBX feedforward | 0805 | Murata GRM2195C1H4R7CA01D | 1 |
@@ -81,7 +81,7 @@ Raspberry Pi 4B
 - C8 placement: on the **input** side of L2 (between Pi and the inductor), in parallel with C6 as part of the input EMI filter. C1 is the V_IN bypass on the **output** side of L2 (between the inductor and U1).
 - C7, C3, C10, C11 are arranged in a vertical column around FB1 on the +48V output net (Pi-filter network).
 - L1: BOM lists `Inductor_SMD:L_Coilcraft_XAL5030-XXX` as the KiCad footprint for the XAL5050 part. The XAL5030 and XAL5050 share the same 5×5 mm pad pattern; XAL5050 just has a taller body (5.1 mm vs. 3.1 mm). Verify clearance above L1 in the Pi/HAT/HiFiBerry stack.
-- C9 voltage rating is 63V (not 50V) — 48V output plus switching transients make 50V marginal.
+- C9 voltage rating is 100V — 48V output plus switching transients make 50V marginal and 63V offers little derating headroom. 100V/1210 X7R is widely stocked (TDK C3225X7R2A106K250AC).
 
 ### 2.2 Phantom injection section
 

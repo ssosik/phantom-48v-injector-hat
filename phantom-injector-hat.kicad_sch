@@ -8894,7 +8894,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10 µF / 63V X7R"
+		(property "Value" "10 µF / 100V X7R"
 			(at 250.19 83.8199 0)
 			(show_name yes)
 			(do_not_autoplace no)
