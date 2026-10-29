@@ -141,7 +141,7 @@ See `BOM.csv` for the authoritative parts list with DigiKey part numbers, prices
 | `+5V_FILT` | Post-EMI-filtered 5V | L2 (output-side terminal); L1 (input-side terminal); U1 `V_IN`; C1 |
 | `SW_NODE` | Boost switch node | L1 (output-side terminal); D1 anode; U1 `SW` |
 | `+48V_RAW` | Boost output before output filter | D1 cathode; C9; FB1 (input-side terminal) |
-| `+48V` | Filtered phantom rail (always on while boost converter runs) | FB1 (output-side terminal); C3; C7; C10; C11; SW1 pin 1 (ON throw) — ⚠ current schematic/PCB have this on SW1 pin 2 (common); see README → Known issues |
+| `+48V` | Filtered phantom rail (always on while boost converter runs) | FB1 (output-side terminal); C3; C7; C10; C11; SW1 pin 1 (ON throw) |
 | `+48V_SW` | Switched phantom rail (both channels, gated by SW1) | SW1 pin 2 (common); R6; R7; R8; R9; R10 (LED follows switch) |
 | `XLR_L_HOT` | L channel XLR pin 2 | R6 (XLR-side terminal); C13 (XLR-side terminal); J3 pin 2 |
 | `XLR_L_COLD` | L channel XLR pin 3 | R7 (XLR-side terminal); C14 (XLR-side terminal); J3 pin 3 |

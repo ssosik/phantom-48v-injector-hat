@@ -156,3 +156,11 @@ older items predate later component moves; trust the PCB, not the numbers here.
    Both below 20 Hz audio band; BirdNET bandwidth (0.05–12 kHz) is flat. ✓
    Note: TESTS.md listed 10.6 Hz (used R_inj=6.81kΩ as reference impedance — wrong).
    Correct formula uses R_HFB=8kΩ (HiFiBerry PCM1863 input Z). Simulation confirms 15 Hz.
+
+#35 - ✅ SW1 OFF position shorted +48V to GND (fixed 2026-10-29).
+   The schematic had drifted from wire_schematic.py: SW1 pin 2 (common, middle pad) was on +48V
+   and pin 3 on GND, so the OFF throw shorted the boost output. The golden had been re-baselined
+   with the error. Fix: re-ran wire_schematic.py (only SW1 changed in the netlist), swapped SW1
+   pad 1/2 nets on the PCB, rerouted +48V from C3 through a via and a short B.Cu link to pad 1,
+   and brought +48V_SW over pad 1 into pad 2 on F.Cu. DRC unchanged (1 accepted exception,
+   0 unconnected); schematic parity clean. Golden re-saved. C9 value synced to 100V at the same time.

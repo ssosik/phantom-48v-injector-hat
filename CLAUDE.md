@@ -77,4 +77,4 @@ y≈79–88: injection row: R8/R9, J4, C15/C16, J2, C13/C14, J3, R6/R7, then R10
 DRC: fully routed, 0 unconnected pads, 1 accepted `track_width` error (0.25 mm +5V_FILT stub into U1, documented in `.kicad_dru`).
 ERC: 0 errors, 13 warnings (vendor symbol pin types + library mismatch).
 
-**Known open defect**: SW1 pins 1/2 are swapped in the schematic/PCB relative to `wire_schematic.py` (see README → Known issues).
+SW1 wiring (fixed 2026-10-29): pad 2 (middle, common) = +48V_SW, pad 1 = +48V, pad 3 = GND. +48V reaches pad 1 via a short B.Cu link from a via just below C3.
