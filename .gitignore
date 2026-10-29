@@ -1,0 +1,26 @@
+# KiCad backups, autosaves, locks and per-user state
+*-backups/
+*.bak
+*.kicad_prl
+*.lck
+~*.lck
+_autosave-*
+\#auto_saved_files#
+fp-info-cache
+*.kicad_pcb.zip
+
+# Generated outputs (regenerate from the schematic/PCB)
+*.net
+gerbers/
+fab/
+*.raw
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor / tooling / OS
+.history/
+.claude/settings.local.json
+claude.resume
+.DS_Store

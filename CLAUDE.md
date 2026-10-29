@@ -25,7 +25,7 @@ Creates a `.bak` backup before writing. Run this whenever net labels or no-conne
 
 ### Re-place PCB components
 ```bash
-python3 place_components.py
+/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3 place_components.py
 ```
 Requires KiCad's `pcbnew` Python module (bundled at `/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/...`). Run **after** "Tools → Update PCB from Schematic" (F8) in the KiCad PCB editor.
 
@@ -46,33 +46,35 @@ Requires KiCad's `pcbnew` Python module (bundled at `/Applications/KiCad/KiCad.a
 
 ### Coordinate systems
 - **KiCad schematic**: y-down, mm. Symbol libraries use y-up; `wire_schematic.py`'s `pin_abs()` handles the transform.
-- **KiCad PCB**: y-down, mm. Origin near top-left. Board outline: x = 100–162 mm, y = 44–100 mm.
+- **KiCad PCB**: y-down, mm. Origin near top-left. Board outline: x ≈ 100–165 mm, y ≈ 44–89 mm (65 × 45 mm).
 - **B.Cu footprints** (like J1): local coords are mirrored. Transform: `PCB_x = center_x − y_local`, `PCB_y = center_y + x_local` for a footprint at -90°.
 
-### Board layout zones
+### Board layout zones (as built)
 ```
-x=100–113: J1 GPIO header (B.Cu, socket faces Pi below)
-x=113–160, y=50–75: Boost converter (U1, L1, L2, D1, Cx, Rx)
-x=113–160, y=75–98: Phantom injection (SW1/SW2, R6–R9, C13–C16, J3/J4)
-x=119, y=90: J2 (2×3 to HiFiBerry J4)
+y≈47–56, x≈103–162: J1 GPIO socket (B.Cu, faces Pi below) + MH1/MH2 at the top corners
+y≈57–78, x≈105–150: input filter (C6, C8, L2) on the left; boost converter (U1, L1, D1, Cx, Rx) centre/right
+y≈79–88: injection row: R8/R9, J4, C15/C16, J2, C13/C14, J3, R6/R7, then R10/D2 and SW1
 ```
 
 ## Key design constraints
 
-**J1 GPIO header**: `PinSocket_2x20_P2.54mm_Vertical` on **B.Cu**, at `(108.37, 48.77)` with rotation **-90°**. Socket housing faces down toward the Pi. Pad 2 (+5V_PI) at PCB (108.37, 46.23); pad 4 (+5V_PI) at (110.91, 46.23).
+**J1 GPIO header**: `PinSocket_2x20_P2.54mm_Vertical` on **B.Cu**, at `(108.37, 53.91)` with rotation **-90°**. Socket housing faces down toward the Pi. Pads 2 and 4 (+5V_PI) are in the top row at the left end.
 
 **LT8362 pin wiring**: Wire U1 by **pin name** (V_IN, SW, FBX, etc.), never by pin number. The NC spacer pins must be left unconnected (no-connect flag, not tied to GND). See `DESIGN_DOC.md` section 3.2.
 
 **Custom DRC rules** (`.kicad_dru`):
 - `signal`: 0.18mm clearance (tight — set to accommodate MSOP-16 U1 pads, which are 0.1956mm edge-to-edge), 0.2mm min track, 0.25mm min hole
-- `power`: 0.5mm min track, 0.3mm clearance for +5V_PI, +5V_FILT, GND, SW_NODE, +48V_RAW, +48V
+- `power`: 0.5mm min track for +5V_PI, +5V_FILT, GND, SW_NODE, +48V_RAW, +48V (no extra clearance)
 - `sw_node_isolation`: 0.5mm clearance between SW_NODE and all other nets
-- `thermal_via`: 0.6mm min via diameter on GND (for 3×3 stitching vias under U1 EP)
+- `thermal_via`: 0.6mm min via diameter on GND (3×3 grid of 0.6/0.3mm vias under U1 EP; stitching vias are 0.8/0.4mm)
 
 **KiCad 10 DRC rule syntax**: valid condition properties are `NetName` and `memberOf`. `Footprint`, `Reference`, and `Type` are not valid in rule conditions. Multiple constraints in one rule are fine; two rules with identical (or empty) conditions trigger a "same condition" error.
 
 **Editing `.kicad_pcb` directly**: When flipping a footprint from F.Cu to B.Cu, all non-pad geometry (fp_line on F.CrtYd, F.SilkS, F.Fab) must have layer names changed to B.* **and** their local y-coordinates negated (so the physical PCB position is preserved). Pad y-coordinates must also be negated. Pad rotations shift by 180° (e.g., 90° → 270°). The `(justify mirror)` attribute must be added to all text `(effects ...)` blocks.
 
-## DRC status (as of 2026-05-16)
+## DRC / ERC status (as of 2026-10-29)
 
-25 warnings (silk overlaps and silk-over-copper — need GUI ref-text repositioning), 48 unconnected pads (routing not yet done), 0 errors. The 1 dangling track is a +5V_PI stub at (110.91, 51.31) on F.Cu.
+DRC: fully routed, 0 unconnected pads, 1 accepted `track_width` error (0.25 mm +5V_FILT stub into U1, documented in `.kicad_dru`).
+ERC: 0 errors, 13 warnings (vendor symbol pin types + library mismatch).
+
+**Known open defect**: SW1 pins 1/2 are swapped in the schematic/PCB relative to `wire_schematic.py` (see README → Known issues).

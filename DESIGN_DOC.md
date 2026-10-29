@@ -20,7 +20,7 @@ Raspberry Pi 4B
                 │
                 ▼ +48V rail
                 │
-          [Per-channel slide switch]
+          [SPDT slide switch SW1 — both channels; OFF drains the line side to GND]
                 │
                 ▼
           [2× 6.81 kΩ 0.1% bias resistors per channel]
@@ -39,6 +39,8 @@ Raspberry Pi 4B
 **Power budget**: 16 mA total @ 48V = 770 mW output. At 83% boost efficiency, draws ~185 mA from the Pi 5V rail. Within Pi 4B's GPIO 5V budget.
 
 **Stack order**: Pi 4B (bottom) → HiFiBerry DAC2 ADC Pro (middle) → Phantom Injector HAT (top)
+
+> ⚠ **Unresolved**: PLAN.md #1 records the stack as Pi → HAT → HiFiBerry instead. J1 is a bottom-side socket with no pass-through pins, so the two orders imply different mechanical and GPIO pass-through requirements. See README → Known issues.
 
 ---
 
@@ -139,7 +141,7 @@ See `BOM.csv` for the authoritative parts list with DigiKey part numbers, prices
 | `+5V_FILT` | Post-EMI-filtered 5V | L2 (output-side terminal); L1 (input-side terminal); U1 `V_IN`; C1 |
 | `SW_NODE` | Boost switch node | L1 (output-side terminal); D1 anode; U1 `SW` |
 | `+48V_RAW` | Boost output before output filter | D1 cathode; C9; FB1 (input-side terminal) |
-| `+48V` | Filtered phantom rail (always on while boost converter runs) | FB1 (output-side terminal); C3; C7; C10; C11; SW1 pin 1 (ON throw) |
+| `+48V` | Filtered phantom rail (always on while boost converter runs) | FB1 (output-side terminal); C3; C7; C10; C11; SW1 pin 1 (ON throw) — ⚠ current schematic/PCB have this on SW1 pin 2 (common); see README → Known issues |
 | `+48V_SW` | Switched phantom rail (both channels, gated by SW1) | SW1 pin 2 (common); R6; R7; R8; R9; R10 (LED follows switch) |
 | `XLR_L_HOT` | L channel XLR pin 2 | R6 (XLR-side terminal); C13 (XLR-side terminal); J3 pin 2 |
 | `XLR_L_COLD` | L channel XLR pin 3 | R7 (XLR-side terminal); C14 (XLR-side terminal); J3 pin 3 |
@@ -154,10 +156,10 @@ See `BOM.csv` for the authoritative parts list with DigiKey part numbers, prices
 | `RT` | Frequency-setting | U1 `RT`; R3 (to GND) |
 | `SS` | Soft-start | U1 `SS`; C5 (to GND) |
 | `EN_UVLO` | Enable / undervoltage lockout | U1 `EN/UVLO`; R5 (to +5V_FILT, always-on enable) |
-| `BIAS` | Internal bias | U1 `BIAS`; tied to +5V_FILT (verify in datasheet — see open item 4) |
-| `INTVCC` | Internal regulator output | U1 `INTVCC`; bypass cap to GND (typ. 1 µF / 16V, verify in datasheet) |
-| `SYNC_MODE` | Mode select | U1 `SYNC/MODE`; GND for SSFM-enabled operation (verify in datasheet) |
-| `GND` | System ground | J1 pins 6, 9, 14, 20, 25, 30, 34, 39; J2 pins 3, 4; U1 `GND` and exposed pad; R2 (bottom terminal); R3 (ground-side terminal); C2, C4, C5, C7, C10, C11 (ground-side terminal each); C6, C8 (ground-side terminal each); C9 (ground-side terminal); C1 (ground-side terminal); D2 cathode; SW1 pin 3 (OFF throw — actively drains phantom rail); XLR pin 1 on J3 and J4 |
+| `BIAS` | Internal bias | U1 `BIAS`; tied to +5V_FILT, bypassed by C18 (see §6 item 4) |
+| `INTVCC` | Internal regulator output | U1 `INTVCC`; C17 (1 µF) to GND |
+| `SYNC_MODE` | Mode select | U1 `SYNC/MODE`; R11 (100 kΩ) to GND selects Burst + SSFM (see §6 item 3) |
+| `GND` | System ground | J1 pins 6, 9, 14, 20, 25, 30, 34, 39; J2 pins 3, 4; U1 `GND` and exposed pad; R2 (bottom terminal); R3 (ground-side terminal); C2, C3, C4, C5, C7, C10, C11, C17, C18 (ground-side terminal each); R11 (ground-side terminal); C6, C8 (ground-side terminal each); C9 (ground-side terminal); C1 (ground-side terminal); D2 cathode; SW1 pin 3 (OFF throw — actively drains phantom rail); XLR pin 1 on J3 and J4 |
 
 **Convention notes**:
 - **All capacitors in this design are non-polarized ceramic** (X7R or C0G). Use `Device:C` (the symmetric symbol with two parallel plates), not `Device:C_Polarized`. Either terminal can connect to either net — orientation does not matter for assembly. Where the netlist describes a cap's terminals (e.g., "C13 (XLR-side terminal)"), it's identifying *which* net the terminal sits on, not implying a polarity requirement.
@@ -165,8 +167,8 @@ See `BOM.csv` for the authoritative parts list with DigiKey part numbers, prices
 - **L2 (input EMI filter)** sits between `+5V_PI` (input side, Pi GPIO) and `+5V_FILT` (output side, filtered). Non-polarized.
 - **FB1 (output ferrite bead)** sits between `+48V_RAW` (boost converter output, ripple-bearing) and `+48V` (filtered rail, clean). Non-polarized.
 - **D1 (Schottky)** is polarized. Anode → SW_NODE, cathode → +48V_RAW. Marked with a band on the cathode side.
-- **D2 (LED)** is polarized. Anode (via R10) → +48V, cathode → GND. Marked with a flat on the cathode side, longer lead on the anode side.
-- **R6–R9 (precision bias resistors)** are non-polarized. They sit between `+48V_L` or `+48V_R` and an XLR pin. "Other terminal" or "XLR-side terminal" in the netlist refers to the terminal connecting to the XLR pin (not the +48V side).
+- **D2 (LED)** is polarized. Anode (via R10) → +48V_SW, cathode → GND. Marked with a flat on the cathode side, longer lead on the anode side.
+- **R6–R9 (precision bias resistors)** are non-polarized. They sit between `+48V_SW` and an XLR pin. "Other terminal" or "XLR-side terminal" in the netlist refers to the terminal connecting to the XLR pin (not the +48V side).
 
 **Star ground note**: All "GND" pins are a single net in this design — there is no isolation barrier. The star point should be physically near U1's exposed pad (the IC's GND lead frame). J1's many GND pins all tie to this single GND net.
 
@@ -178,15 +180,15 @@ Pin numbers are deliberately omitted here. Connect using the pin function names 
 |----------|----------|--------------|
 | `V_IN` | Power input | +5V_FILT, C1 |
 | `EN/UVLO` | Enable / undervoltage lockout | R5 to +5V_FILT (always-on enable) |
-| `SYNC/MODE` | Frequency sync / mode select | GND for internal-clock + SSFM-enabled operation (verify datasheet) |
+| `SYNC/MODE` | Frequency sync / mode select | R11 (100 kΩ) to GND → Burst + SSFM mode (§6 item 3) |
 | `SW` | Switch node | L1 (output-side terminal, the end opposite +5V_FILT), D1 anode |
 | `GND` | Power ground | GND star point |
-| `BIAS` | Internal bias supply | +5V_FILT (verify datasheet for minimum V_BIAS requirement) |
-| `FBX` | Feedback | R1/R2 midpoint, C11 |
+| `BIAS` | Internal bias supply | +5V_FILT, C18 bypass (§6 item 4) |
+| `FBX` | Feedback | R1/R2 midpoint, C12 (feedforward) |
 | `VC` | Compensation | R4-C4 series to GND, C2 to GND |
 | `RT` | Frequency-setting | R3 (121 kΩ) to GND for ~400 kHz |
 | `SS` | Soft-start cap | C5 (22 nF) to GND |
-| `INTVCC` | Internal regulator output | Bypass cap to GND (typ. 1 µF / 16V) |
+| `INTVCC` | Internal regulator output | C17 (1 µF) to GND |
 | `EP` (exposed pad) | Thermal + electrical ground | GND ground pour, with 3×3 thermal stitching vias to bottom-layer ground |
 | `NC` × 4 | No connect | Leave open (do NOT tie to GND or any net) |
 
@@ -194,14 +196,14 @@ Pin numbers are deliberately omitted here. Connect using the pin function names 
 
 ### 3.3 J1 — Raspberry Pi GPIO (2×20)
 
-Only 4 pins of the 40 are functionally connected. The rest pass through (because we're a stacked HAT and the HiFiBerry above us shares the same physical GPIO header).
+Only +5V and GND are functionally connected. The remaining pins have socket contacts but no copper connection; this HAT does **not** pass the GPIO header through to a board stacked above it (see PLAN #18).
 
 | Pin | Signal | Connection |
 |-----|--------|------------|
-| 1 | +3.3V | Not used (pass-through only) |
+| 1 | +3.3V | Not used |
 | 2, 4 | +5V | +5V_PI net |
 | 6, 9, 14, 20, 25, 30, 34, 39 | GND | GND net |
-| All other pins | (Pi GPIO) | Not used, pass through |
+| All other pins | (Pi GPIO) | Not used |
 
 ### 3.4 J2 — HiFiBerry J4 ribbon (2×3)
 
@@ -305,19 +307,21 @@ LT8362's spread-spectrum frequency modulation (SSFM) dithers the switching frequ
 
 ### 5.1 Board outline and stack
 
-- Dimensions: Pi HAT standard, 65 mm × 56.5 mm
-- Mounting holes: standard Pi HAT pattern (4× M2.5 at corners)
+- Dimensions: 65 mm × 45 mm (shorter than the 65 × 56.5 mm Pi HAT standard)
+- Mounting holes: 2× M2.5 along the GPIO edge only (MH1/MH2; see PLAN #34)
 - Thickness: 1.6 mm
 - 2-layer board (can fit on 2 layers; 4-layer would help SI but isn't required)
 
 ### 5.2 Critical layout zones
+
+> This was the original planning sketch. The as-built placement differs: J1 runs along the top edge, the boost converter sits in the centre, and the injection network, J2–J4, SW1 and D2 run along the bottom edge. See `docs/img/pcb-layout.png`.
 
 ```
 +-------------------------------------------+
 |  XLR pigtails J3, J4    [top edge]        |
 |  Slide switch SW1  ......... ~~~~~~~~~~~  |
 |                                            |
-|  Phantom injection: R6-R9, C12-C15        |
+|  Phantom injection: R6-R9, C13-C16        |
 |  (analog, keep quiet)                     |
 |                                            |
 |  ============================== keep-out  |  ← break
@@ -350,7 +354,7 @@ The FBX trace from R1/R2 midpoint to U1's `FBX` pin carries low-impedance high-f
 
 Single GND net, but plan the layout such that:
 - High-current switching ground (C6, C9, D1, U1 EP) shares a tight ground patch
-- Audio ground (C12-C15, R6-R9, J2 GND, J3 GND, J4 GND) connects to that patch at one point only
+- Audio ground (C13-C16, R6-R9, J2 GND, J3 GND, J4 GND) connects to that patch at one point only
 - Pi GND comes in via J1 and ties at the same star point
 
 ### 5.6 LT8362 exposed pad layout
@@ -430,7 +434,7 @@ All passives are 0805 or larger to support hand soldering with a fine-tip iron a
 
 7. **Install through-hole parts** after the board has fully cooled:
    - J2, J3, J4 (small headers) first
-   - SW1, SW2 (slide switches)
+   - SW1 (slide switch)
    - D2 (LED) + verify polarity against silkscreen
    - J1 (Pi GPIO 2×20 stacking header) **last** — it's tall and blocks access to everything else underneath
 
@@ -494,7 +498,7 @@ After assembly, before plugging into the Pi:
 2. **Check continuity from +5V to GND** with a multimeter on the unpowered board — should read open or very high resistance (kΩ range or more). A low reading indicates a short and means stop, don't power up.
 3. **Apply 5V via bench supply** with current limit set to 100 mA (well below expected ~185 mA draw) — board should current-limit immediately if there's a short, protecting the IC
 4. **Measure +48V at the output filter** (after FB1) — should be 47-49V at no load
-5. **Toggle each slide switch** and verify +48V appears on the corresponding XLR pins 2 and 3 (relative to pin 1)
+5. **Toggle SW1** and verify +48V appears on XLR pins 2 and 3 of both J3 and J4 (relative to pin 1), and that the rail drops to 0 V when switched off
 6. **Increase current limit to 500 mA** and **plug in an actual P93 + EM272** — should see <100 mA total draw, +48V holding stable
 7. **Inject audio at the EM272** (tap mic body, click, finger snap) — should see audio at the HiFiBerry J4 output via scope, or in the BirdNET-Pi recording stream
 
@@ -527,13 +531,13 @@ After basic function is confirmed, before committing to the design across all 5 
 4. ~~**BIAS pin connection**~~ — resolved. Datasheet page 7: "INTVCC draws power from the BIAS pin if 4.4V ≤ BIAS ≤ VIN." With BIAS = +5V_FILT = VIN = 5V, both conditions are met (4.4V ≤ 5V ≤ 5V). This reduces VIN quiescent current from ~1200 µA to ~22 µA (55× improvement at light load). BIAS tied to +5V_FILT via C18 bypass is correct and optimal. "If unused, tie to GND" applies only when no suitable voltage is available.
 5. ~~**HiFiBerry J4 pinout**~~ — resolved (2026-06-12). Re-verified §3.4 against HiFiBerry DAC2 ADC Pro datasheet (hifiberry.com/docs/data-sheets/datasheet-dac2-adc-pro/). **Bug found and fixed**: right channel +/− were swapped — §3.4 previously had pin 1 = R+ / pin 2 = R−, but the datasheet specifies pin 1 = in R− / pin 2 = in R+ (pin 1 is left bottom corner). Left channel and GND pins were correct. Without fix, the right channel would have inverted polarity vs the left, breaking stereo imaging and causing partial cancellation in any downstream mono sum. wire_schematic.py NETLIST and §3.4 table both updated; schematic regenerated.
 6. ~~**C&K OS102011MA1QN1 footprint**~~ — resolved (2026-06-12). KiCad's `Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q` footprint verified against C&K OS-series datasheet page 10. All critical dimensions match: 3 signal pins at 2.00 mm pitch (`.079"`), 2 mounting feet with 1.50 mm drill (`Ø.059"`) offset 2.10 mm (`.083"`) horizontally from the outer signal pins, total hole-pattern width 8.20 mm (`.323"`), body footprint 8.60 × 4.40 mm (`.339" × .173"`). Pin numbering matches SPDT schematic (pin 2 = common, pins 1/3 = throws). Single deviation: signal pin drill is 0.90 mm in KiCad vs 0.80 mm in datasheet — standard library practice (rounded to a common drill bit; 0.1 mm extra clearance eases insertion and stays within solderable annular-ring tolerance on the 1.5 mm pad).
-7. ~~**Pi 5V current draw under transient (e.g., startup inrush of LT8362)**~~ — resolved (2026-06-12). Analytical analysis: t_ss = V_FBX × C5 / I_SS = 1.6V × C5 / 2µA. Output ramp current = C_OUT × (V_OUT/t_ss) where C_OUT ≈ 11.3 µF (C9 + C3 + C7/C10/C11). Input current = I_OUT × V_OUT / (V_IN × η) at η ≈ 85%. With original C5 = 10 nF → t_ss = 8 ms, I_IN ≈ **750 mA** for 8 ms (over the 600 mA HAT continuous spec). **Mitigation applied: C5 increased to 22 nF** → t_ss = 17.6 ms, I_IN ≈ **342 mA** (well under HAT spec). Schematic, BOM, and DigiKey order updated to match. Steady-state input current after startup is ~34 mA at full phantom load. Tradeoff: startup is 10 ms slower; irrelevant for phantom power. (Note: separate Pi 5V inrush event from C6+C8 charging at Pi power-on is governed by the Pi's own 5V slew rate and is independent of this analysis.)
+7. ~~**Pi 5V current draw under transient (e.g., startup inrush of LT8362)**~~ — resolved (2026-06-12). Analytical analysis: t_ss = V_FBX × C5 / I_SS = 1.6V × C5 / 2µA. Output ramp current = C_OUT × (V_OUT/t_ss) where C_OUT ≈ 11.3 µF (C9 + C3 + C7/C10/C11). Input current = I_OUT × V_OUT / (V_IN × η) at η ≈ 85%. With original C5 = 10 nF → t_ss = 8 ms, I_IN ≈ **750 mA** for 8 ms (over the 600 mA HAT continuous spec). **Mitigation applied: C5 increased to 22 nF** → t_ss = 17.6 ms, I_IN ≈ **342 mA** (well under HAT spec). Schematic, BOM, and DigiKey order updated to match. Steady-state input current after startup is ~185 mA at full phantom load (§1 power budget). Tradeoff: startup is 10 ms slower; irrelevant for phantom power. (Note: separate Pi 5V inrush event from C6+C8 charging at Pi power-on is governed by the Pi's own 5V slew rate and is independent of this analysis.)
 
 ---
 
 ## 7. KiCad workflow to finish this design
 
-1. **Open KiCad 10**, create new project at `/Users/stevesosik/Documents/KiCad/phantom-injector-hat/`
+1. **Open KiCad 10** and open `phantom-injector-hat.kicad_pro`
 2. **Add Analog Devices KiCad library** if not already installed (LT8362 symbol is in the official AD library — search "Symbol library" in KiCad's preferences)
 3. **Place components** per section 2 BOM, using reference designators above
 4. **Wire nets** per section 3 netlist
@@ -547,7 +551,7 @@ After basic function is confirmed, before committing to the design across all 5 
 
 ## 8. Future variants
 
-- **v1.1**: WIMA MKS2 film caps for C12–C15 (audiophile variant, larger board area)
-- **v2.0**: Add software-controlled P48 enable via Pi GPIO (replace SW1/SW2 with logic-level MOSFET high-side switches)
-- **v2.1**: Add per-channel green LED to indicate phantom-active state
+- **v1.1**: WIMA MKS2 film caps for C13–C16 (audiophile variant, larger board area)
+- **v2.0**: Add software-controlled P48 enable via Pi GPIO (replace SW1 with a logic-level MOSFET high-side switch)
+- **v2.1**: Per-channel phantom-active LEDs (today D2 indicates both channels)
 - **v3.0**: Integrate a small headphone amplifier for monitoring (would need a separate +9V/+12V rail from the existing PSU HAT — return to two-HAT stack)

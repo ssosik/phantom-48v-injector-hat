@@ -21,6 +21,7 @@ J2 (HiFiBerry connector): measured from MH1 +11.32mm east, +37.14mm south.
   Pin 1 (R−) is at the lower-right corner of J4 on the HiFiBerry.
 """
 
+import os
 import sys
 sys.path.insert(0, (
     '/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework'
@@ -29,7 +30,7 @@ sys.path.insert(0, (
 
 import pcbnew
 
-PCB_PATH = '/Users/stevesosik/Documents/KiCad/phantom-injector-hat/phantom-injector-hat.kicad_pcb'
+PCB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'phantom-injector-hat.kicad_pcb')
 
 # (x_mm, y_mm, rotation_degrees)  — or  (x_mm, y_mm, rotation_degrees, 'layer')
 # Rotation follows KiCad convention: CCW positive, 0° = default footprint orientation.

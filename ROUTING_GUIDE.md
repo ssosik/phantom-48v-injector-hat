@@ -1,5 +1,8 @@
 # Routing Guide — phantom-injector-hat
 
+> Pre-routing guide, kept for the reasoning. The board is now fully routed; coordinates and zone
+> suggestions below describe the plan, not necessarily the final layout.
+
 ## Trace Widths by Net
 
 | Net | Current | Width | Notes |
@@ -9,8 +12,8 @@
 | `+5V_FILT` | ~300mA continuous | **1.0mm** | After L2 filter inductor |
 | `GND` | return for all | **copper pour** | Fill zone, don't route traces |
 | `+48V_RAW` | ≤30mA | **0.5mm** | D1 cathode → C9 → FB1 |
-| `+48V` | ≤30mA | **0.5mm** | FB1 output → R10, C3/C7/C10/C11 |
-| `+48V_SW` | ≤30mA | **0.5mm** | SW1 out → R6/R7/R8/R9 |
+| `+48V` | ≤30mA | **0.5mm** | FB1 output → C3/C7/C10/C11 → SW1 |
+| `+48V_SW` | ≤30mA | **0.5mm** | SW1 out → R6/R7/R8/R9, R10 (LED) |
 | `XLR_L_HOT`, `XLR_L_COLD` | audio + 7mA DC | **0.25mm** | R6/R7 output → C13/C14 → J3 |
 | `XLR_R_HOT`, `XLR_R_COLD` | audio + 7mA DC | **0.25mm** | R8/R9 output → C15/C16 → J4 |
 | `J4_L+`, `J4_L-`, `J4_R+`, `J4_R-` | audio signal | **0.25mm** | C13–C16 output → J2 (HiFiBerry) |
@@ -71,14 +74,14 @@ Keep these traces short and away from SW_NODE and L1/D1.
 ### Group 4: Output filter chain
 D1 cathode → +48V_RAW → C9 (bulk) → FB1 → +48V → C3/C7/C10/C11 (decoupling column)
 Route as a left-to-right chain along the top of the output zone (y ≈ 56–65).
-After FB1, the +48V rail fans down to R10 (LED) and right to the output caps.
+After FB1, the +48V rail runs through the output caps to SW1; R10 (LED) hangs off +48V_SW.
 
 ### Group 5: Phantom injection
 +48V_SW (SW1 output) runs along the left edge to R6/R7/R8/R9.
 - R6 → XLR_L_HOT → C13 → J4_L+ → J2 pin 5
 - R7 → XLR_L_COLD → C14 → J4_L- → J2 pin 6
-- R8 → XLR_R_HOT → C15 → J4_R+ → J2 pin 1
-- R9 → XLR_R_COLD → C16 → J4_R- → J2 pin 2
+- R8 → XLR_R_HOT → C15 → J4_R+ → J2 pin 2
+- R9 → XLR_R_COLD → C16 → J4_R- → J2 pin 1
 - J3 pin 1 (GND), J3 pin 2 (XLR_L_HOT), J3 pin 3 (XLR_L_COLD)
 - J4 pin 1 (GND), J4 pin 2 (XLR_R_HOT), J4 pin 3 (XLR_R_COLD)
 

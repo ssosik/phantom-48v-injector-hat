@@ -22,7 +22,7 @@
    (condition "A.NetName == '/SW_NODE' && B.NetName != '/SW_NODE'")
 )
 
-# Thermal stitching vias under U1 EP: 0.6mm pad diameter (0.3mm drill is set in via properties)
+# GND vias: 0.6mm min diameter. 3×3 grid under U1 EP is 0.6/0.3mm; stitching vias are 0.8/0.4mm.
 (rule "thermal_via"
    (constraint via_diameter (min 0.6mm))
    (condition "A.NetName == '/GND'")
@@ -35,9 +35,9 @@
 # here (1MΩ feedback divider); 0.5mm trace physically cannot fit between R1 pads and
 # neighboring components. Accept both track_width violations on this 13mm sense segment.
 #
-# /+5V_FILT stub into U1 pad7 (VIN):
+# /+5V_FILT stub into U1 pad7 (BIAS; same net as VIN pad3):
 # The 2mm horizontal approach to U1 VIN is at 0.25mm width. A 0.5mm trace cannot fit
 # here: MSOP-16 pad pitch is 0.5mm, adjacent pads (NC pad6, VC pad8) allow only ~0.25mm
 # max trace at 0.18mm signal clearance. C1 (10µF VIN bypass, 1.5mm from U1) is the real
 # power delivery point; this stub carries only average current at negligible resistance.
-# Accept the one track_width DRC violation at (142.749, 68.590).
+# Accept the one track_width DRC violation at (133.717, 68.590) (board moved since this was written).

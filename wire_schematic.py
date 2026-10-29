@@ -13,7 +13,7 @@ Makes a .bak backup before writing.
 import re, math, uuid, shutil
 from pathlib import Path
 
-SCH = Path('/Users/stevesosik/Documents/KiCad/phantom-injector-hat/phantom-injector-hat.kicad_sch')
+SCH = Path(__file__).resolve().parent / 'phantom-injector-hat.kicad_sch'
 
 # ─── Pin connection-endpoint coords in symbol space (y-up convention) ──────────
 LIB_PINS = {

@@ -15,6 +15,7 @@ schematic is known correct.  Re-save whenever you intentionally change the
 schematic (new components, renamed nets, etc.).
 """
 
+import os
 import sys
 import json
 import argparse
@@ -25,8 +26,9 @@ sys.path.insert(0, (
 ))
 import pcbnew
 
-PCB_PATH    = '/Users/stevesosik/Documents/KiCad/phantom-injector-hat/phantom-injector-hat.kicad_pcb'
-GOLDEN_PATH = '/Users/stevesosik/Documents/KiCad/phantom-injector-hat/netlist_golden.json'
+HERE        = os.path.dirname(os.path.abspath(__file__))
+PCB_PATH    = os.path.join(HERE, 'phantom-injector-hat.kicad_pcb')
+GOLDEN_PATH = os.path.join(HERE, 'netlist_golden.json')
 
 # Nets to ignore in the diff — these are KiCad's auto-generated names for
 # pads that have no-connect flags in the schematic.  Their exact names can
