@@ -60,7 +60,12 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "track_width|134732075|68590250|cbc105f1-0452-4eaa-831a-670f2c4077a6|00000000-0000-0000-0000-000000000000",
+          "Accepted: 0.25 mm +5V_FILT stub into U1 V_IN at MSOP-16 pad pitch; see .kicad_dru"
+        ]
+      ],
       "meta": {
         "version": 2
       },

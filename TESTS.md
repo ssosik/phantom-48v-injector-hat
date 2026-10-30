@@ -34,8 +34,9 @@ after a bad schematic change bakes the mistake in. Review the diff before `--sav
   --all-track-errors \
   phantom-injector-hat.kicad_pcb
 ```
-Run after every routing session. Current baseline (2026-10-29): 1 error (accepted
-0.25 mm `+5V_FILT` stub into U1, documented in `.kicad_dru`), 0 unconnected pads.
+Run after every routing session. Current baseline (2026-10-30): 0 violations, 0 unconnected
+pads. The accepted 0.25 mm `+5V_FILT` stub into U1 (documented in `.kicad_dru`) is excluded in
+`.kicad_pro`; add `--severity-exclusions` to list it.
 Goal before fabrication: 0 unconnected, only documented exceptions.
 
 ### ERC — schematic electrical rules

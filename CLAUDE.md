@@ -36,7 +36,8 @@ Requires KiCad's `pcbnew` Python module (bundled at `/Applications/KiCad/KiCad.a
 - `phantom-injector-hat.kicad_pcb` — PCB layout (S-expression format; can be scripted with Python or edited directly)
 - `phantom-injector-hat.kicad_dru` — custom DRC rules (see constraints below)
 - `phantom-injector-hat.kicad_pro` — project settings (board-level constraints like `min_resolved_spokes`)
-- `fp-lib-table` — points to local custom LT8362 MSOP-16-EP footprint at `../ul_LT8362EMSE-PBF/KiCADv6/footprints.pretty` (outside the repo), plus the project library `phantom-injector-hat.pretty` (logo footprint `Logo_Sosik`, placed as board-only G1)
+- `fp-lib-table` — only the project library `phantom-injector-hat.pretty`: LT8362 MSOP-16-EP footprint `MSE_16A_ADI` (copied from the Ultra Librarian download) and logo footprint `Logo_Sosik` (board-only G1)
+- `make_fab.sh` — DRC gate (with schematic parity), then Gerbers/drill/pos/BOM into `fab/` (gitignored)
 
 ### Python scripts
 
@@ -72,9 +73,9 @@ y≈79–88: injection row: R8/R9, J4, C15/C16, J2, C13/C14, J3, R6/R7, then R10
 
 **Editing `.kicad_pcb` directly**: When flipping a footprint from F.Cu to B.Cu, all non-pad geometry (fp_line on F.CrtYd, F.SilkS, F.Fab) must have layer names changed to B.* **and** their local y-coordinates negated (so the physical PCB position is preserved). Pad y-coordinates must also be negated. Pad rotations shift by 180° (e.g., 90° → 270°). The `(justify mirror)` attribute must be added to all text `(effects ...)` blocks.
 
-## DRC / ERC status (as of 2026-10-29)
+## DRC / ERC status (as of 2026-10-30)
 
-DRC: fully routed, 0 unconnected pads, 1 accepted `track_width` error (0.25 mm +5V_FILT stub into U1, documented in `.kicad_dru`).
+DRC: fully routed, 0 violations, 0 unconnected pads. The 0.25 mm +5V_FILT stub into U1 (`track_width`) is excluded in `.kicad_pro` `drc_exclusions`; the key uses the track midpoint in nm and the track UUID, so re-routing that stub un-excludes it.
 ERC: 0 errors, 13 warnings (vendor symbol pin types + library mismatch).
 
 SW1 wiring (fixed 2026-10-29): pad 2 (middle, common) = +48V_SW, pad 1 = +48V, pad 3 = GND. +48V reaches pad 1 via a short B.Cu link from a via just below C3.

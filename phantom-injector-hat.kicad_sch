@@ -44,7 +44,7 @@
 					)
 				)
 			)
-			(property "Footprint" "ul_LT8362EMSE-PBF:MSE_16A_ADI"
+			(property "Footprint" "phantom-injector-hat:MSE_16A_ADI"
 				(at 0 0 0)
 				(show_name yes)
 				(do_not_autoplace no)
@@ -8427,7 +8427,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ul_LT8362EMSE-PBF:MSE_16A_ADI"
+		(property "Footprint" "phantom-injector-hat:MSE_16A_ADI"
 			(at 45.72 177.8 0)
 			(hide yes)
 			(show_name no)

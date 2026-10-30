@@ -194,3 +194,15 @@ older items predate later component moves; trust the PCB, not the numbers here.
    to rev v2. One GND stitching via moved (114.78→113.6, 74.9) to clear the text. DRC: silk
    checks clean; only the documented +5V_FILT track_width exception remains.
    SW1 deliberately has no ON/OFF end marks: slide direction vs. pin 1 not yet verified.
+
+## Housekeeping (2026-10-30)
+
+#40 - ✅ Repo is self-contained and fab-ready.
+   - LT8362 footprint MSE_16A_ADI copied from the Ultra Librarian download into
+     phantom-injector-hat.pretty; U1 retargeted (schematic + PCB); fp-lib-table no longer
+     references ../ul_LT8362EMSE-PBF. DRC schematic parity clean, check_netlist OK.
+   - The +5V_FILT track_width exception is now a DRC exclusion in .kicad_pro (with its reason),
+     so DRC reports 0 violations.
+   - make_fab.sh: DRC gate, then Gerbers (9 layers), Excellon PTH/NPTH + maps, pick-and-place
+     CSV and BOM into fab/ (gitignored), zipped as phantom-injector-hat-<rev>-gerbers.zip.
+   - Open pre-fab items (#36–#38, SW1 direction, LTspice transient) collected in TODO.md.

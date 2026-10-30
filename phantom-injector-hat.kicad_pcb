@@ -6335,7 +6335,7 @@
 			)
 		)
 	)
-	(footprint "ul_LT8362EMSE-PBF:MSE_16A_ADI"
+	(footprint "phantom-injector-hat:MSE_16A_ADI"
 		(layer "F.Cu")
 		(uuid "c62eb34e-d294-4c2a-bcef-6c11c4d34ae3")
 		(at 137.8554 67.3393)

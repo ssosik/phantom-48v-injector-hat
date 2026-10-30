@@ -1,11 +1,8 @@
 ** Drc report for phantom-injector-hat.kicad_pcb **
-** Created on 2026-10-29T20:27:42 **
+** Created on 2026-10-30T06:29:02 **
 ** Report includes: Errors, Warnings **
 
-** Found 1 DRC violations **
-[track_width]: Track width (board setup constraints min width 0.5000 mm; actual 0.2500 mm)
-    Rule: power; error
-    @(133.7169 mm, 68.5902 mm): Track [/+5V_FILT] on F.Cu, length 2.0303 mm
+** Found 0 DRC violations **
 
 ** Found 0 unconnected pads **
 

@@ -41,3 +41,4 @@
 # max trace at 0.18mm signal clearance. C1 (10µF VIN bypass, 1.5mm from U1) is the real
 # power delivery point; this stub carries only average current at negligible resistance.
 # Accept the one track_width DRC violation at (133.717, 68.590) (board moved since this was written).
+# It is excluded in the .kicad_pro drc_exclusions list, so DRC reports 0 violations.
