@@ -36,7 +36,7 @@ Requires KiCad's `pcbnew` Python module (bundled at `/Applications/KiCad/KiCad.a
 - `phantom-injector-hat.kicad_pcb` — PCB layout (S-expression format; can be scripted with Python or edited directly)
 - `phantom-injector-hat.kicad_dru` — custom DRC rules (see constraints below)
 - `phantom-injector-hat.kicad_pro` — project settings (board-level constraints like `min_resolved_spokes`)
-- `fp-lib-table` — points to local custom LT8362 MSOP-16-EP footprint at `../ul_LT8362EMSE-PBF/KiCADv6/footprints.pretty`
+- `fp-lib-table` — points to local custom LT8362 MSOP-16-EP footprint at `../ul_LT8362EMSE-PBF/KiCADv6/footprints.pretty` (outside the repo), plus the project library `phantom-injector-hat.pretty` (logo footprint `Logo_Sosik`, placed as board-only G1)
 
 ### Python scripts
 

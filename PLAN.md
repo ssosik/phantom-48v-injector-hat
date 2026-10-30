@@ -35,6 +35,7 @@ older items predate later component moves; trust the PCB, not the numbers here.
    GND pour provides isolation between zones. No additional separation required.
 
 #10 - ✅ should the LED be on all the time, or only when the 48v switch is set?
+   → Only when switched: R10 moved from +48V to +48V_SW so D2 means "phantom applied" (commit 7cfcf93).
 
 ## PCB layout optimizations (from placement review)
 
@@ -164,3 +165,32 @@ older items predate later component moves; trust the PCB, not the numbers here.
    pad 1/2 nets on the PCB, rerouted +48V from C3 through a via and a short B.Cu link to pad 1,
    and brought +48V_SW over pad 1 into pad 2 on F.Cu. DRC unchanged (1 accepted exception,
    0 unconnected); schematic parity clean. Golden re-saved. C9 value synced to 100V at the same time.
+
+## Deferred design questions (2026-10-29)
+
+#36 - Phantom switching transients into the HiFiBerry inputs. On SW1 ON, C13–C16 are uncharged,
+   so the ADC side of each DC-block cap follows the line side. Estimated ≈ +26 V common-mode at the
+   PCM1863 inputs (48 V × 8k / (6.81k + 8k)), decaying with τ ≈ 2.2 µF × 14.8 kΩ ≈ 33 ms; SW1 OFF
+   gives ≈ −26 V. Rough first-order estimate; ignores cable/mic capacitance and any HiFiBerry-side
+   input network. To do: check the HiFiBerry DAC2 ADC Pro input circuit; if unprotected, add a
+   per-leg clamp after the DC-block cap (series R + BAV99 to rails, or low-C TVS) and re-run sim4
+   for in-band loss.
+
+#37 - Stack order. DESIGN_DOC §1 says Pi → HiFiBerry → HAT; #1 above says Pi → HAT → HiFiBerry.
+   J1 is a bottom-side socket with no pass-through, so Pi → HAT → HiFiBerry leaves the HiFiBerry
+   without GPIO (I²S/I²C). To do: test-fit on 11 mm standoffs; check J1 pin length and L1's 5.1 mm
+   height against the board above.
+
+#38 - J2 ↔ HiFiBerry J4 wiring. J2 is a top-side vertical header (#7 originally asked for bottom
+   side). A 2×3 IDC ribbon swaps the odd and even rows. To do: decide the cable, then trace pin 1
+   end to end (J2 pin 1 = R−, per DESIGN_DOC §3.4).
+
+## v2 (2026-10-29)
+
+#39 - ✅ v2 silkscreen. Added Logo_Sosik (project lib phantom-injector-hat.pretty, board-only
+   footprint G1) and a title block on F.Silk: name, "v2 2026-10", XLR pin legend
+   (1 GND / 2 HOT / 3 COLD), licence. Labels: J4 "R", J3 "L", J2 "TO HIFIBERRY J4", SW1 "P48",
+   D2 "ON", U1 pin-1 dot. B.Silk: name + v2 + repo URL. PCB and schematic title blocks set
+   to rev v2. One GND stitching via moved (114.78→113.6, 74.9) to clear the text. DRC: silk
+   checks clean; only the documented +5V_FILT track_width exception remains.
+   SW1 deliberately has no ON/OFF end marks: slide direction vs. pin 1 not yet verified.

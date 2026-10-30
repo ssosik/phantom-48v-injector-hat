@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "Phantom Power Injector HAT")
-		(date "2026-05-12")
-		(rev "1.0")
+		(date "2026-10-29")
+		(rev "v2")
 		(company "Stereo Wildlife Recording System")
 		(comment 1 "5V to 48V P48 Phantom Power Injector for HiFiBerry DAC2 ADC Pro + P93")
 		(comment 2 "LT8362 boost, 400 kHz SSFM, 16 mA output budget")
@@ -5158,7 +5158,7 @@
 		(uuid "040771f0-c8c5-4ad1-aff2-adbf0e5de3d1")
 		(property "Reference" "C17"
 			(at 36.83 181.61 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5169,7 +5169,7 @@
 		)
 		(property "Value" "1 µF / 10V X7R"
 			(at 36.83 184.15 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5180,7 +5180,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 33.02 186.69 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5190,7 +5191,8 @@
 		)
 		(property "Datasheet" ""
 			(at 33.02 182.88 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5200,7 +5202,8 @@
 		)
 		(property "Description" "INTVCC bypass, required minimum 1µF low ESR ceramic"
 			(at 33.02 182.88 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5237,7 +5240,7 @@
 		(uuid "054425c5-3f6d-498c-9fa9-5e8f34063da7")
 		(property "Reference" "FB1"
 			(at 82.55 29.1591 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5248,7 +5251,7 @@
 		)
 		(property "Value" "FerriteBead"
 			(at 82.55 31.6991 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5259,7 +5262,8 @@
 		)
 		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder"
 			(at 76.962 30.48 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5269,7 +5273,8 @@
 		)
 		(property "Datasheet" ""
 			(at 78.74 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5279,7 +5284,8 @@
 		)
 		(property "Description" "600Ω @ 100MHz, 1A"
 			(at 78.74 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5316,7 +5322,7 @@
 		(uuid "06a04342-4af5-43a2-ba10-2f7c5f7f479b")
 		(property "Reference" "C7"
 			(at 194.31 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5327,7 +5333,7 @@
 		)
 		(property "Value" "0.1 µF / 100V X7R"
 			(at 194.31 83.8199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5338,7 +5344,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 191.4652 86.36 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5348,7 +5355,8 @@
 		)
 		(property "Datasheet" ""
 			(at 190.5 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5358,7 +5366,8 @@
 		)
 		(property "Description" "Output bypass"
 			(at 190.5 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5395,7 +5404,7 @@
 		(uuid "105e534a-ac46-4463-babe-37f4b4041246")
 		(property "Reference" "C11"
 			(at 67.31 105.4099 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5406,7 +5415,7 @@
 		)
 		(property "Value" "0.1 µF / 100V X7R"
 			(at 67.31 107.9499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5417,7 +5426,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 64.4652 110.49 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5427,7 +5437,8 @@
 		)
 		(property "Datasheet" ""
 			(at 63.5 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5437,7 +5448,8 @@
 		)
 		(property "Description" "Output bypass"
 			(at 63.5 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5474,7 +5486,7 @@
 		(uuid "151c679a-6243-411f-9b2e-04eba8561149")
 		(property "Reference" "R3"
 			(at 74.93 57.1499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5485,7 +5497,7 @@
 		)
 		(property "Value" "121 kΩ 1%"
 			(at 74.93 59.6899 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5496,7 +5508,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 70.612 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5506,7 +5519,8 @@
 		)
 		(property "Datasheet" ""
 			(at 72.39 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5516,7 +5530,8 @@
 		)
 		(property "Description" "R_T, sets 400 kHz"
 			(at 72.39 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5553,7 +5568,7 @@
 		(uuid "189c7919-10e4-43c4-bf8c-0e3f85ff7564")
 		(property "Reference" "C10"
 			(at 38.1 105.4099 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5564,7 +5579,7 @@
 		)
 		(property "Value" "0.1 µF / 100V X7R"
 			(at 38.1 107.9499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5575,7 +5590,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 35.2552 110.49 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5585,7 +5601,8 @@
 		)
 		(property "Datasheet" ""
 			(at 34.29 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5595,7 +5612,8 @@
 		)
 		(property "Description" "Output bypass"
 			(at 34.29 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5631,7 +5649,7 @@
 		(uuid "19e1308b-3f88-4485-bf1f-66085a917972")
 		(property "Reference" "J3"
 			(at 209.55 163.8301 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5642,7 +5660,7 @@
 		)
 		(property "Value" "Conn_01x03"
 			(at 209.55 161.2901 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5653,7 +5671,8 @@
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 			(at 212.09 162.56 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5663,7 +5682,8 @@
 		)
 		(property "Datasheet" ""
 			(at 212.09 162.56 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5673,7 +5693,8 @@
 		)
 		(property "Description" "XLR pigtail, L channel"
 			(at 212.09 157.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5712,7 +5733,7 @@
 		(uuid "1f315f09-231d-4ca8-83cc-95060aeb0368")
 		(property "Reference" "R1"
 			(at 39.37 57.1499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5723,7 +5744,7 @@
 		)
 		(property "Value" "1 MΩ 1%"
 			(at 39.37 59.6899 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5734,7 +5755,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 35.052 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5744,7 +5766,8 @@
 		)
 		(property "Datasheet" ""
 			(at 36.83 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5754,7 +5777,8 @@
 		)
 		(property "Description" "FBX top divider"
 			(at 46.736 61.976 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5791,7 +5815,7 @@
 		(uuid "28e1e91b-7f28-4223-a3ea-edc301562da3")
 		(property "Reference" "C8"
 			(at 222.25 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5802,7 +5826,7 @@
 		)
 		(property "Value" "4.7 µF / 50V X7R"
 			(at 222.25 83.8199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5813,7 +5837,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 219.4052 86.36 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5823,7 +5848,8 @@
 		)
 		(property "Datasheet" ""
 			(at 218.44 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5833,7 +5859,8 @@
 		)
 		(property "Description" "Input EMI filter"
 			(at 218.44 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5870,7 +5897,7 @@
 		(uuid "306d986b-ebf3-44b7-8c83-1b724b373fab")
 		(property "Reference" "L2"
 			(at 54.61 29.2099 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5881,7 +5908,7 @@
 		)
 		(property "Value" "2.2 µH"
 			(at 54.61 31.7499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5892,7 +5919,8 @@
 		)
 		(property "Footprint" "Inductor_SMD:L_Wuerth_HCI-7040"
 			(at 53.34 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5902,7 +5930,8 @@
 		)
 		(property "Datasheet" ""
 			(at 53.34 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5912,7 +5941,8 @@
 		)
 		(property "Description" "Input EMI filter inductor"
 			(at 53.34 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5948,7 +5978,7 @@
 		(uuid "382677a6-3bb2-49eb-b7e6-6922ee6b3409")
 		(property "Reference" "C15"
 			(at 190.5 104.1399 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5959,7 +5989,7 @@
 		)
 		(property "Value" "2.2 µF / 100V X7R"
 			(at 190.5 106.6799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5970,7 +6000,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 187.6552 109.22 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5980,7 +6011,8 @@
 		)
 		(property "Datasheet" ""
 			(at 186.69 105.41 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -5990,7 +6022,8 @@
 		)
 		(property "Description" "DC-block, R+ to J4"
 			(at 186.436 109.728 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6026,7 +6059,7 @@
 		(uuid "3a970eea-5d1d-4c9b-8e41-4079fd8d6db2")
 		(property "Reference" "C13"
 			(at 121.92 104.1399 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6037,7 +6070,7 @@
 		)
 		(property "Value" "2.2 µF / 100V X7R"
 			(at 121.92 106.6799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6048,7 +6081,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 119.0752 109.22 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6058,7 +6092,8 @@
 		)
 		(property "Datasheet" ""
 			(at 118.11 105.41 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6068,7 +6103,8 @@
 		)
 		(property "Description" "DC-block, L+ to J4"
 			(at 118.11 109.728 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6105,7 +6141,7 @@
 		(uuid "462b89c0-807d-4c12-be2c-7c5b57831add")
 		(property "Reference" "R5"
 			(at 110.49 57.1499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6116,7 +6152,7 @@
 		)
 		(property "Value" "100 kΩ 1%"
 			(at 110.49 59.6899 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6127,7 +6163,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 106.172 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6137,7 +6174,8 @@
 		)
 		(property "Datasheet" ""
 			(at 107.95 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6147,7 +6185,8 @@
 		)
 		(property "Description" "EN/UVLO pull-up"
 			(at 107.95 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6184,7 +6223,7 @@
 		(uuid "4f84a5a8-ae29-4bbb-8f4f-4225a72afbec")
 		(property "Reference" "C2"
 			(at 67.31 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6195,7 +6234,7 @@
 		)
 		(property "Value" "1 µF / 25V X7R"
 			(at 67.31 83.8199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6206,7 +6245,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 64.4652 86.36 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6216,7 +6256,8 @@
 		)
 		(property "Datasheet" ""
 			(at 63.5 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6226,7 +6267,8 @@
 		)
 		(property "Description" "V_C compensation"
 			(at 63.5 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6262,7 +6304,7 @@
 		(uuid "53316afb-c1c3-4b28-8e02-e7e25f3708f5")
 		(property "Reference" "SW1"
 			(at 320.04 46.99 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6272,7 +6314,7 @@
 		)
 		(property "Value" "SW_SPST"
 			(at 320.04 49.53 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6345,7 +6387,7 @@
 		(uuid "553fc585-6d05-450b-ae76-e335aba2fc81")
 		(property "Reference" "C18"
 			(at 26.67 186.69 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6356,7 +6398,7 @@
 		)
 		(property "Value" "100 nF / 10V X7R"
 			(at 26.67 189.23 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6367,7 +6409,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 22.86 191.77 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6377,7 +6420,8 @@
 		)
 		(property "Datasheet" ""
 			(at 22.86 187.96 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6387,7 +6431,8 @@
 		)
 		(property "Description" "BIAS pin local bypass, 100nF ceramic per LT8362 datasheet"
 			(at 22.86 187.96 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6424,7 +6469,7 @@
 		(uuid "5f15eb19-ef9f-407b-9dab-04b7d455e481")
 		(property "Reference" "C3"
 			(at 92.71 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6435,7 +6480,7 @@
 		)
 		(property "Value" "1 µF / 100V X7R"
 			(at 92.71 83.8199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6446,7 +6491,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 89.8652 86.36 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6456,7 +6502,8 @@
 		)
 		(property "Datasheet" ""
 			(at 88.9 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6466,7 +6513,8 @@
 		)
 		(property "Description" "Output filter"
 			(at 88.9 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6503,7 +6551,7 @@
 		(uuid "64eec668-0d39-4e70-b6f3-feae44b2d491")
 		(property "Reference" "R11"
 			(at 116.84 184.15 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6514,7 +6562,7 @@
 		)
 		(property "Value" "100 kΩ 1%"
 			(at 116.84 186.69 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6525,7 +6573,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 112.522 185.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6535,7 +6584,8 @@
 		)
 		(property "Datasheet" ""
 			(at 114.3 185.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6545,7 +6595,8 @@
 		)
 		(property "Description" "SYNC/MODE pull-down, selects Burst+SSFM"
 			(at 114.3 185.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6582,7 +6633,7 @@
 		(uuid "674cd035-d4bd-49b0-bc18-7b51643cd116")
 		(property "Reference" "C4"
 			(at 120.65 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6593,7 +6644,7 @@
 		)
 		(property "Value" "1 nF X7R"
 			(at 120.65 83.8199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6604,7 +6655,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 117.8052 86.36 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6614,7 +6666,8 @@
 		)
 		(property "Datasheet" ""
 			(at 116.84 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6624,7 +6677,8 @@
 		)
 		(property "Description" "Compensation high-freq"
 			(at 116.84 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6661,7 +6715,7 @@
 		(uuid "6e4a8f16-5eb2-4bae-bff4-630d89126f60")
 		(property "Reference" "R6"
 			(at 129.54 55.8799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6672,7 +6726,7 @@
 		)
 		(property "Value" "6.81 kΩ 0.1%"
 			(at 129.54 58.4199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6683,7 +6737,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 125.222 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6693,7 +6748,8 @@
 		)
 		(property "Datasheet" ""
 			(at 127 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6703,7 +6759,8 @@
 		)
 		(property "Description" "XLR pin 2, L channel bias"
 			(at 129.54 60.9599 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6740,7 +6797,7 @@
 		(uuid "6e5f4916-d62c-462b-902b-f565f7005ebc")
 		(property "Reference" "R2"
 			(at 55.88 57.1499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6751,7 +6808,7 @@
 		)
 		(property "Value" "34.8 kΩ 1%"
 			(at 55.88 59.6899 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6762,7 +6819,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 51.562 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6772,7 +6830,8 @@
 		)
 		(property "Datasheet" ""
 			(at 53.34 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6782,7 +6841,8 @@
 		)
 		(property "Description" "FBX bottom divider"
 			(at 65.024 61.976 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6819,7 +6879,7 @@
 		(uuid "828d0c6c-2cbf-4325-8163-c8f3c389744c")
 		(property "Reference" "C6"
 			(at 166.37 78.7399 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6830,7 +6890,7 @@
 		)
 		(property "Value" "22 µF / 16V X7R"
 			(at 166.37 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6841,7 +6901,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
 			(at 166.37 83.8199 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6852,7 +6913,8 @@
 		)
 		(property "Datasheet" ""
 			(at 162.56 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6862,7 +6924,8 @@
 		)
 		(property "Description" "Bulk input"
 			(at 166.37 86.3599 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6900,7 +6963,7 @@
 		(uuid "878f8ca0-d2a6-4b47-8fa3-30926a385154")
 		(property "Reference" "R7"
 			(at 162.56 55.8799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6911,7 +6974,7 @@
 		)
 		(property "Value" "6.81 kΩ 0.1%"
 			(at 162.56 58.4199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6922,7 +6985,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 158.242 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6932,7 +6996,8 @@
 		)
 		(property "Datasheet" ""
 			(at 160.02 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6942,7 +7007,8 @@
 		)
 		(property "Description" "XLR pin 3, L channel bias"
 			(at 162.56 60.9599 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6980,7 +7046,7 @@
 		(uuid "9e0d71c7-a7a8-42f4-a28a-5527c6402905")
 		(property "Reference" "R8"
 			(at 195.58 55.8799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -6991,7 +7057,7 @@
 		)
 		(property "Value" "6.81 kΩ 0.1%"
 			(at 195.58 58.4199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7002,7 +7068,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 191.262 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7012,7 +7079,8 @@
 		)
 		(property "Datasheet" ""
 			(at 193.04 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7022,7 +7090,8 @@
 		)
 		(property "Description" "XLR pin 2, R channel bias"
 			(at 195.58 60.9599 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7060,7 +7129,7 @@
 		(uuid "a12dc8cc-a87b-4e08-909d-a1386d498569")
 		(property "Reference" "C1"
 			(at 39.37 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7071,7 +7140,7 @@
 		)
 		(property "Value" "10 µF / 16V X7R"
 			(at 39.37 83.8199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7082,7 +7151,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 36.5252 86.36 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7092,7 +7162,8 @@
 		)
 		(property "Datasheet" ""
 			(at 35.56 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7102,7 +7173,8 @@
 		)
 		(property "Description" "V_IN bypass"
 			(at 35.56 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7138,7 +7210,7 @@
 		(uuid "a1e7862a-79df-4657-b079-9c6d12442116")
 		(property "Reference" "J2"
 			(at 182.88 153.67 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7148,7 +7220,7 @@
 		)
 		(property "Value" "Conn_02x03_Top_Bottom"
 			(at 182.88 156.21 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7158,7 +7230,8 @@
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical"
 			(at 181.61 162.56 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7168,7 +7241,8 @@
 		)
 		(property "Datasheet" ""
 			(at 181.61 162.56 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7178,7 +7252,8 @@
 		)
 		(property "Description" "To HiFiBerry J4"
 			(at 182.626 168.148 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7227,7 +7302,7 @@
 		(uuid "a933efea-9be3-43e4-ba5b-0b881733b4b9")
 		(property "Reference" "D2"
 			(at 283.21 103.8224 90)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7238,7 +7313,7 @@
 		)
 		(property "Value" "Green LED 3mm"
 			(at 283.21 106.3624 90)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7249,7 +7324,8 @@
 		)
 		(property "Footprint" "LED_THT:LED_D3.0mm"
 			(at 280.67 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7259,7 +7335,8 @@
 		)
 		(property "Datasheet" ""
 			(at 280.67 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7269,7 +7346,8 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 280.67 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7279,6 +7357,7 @@
 		)
 		(property "Sim.Pins" "+48V rail indicator"
 			(at 280.67 106.68 0)
+			(hide yes)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -7316,7 +7395,7 @@
 		(uuid "ae86ff96-e4f4-4f93-8717-05ba655f7a02")
 		(property "Reference" "C12"
 			(at 96.52 105.4099 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7327,7 +7406,7 @@
 		)
 		(property "Value" "4.7 pF C0G"
 			(at 96.52 107.9499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7338,7 +7417,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 93.6752 110.49 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7348,7 +7428,8 @@
 		)
 		(property "Datasheet" ""
 			(at 92.71 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7358,7 +7439,8 @@
 		)
 		(property "Description" "FBX feedforward"
 			(at 92.71 106.68 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7395,7 +7477,7 @@
 		(uuid "b2180028-de1d-40cd-bd91-7c117b206a02")
 		(property "Reference" "R9"
 			(at 228.6 55.8799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7406,7 +7488,7 @@
 		)
 		(property "Value" "6.81 kΩ 0.1%"
 			(at 228.6 58.4199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7417,7 +7499,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 224.282 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7427,7 +7510,8 @@
 		)
 		(property "Datasheet" ""
 			(at 226.06 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7437,7 +7521,8 @@
 		)
 		(property "Description" "XLR pin 3, R channel bias"
 			(at 228.6 60.9599 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7475,7 +7560,7 @@
 		(uuid "b8a69e76-f1b5-41d5-83b2-f99556d19473")
 		(property "Reference" "D1"
 			(at 68.58 28.8924 90)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7486,7 +7571,7 @@
 		)
 		(property "Value" "SS26S"
 			(at 68.58 31.4324 90)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7497,7 +7582,8 @@
 		)
 		(property "Footprint" "Diode_SMD:D_SMA"
 			(at 61.595 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7507,7 +7593,8 @@
 		)
 		(property "Datasheet" "http://www.jameco.com/Jameco/Products/ProdDS/1538777.pdf"
 			(at 66.04 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7517,7 +7604,8 @@
 		)
 		(property "Description" "60V 2A Schottky Barrier Rectifier Diode, SMB"
 			(at 66.04 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7554,7 +7642,7 @@
 		(uuid "c352c52d-552c-4a8a-8dc4-832e8f023365")
 		(property "Reference" "C5"
 			(at 143.51 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7565,7 +7653,7 @@
 		)
 		(property "Value" "22 nF X7R"
 			(at 143.51 83.8199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7576,7 +7664,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 140.6652 86.36 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7586,7 +7675,8 @@
 		)
 		(property "Datasheet" ""
 			(at 139.7 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7596,7 +7686,8 @@
 		)
 		(property "Description" "Soft-start"
 			(at 139.7 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7632,7 +7723,7 @@
 		(uuid "c552bdd7-4634-426d-85c3-d5d40e79da1c")
 		(property "Reference" "C16"
 			(at 227.33 104.1399 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7643,7 +7734,7 @@
 		)
 		(property "Value" "2.2 µF / 100V X7R"
 			(at 227.33 106.6799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7654,7 +7745,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 224.4852 109.22 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7664,7 +7756,8 @@
 		)
 		(property "Datasheet" ""
 			(at 223.52 105.41 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7674,7 +7767,8 @@
 		)
 		(property "Description" "DC-block, R- to J4"
 			(at 223.52 109.728 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7711,7 +7805,7 @@
 		(uuid "d5b58541-b11e-48ec-97ff-cf4f84894d3a")
 		(property "Reference" "C9"
 			(at 250.19 81.2799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7722,7 +7816,7 @@
 		)
 		(property "Value" "10 µF / 100V X7R"
 			(at 250.19 83.8199 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7733,7 +7827,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
 			(at 247.3452 86.36 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7743,7 +7838,8 @@
 		)
 		(property "Datasheet" ""
 			(at 246.38 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7753,7 +7849,8 @@
 		)
 		(property "Description" "Bulk output"
 			(at 246.38 82.55 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7789,7 +7886,7 @@
 		(uuid "db3df145-1e0e-470f-bfc7-5efdeda5d7c3")
 		(property "Reference" "J4"
 			(at 241.3 163.8301 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7800,7 +7897,7 @@
 		)
 		(property "Value" "Conn_01x03"
 			(at 241.3 161.2901 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7811,7 +7908,8 @@
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 			(at 243.84 162.56 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7821,7 +7919,8 @@
 		)
 		(property "Datasheet" ""
 			(at 243.84 162.56 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7831,7 +7930,8 @@
 		)
 		(property "Description" "XLR pigtail, R channel"
 			(at 243.84 157.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7870,7 +7970,7 @@
 		(uuid "e0ee0e81-4070-42f2-abfb-1ca5641ea62b")
 		(property "Reference" "C14"
 			(at 154.94 104.1399 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7881,7 +7981,7 @@
 		)
 		(property "Value" "2.2 µF / 100V X7R"
 			(at 154.94 106.6799 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7892,7 +7992,8 @@
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 152.0952 109.22 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7902,7 +8003,8 @@
 		)
 		(property "Datasheet" ""
 			(at 151.13 105.41 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7912,7 +8014,8 @@
 		)
 		(property "Description" "DC-block, L- to J4"
 			(at 151.13 109.728 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7949,7 +8052,7 @@
 		(uuid "e56121f3-54e2-40a0-8b03-dfbc0bc22fd6")
 		(property "Reference" "R4"
 			(at 92.71 57.1499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7960,7 +8063,7 @@
 		)
 		(property "Value" "22.1 kΩ 1%"
 			(at 92.71 59.6899 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7971,7 +8074,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 88.392 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7981,7 +8085,8 @@
 		)
 		(property "Datasheet" ""
 			(at 90.17 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -7991,7 +8096,8 @@
 		)
 		(property "Description" "V_C compensation"
 			(at 90.17 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8027,7 +8133,7 @@
 		(uuid "e632d144-52db-48c0-9291-b9c22a134ac8")
 		(property "Reference" "R10"
 			(at 264.16 57.1499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8038,7 +8144,7 @@
 		)
 		(property "Value" "12 kΩ 1/4W"
 			(at 264.16 59.6899 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8049,7 +8155,8 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 259.842 58.42 90)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8059,7 +8166,8 @@
 		)
 		(property "Datasheet" ""
 			(at 261.62 58.42 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8069,7 +8177,8 @@
 		)
 		(property "Description" "LED current limit (~3 mA @ 48V)"
 			(at 280.416 62.23 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8106,7 +8215,7 @@
 		(uuid "e63ab3fa-8c56-4210-a62a-0be9304d66a1")
 		(property "Reference" "J1"
 			(at 146.05 152.4 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8116,7 +8225,7 @@
 		)
 		(property "Value" "Conn_02x20_Odd_Even"
 			(at 146.05 154.94 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8126,7 +8235,8 @@
 		)
 		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical"
 			(at 144.78 181.61 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8136,7 +8246,8 @@
 		)
 		(property "Datasheet" ""
 			(at 144.78 181.61 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8146,7 +8257,8 @@
 		)
 		(property "Description" "Generic connector, double row, 02x20, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 144.78 181.61 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8297,7 +8409,7 @@
 		(uuid "e87e959e-b9ab-4165-90e8-75e1e015a6ad")
 		(property "Reference" "U1"
 			(at 73.66 167.64 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8307,7 +8419,7 @@
 		)
 		(property "Value" "LT8362EMSE-PBF"
 			(at 73.66 170.18 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8317,7 +8429,8 @@
 		)
 		(property "Footprint" "ul_LT8362EMSE-PBF:MSE_16A_ADI"
 			(at 45.72 177.8 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8327,7 +8440,8 @@
 		)
 		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/lt8362.pdf"
 			(at 45.72 177.8 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8337,7 +8451,8 @@
 		)
 		(property "Description" ""
 			(at 45.72 177.8 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8407,7 +8522,7 @@
 		(uuid "f691a711-7904-432c-9713-799f971037f4")
 		(property "Reference" "L1"
 			(at 41.91 29.2099 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8418,7 +8533,7 @@
 		)
 		(property "Value" "22 µH"
 			(at 41.91 31.7499 0)
-			(show_name yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8429,7 +8544,8 @@
 		)
 		(property "Footprint" "Inductor_SMD:L_Coilcraft_XAL5030-XXX"
 			(at 40.64 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8439,7 +8555,8 @@
 		)
 		(property "Datasheet" ""
 			(at 40.64 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -8449,7 +8566,8 @@
 		)
 		(property "Description" "Shielded power inductor, ≥1.4A Isat"
 			(at 40.64 30.48 0)
-			(show_name yes)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font

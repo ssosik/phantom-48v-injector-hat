@@ -2,8 +2,8 @@
 
 **Project**: P48 phantom-power injection HAT for Raspberry Pi 4B + HiFiBerry DAC2 ADC Pro + ESP P93 microphone preamplifier (phantom-mode variant).
 
-**Revision**: 1.0 — initial design
-**Date**: 2026-05-12
+**Revision**: v2 — SW1 wiring fix, silkscreen (logo, labels, revision), v1.0 was the initial design (2026-05-12)
+**Date**: 2026-10-29
 **Based on**: Analog Devices LT8362 datasheet, "Low I_Q, Low EMI, 400kHz, 48V Boost Converter with SSFM" typical application
 
 ---
@@ -532,6 +532,14 @@ After basic function is confirmed, before committing to the design across all 5 
 5. ~~**HiFiBerry J4 pinout**~~ — resolved (2026-06-12). Re-verified §3.4 against HiFiBerry DAC2 ADC Pro datasheet (hifiberry.com/docs/data-sheets/datasheet-dac2-adc-pro/). **Bug found and fixed**: right channel +/− were swapped — §3.4 previously had pin 1 = R+ / pin 2 = R−, but the datasheet specifies pin 1 = in R− / pin 2 = in R+ (pin 1 is left bottom corner). Left channel and GND pins were correct. Without fix, the right channel would have inverted polarity vs the left, breaking stereo imaging and causing partial cancellation in any downstream mono sum. wire_schematic.py NETLIST and §3.4 table both updated; schematic regenerated.
 6. ~~**C&K OS102011MA1QN1 footprint**~~ — resolved (2026-06-12). KiCad's `Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q` footprint verified against C&K OS-series datasheet page 10. All critical dimensions match: 3 signal pins at 2.00 mm pitch (`.079"`), 2 mounting feet with 1.50 mm drill (`Ø.059"`) offset 2.10 mm (`.083"`) horizontally from the outer signal pins, total hole-pattern width 8.20 mm (`.323"`), body footprint 8.60 × 4.40 mm (`.339" × .173"`). Pin numbering matches SPDT schematic (pin 2 = common, pins 1/3 = throws). Single deviation: signal pin drill is 0.90 mm in KiCad vs 0.80 mm in datasheet — standard library practice (rounded to a common drill bit; 0.1 mm extra clearance eases insertion and stays within solderable annular-ring tolerance on the 1.5 mm pad).
 7. ~~**Pi 5V current draw under transient (e.g., startup inrush of LT8362)**~~ — resolved (2026-06-12). Analytical analysis: t_ss = V_FBX × C5 / I_SS = 1.6V × C5 / 2µA. Output ramp current = C_OUT × (V_OUT/t_ss) where C_OUT ≈ 11.3 µF (C9 + C3 + C7/C10/C11). Input current = I_OUT × V_OUT / (V_IN × η) at η ≈ 85%. With original C5 = 10 nF → t_ss = 8 ms, I_IN ≈ **750 mA** for 8 ms (over the 600 mA HAT continuous spec). **Mitigation applied: C5 increased to 22 nF** → t_ss = 17.6 ms, I_IN ≈ **342 mA** (well under HAT spec). Schematic, BOM, and DigiKey order updated to match. Steady-state input current after startup is ~185 mA at full phantom load (§1 power budget). Tradeoff: startup is 10 ms slower; irrelevant for phantom power. (Note: separate Pi 5V inrush event from C6+C8 charging at Pi power-on is governed by the Pi's own 5V slew rate and is independent of this analysis.)
+
+---
+
+### Open items (deferred, 2026-10-29)
+
+8. **Phantom switching transients into the ADC** — see README → Known issues 1 and PLAN #36.
+9. **Stack order** — see the note under §1 and PLAN #37.
+10. **J2 ↔ HiFiBerry J4 cable mapping** — see PLAN #38.
 
 ---
 
